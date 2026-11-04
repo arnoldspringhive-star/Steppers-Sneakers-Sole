@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steppers Sneakers &amp; Sole — Editorial Runway &amp; Collector Archive (Concept 02)</title>
+  <meta name="description" content="Steppers Concept 02: Radical editorial runway exhibition, dual-view collector archive, sneaker anatomy dissection deck, and live drop calendar.">
+  <link rel="icon" type="image/jpeg" href="assets/images/steppers-logo.jpg">
+
+  <!-- Core Stylesheet for Concept 2 -->
+  <link rel="stylesheet" href="assets/css/style2.css">
+</head>
+<body>
+
+  <!-- 1. Editorial Technical Masthead Strip -->
+  <header class="editorial-masthead">
+    <div class="masthead-strip">
+      <div class="masthead-meta-group">
+        <span class="meta-chip-live">LIVE ATELIER // SPEC 2026.02</span>
+        <span>LAT 40.7128° N // LON 74.0060° W</span>
+        <span style="color:var(--c-magenta);">AUTHENTICITY RFID PASS: 100%</span>
+      </div>
+
+      <div class="masthead-actions">
+        <span>CURRENCY:</span>
+        <select class="currency-select" aria-label="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+        <span>FREE SHIPPING &gt; $250</span>
+      </div>
+    </div>
+
+    <!-- Main Runway Navbar -->
+    <div class="runway-navbar">
+      <div class="shell-container runway-nav-inner">
+        
+        <!-- Official Logo Crest -->
+        <a href="index2.html" class="runway-brand-crest" aria-label="Steppers Home">
+          <img src="assets/images/steppers-logo.jpg" alt="Steppers Sneakers &amp; Sole Official Emblem" class="runway-logo-img">
+          <div class="runway-brand-text">
+            <span class="vol-label">VOL. 02 // ATELIER RUNWAY</span>
+            <span class="brand-name">STEPPERS SNEAKERS &amp; SOLE</span>
+          </div>
+        </a>
+
+        <!-- Numbered Editorial Navigation Menu -->
+        <nav aria-label="Atelier Navigation">
+          <ul class="runway-index-menu">
+            <li><a href="#runway" class="runway-menu-link active"><span class="idx-num">[01]</span> The Runway</a></li>
+            <li><a href="#calendar" class="runway-menu-link"><span class="idx-num">[02]</span> Drop Radar</a></li>
+            <li><a href="#heritage" class="runway-menu-link"><span class="idx-num">[03]</span> Heritage DNA</a></li>
+            <li><a href="#archive" class="runway-menu-link"><span class="idx-num">[04]</span> Dual Archive</a></li>
+            <li><a href="#anatomy" class="runway-menu-link"><span class="idx-num">[05]</span> Anatomy Deck</a></li>
+            <li><a href="#filmstrip" class="runway-menu-link"><span class="idx-num">[06]</span> Mascot Filmstrip</a></li>
+            <li><a href="#care" class="runway-menu-link"><span class="idx-num">[07]</span> Care Lab</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Controls & Switch to Concept 1 -->
+        <div class="runway-nav-right">
+          <!-- Switch back to Concept 1 link -->
+          <a href="index.html" class="btn-concept-pill" title="Toggle to Concept 1 Underground Design">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+            </svg>
+            <span>Underground V1</span>
+          </a>
+
+          <!-- Cart Drawer Button -->
+          <button class="btn-runway-cart cart-open-btn" aria-label="Open Shopping Bag">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
+            </svg>
+            <span>Bag</span>
+            <span class="cart-count-bubble">1</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--c-border);">
+      <span style="font-family:var(--f-mono); font-size:0.75rem; color:var(--c-magenta); letter-spacing:0.12em;">NAVIGATION</span>
+      <button id="mobile-nav-close" style="background:none; border:none; color:#fff; font-size:1.6rem; line-height:1; cursor:pointer;" aria-label="Close Navigation">&times;</button>
+    </div>
+    <ul style="list-style:none; display:flex; flex-direction:column; gap:16px; padding:0; margin:0;">
+      <li><a href="#runway" style="color:#fff; text-decoration:none; font-family:var(--f-sans); font-weight:700;"><span style="color:var(--c-magenta); font-family:var(--f-mono); margin-right:8px;">[01]</span> The Runway</a></li>
+      <li><a href="#calendar" style="color:#fff; text-decoration:none; font-family:var(--f-sans); font-weight:700;"><span style="color:var(--c-magenta); font-family:var(--f-mono); margin-right:8px;">[02]</span> Drop Radar</a></li>
+      <li><a href="#heritage" style="color:#fff; text-decoration:none; font-family:var(--f-sans); font-weight:700;"><span style="color:var(--c-magenta); font-family:var(--f-mono); margin-right:8px;">[03]</span> Heritage DNA</a></li>
+      <li><a href="#archive" style="color:#fff; text-decoration:none; font-family:var(--f-sans); font-weight:700;"><span style="color:var(--c-magenta); font-family:var(--f-mono); margin-right:8px;">[04]</span> Dual Archive</a></li>
+      <li><a href="#anatomy" style="color:#fff; text-decoration:none; font-family:var(--f-sans); font-weight:700;"><span style="color:var(--c-magenta); font-family:var(--f-mono); margin-right:8px;">[05]</span> Anatomy Deck</a></li>
+      <li><a href="#filmstrip" style="color:#fff; text-decoration:none; font-family:var(--f-sans); font-weight:700;"><span style="color:var(--c-magenta); font-family:var(--f-mono); margin-right:8px;">[06]</span> Mascot Filmstrip</a></li>
+      <li><a href="#care" style="color:#fff; text-decoration:none; font-family:var(--f-sans); font-weight:700;"><span style="color:var(--c-magenta); font-family:var(--f-mono); margin-right:8px;">[07]</span> Care Lab</a></li>
+      <li style="margin-top:20px; padding-top:16px; border-top:1px solid var(--c-border);">
+        <a href="index.html" style="color:var(--c-cyan); text-decoration:none; font-family:var(--f-mono); font-size:0.85rem; display:inline-flex; align-items:center; gap:6px;">
+          <span>&larr; Switch to Underground V1</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 2. HERO COMPONENT: KINETIC RUNWAY EXHIBITION SLIDER -->
+  <section class="hero-runway-stage" id="runway">
+    <div class="runway-bg-marquee">STEPPERS EXHIBITION 02</div>
+
+    <div class="shell-container">
+      <div class="runway-display-grid">
+        
+        <!-- Left: Giant Center-Stage Sneaker Visual -->
+        <div class="runway-hero-visual">
+          <span class="runway-spec-badge" id="runway-spec-badge">[STP-AJ1-BREDTOE // OG Grail]</span>
+          <span class="runway-counter-badge"><span id="runway-current-step">01</span> / 08</span>
+
+          <img src="assets/images/sneaker-chicago.jpg" alt="Air Jordan 1 Retro High OG Bred Toe" id="runway-main-shoe-img" class="runway-hero-img">
+
+          <!-- Slider Arrow Controls -->
+          <div class="runway-slider-nav">
+            <button class="btn-slider-arrow" id="btn-runway-prev" aria-label="Previous Specimen">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+              </svg>
+            </button>
+            <button class="btn-slider-arrow" id="btn-runway-next" aria-label="Next Specimen">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Architectural Spec Dossier -->
+        <div class="runway-dossier">
+          <div class="dossier-eyebrow">
+            <span>// RUNWAY SPECIMEN DOSSIER</span>
+            <span style="color:var(--c-cyan);">AUTHENTICATED 10/10 DEADSTOCK</span>
+          </div>
+
+          <h1 class="dossier-headline" id="runway-model-headline">
+            AIR JORDAN 1 RETRO HIGH OG 'BRED TOE' <span class="highlight-cyan">[2018]</span>
+          </h1>
+
+          <div class="dossier-colorway-strip" id="runway-colorway-text">
+            <strong>COLORWAY:</strong> Gym Red / Black / Summit White
+          </div>
+
+          <p class="dossier-desc-text" id="runway-desc-body">
+            The legendary 2018 mashup of the 'Bred' and 'Black Toe' colorways. Premium tumbled leather with Gym Red toe box and collar, crisp white mid-panels, black Swoosh, and the iconic Jordan Wings insignia.
+          </p>
+
+          <!-- Spec Matrix Table -->
+          <div class="dossier-spec-grid">
+            <div class="spec-cell">
+              <span class="k">SPECIMEN SKU</span>
+              <span class="v" id="spec-val-sku">STP-AJ1-BREDTOE</span>
+            </div>
+            <div class="spec-cell">
+              <span class="k">MATERIALS</span>
+              <span class="v" id="spec-val-materials">Full-Grain Tumbled Cowhide</span>
+            </div>
+            <div class="spec-cell">
+              <span class="k">CUSHIONING</span>
+              <span class="v" id="spec-val-cushioning">Encapsulated Air-Sole Unit</span>
+            </div>
+            <div class="spec-cell">
+              <span class="k">RARITY INDEX</span>
+              <span class="v" style="color:var(--c-magenta);" id="spec-val-rarity">98/100 Grail</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Size Selector -->
+          <div class="dossier-size-cluster">
+            <span class="size-cluster-label">SELECT SPEC SIZE (US MEN):</span>
+            <div class="dossier-sizes-row" id="runway-sizes-cluster">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Price & Cop Action -->
+          <div class="dossier-action-bar">
+            <div class="dossier-price-wrap">
+              <span class="dossier-price-now" id="runway-price-now">$220</span>
+              <span class="dossier-price-was" id="runway-price-was">$260</span>
+            </div>
+            <button class="btn-hero-cop-direct" id="btn-runway-direct-cop">
+              <span>Acquire Drop</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Horizontal Miniature Runway Track (All 8 shoes) -->
+      <div class="runway-mini-track" id="runway-mini-track">
+        <!-- Rendered by assets/js/main2.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DROP SCHEDULE CALENDAR MATRIX -->
+  <section class="timeline-calendar-section" id="calendar">
+    <div class="shell-container">
+      <div class="timeline-header-row">
+        <div>
+          <span class="timeline-tag">// RELEASE DISPATCH RADAR</span>
+          <h2 class="timeline-title">2026 VAULT RELEASE SCHEDULE</h2>
+        </div>
+        <p style="max-width: 440px; font-size: 0.92rem; color: var(--c-text-200);">
+          Calibrated drop releases verified by Steppers laboratory inspectors. Members receive cryptographic priority reservation tokens.
+        </p>
+      </div>
+
+      <div class="timeline-cards-row">
+        <!-- Event 1 -->
+        <div class="timeline-card">
+          <span class="timeline-card-date">NOV 06 // 10:00 AM EST</span>
+          <span class="timeline-card-status">LIVE COUNTDOWN</span>
+          <h3 class="timeline-card-title">AJ1 High OG 'Bred Toe' (2018 Deadstock)</h3>
+          <p class="timeline-card-meta">Original box with RFID vault certificate &amp; extra black laces.</p>
+          <div class="timeline-card-thumb">
+            <img src="assets/images/sneaker-chicago.jpg" alt="Air Jordan 1 Bred Toe">
+          </div>
+          <button class="btn-timeline-notify" onclick="showToast('Alert set for AJ1 Bred Toe Release!');">Set Mobile Alert</button>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="timeline-card">
+          <span class="timeline-card-date">NOV 12 // 02:00 PM EST</span>
+          <span class="timeline-card-status">TIER-1 DROP</span>
+          <h3 class="timeline-card-title">Nike Air Force 1 Shadow 'Pastel Pale Ivory'</h3>
+          <p class="timeline-card-meta">Deconstructed doubled Swoosh styling with elevated foam midsole.</p>
+          <div class="timeline-card-thumb">
+            <img src="assets/images/sneaker-purple.jpg" alt="AF1 Shadow Pastel">
+          </div>
+          <button class="btn-timeline-notify" onclick="showToast('Alert set for AF1 Shadow Drop!');">Set Mobile Alert</button>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="timeline-card">
+          <span class="timeline-card-date">NOV 19 // 11:00 AM EST</span>
+          <span class="timeline-card-status">TECH RELEASE</span>
+          <h3 class="timeline-card-title">Nike Air Force 1 React 'White University Red'</h3>
+          <p class="timeline-card-meta">Drop-in React foam core with oversized contrast outlined Swoosh.</p>
+          <div class="timeline-card-thumb">
+            <img src="assets/images/sneaker-cyan.jpg" alt="AF1 React">
+          </div>
+          <button class="btn-timeline-notify" onclick="showToast('Alert set for AF1 React Drop!');">Set Mobile Alert</button>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="timeline-card">
+          <span class="timeline-card-date">NOV 26 // 09:00 AM EST</span>
+          <span class="timeline-card-status">RETRO VAULT</span>
+          <h3 class="timeline-card-title">Nike Air Max 90 'Curry &amp; University Blue'</h3>
+          <p class="timeline-card-meta">Tinker Hatfield classic with curry suede and visible golden Max Air chamber.</p>
+          <div class="timeline-card-thumb">
+            <img src="assets/images/sneaker-bred.jpg" alt="Air Max 90 Curry">
+          </div>
+          <button class="btn-timeline-notify" onclick="showToast('Alert set for Air Max 90 Drop!');">Set Mobile Alert</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3.5. BRAND HERITAGE SECTION: WELCOME TO STEPPERS SNEAKERS & SOLE -->
+  <section class="runway-heritage-section" id="heritage">
+    <div class="shell-container">
+      <div class="heritage-split-grid">
+        
+        <!-- Left: Culture Showcase Card -->
+        <div class="heritage-photo-hero">
+          <img src="assets/images/heritage-culture.jpg" alt="Steppers Streetwear &amp; Graffiti Culture">
+          <div class="heritage-photo-overlay">
+            <span class="heritage-badge" style="font-family: var(--f-mono); font-size: 0.68rem; color: var(--c-magenta); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 8px;">ORIGIN // STREET IDENTITY</span>
+            <h3 style="font-family: var(--f-monumental); font-size: 1.8rem; color: #fff; margin-bottom: 8px; line-height: 1.1;">CULTURE FORGED ON CONCRETE</h3>
+            <p style="font-size: 0.88rem; color: var(--c-text-200); line-height: 1.5; margin: 0;">Born from alleyway graffiti tags, subway tunnels, and the relentless search for original grails.</p>
+          </div>
+        </div>
+
+        <!-- Right: Brand Manifesto & 4 Architectural Pillars -->
+        <div class="heritage-content-col">
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: var(--f-mono); font-size: 0.72rem; color: var(--c-magenta); letter-spacing: 0.14em; margin-bottom: 6px;">WELCOME TO</div>
+            <h2 style="font-family: var(--f-monumental); font-size: clamp(2rem, 3.5vw, 3.2rem); color: #fff; line-height: 1.05; margin-bottom: 12px;">
+              <span style="color: var(--c-magenta);">STEPPERS</span> SNEAKERS &amp; SOLE
+            </h2>
+            <p style="font-size: 0.92rem; color: var(--c-text-200); line-height: 1.6; margin: 0;">
+              Steppers Sneakers &amp; Sole was forged at the intersection of raw graffiti art, authentic sneaker obsession, and unbreakable street loyalty. Every detail of our official emblem tells our origin story:
+            </p>
+          </div>
+
+          <div class="heritage-pillars-stack">
+            <!-- Pillar 1: Bubble Typography -->
+            <div class="heritage-spec-card">
+              <div class="spec-pillar-icon">✍️</div>
+              <span class="spec-pillar-tag">ORIGIN ELEMENT 01</span>
+              <h3 class="spec-pillar-title">Bubble Typography</h3>
+              <p class="spec-pillar-body">Vibrant pink &amp; purple lettering honoring classic subway graffiti.</p>
+            </div>
+
+            <!-- Pillar 2: The Chicago Silhouette -->
+            <div class="heritage-spec-card">
+              <div class="spec-pillar-icon">👟</div>
+              <span class="spec-pillar-tag">ORIGIN ELEMENT 02</span>
+              <h3 class="spec-pillar-title">The Chicago Silhouette</h3>
+              <p class="spec-pillar-body">The iconic red high-top representing timeless sneakerhead culture.</p>
+            </div>
+
+            <!-- Pillar 3: French Bulldog Mascot -->
+            <div class="heritage-spec-card">
+              <div class="spec-pillar-icon">🐾</div>
+              <span class="spec-pillar-tag">ORIGIN ELEMENT 03</span>
+              <h3 class="spec-pillar-title">The Street Guardian</h3>
+              <p class="spec-pillar-body">Our loyal fawn French Bulldog standing guard over fresh kicks.</p>
+            </div>
+
+            <!-- Pillar 4: Cyan Paint Drips -->
+            <div class="heritage-spec-card">
+              <div class="spec-pillar-icon">🎨</div>
+              <span class="spec-pillar-tag">ORIGIN ELEMENT 04</span>
+              <h3 class="spec-pillar-title">Cyan Spray Drips</h3>
+              <p class="spec-pillar-body">Fresh paint drips celebrating raw street art and authenticity.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE GRAIL ARCHIVE: DUAL-VIEW BROWSE ENGINE -->
+  <section class="archive-catalog-section" id="archive">
+    <div class="shell-container">
+      
+      <!-- Catalog Control Header -->
+      <div class="catalog-control-header">
+        <div>
+          <span style="font-family: var(--f-mono); font-size: 0.72rem; color: var(--c-magenta); letter-spacing: 0.14em;">// CURATED COLLECTION</span>
+          <h2 style="font-family: var(--f-monumental); font-size: clamp(2.6rem, 4vw, 4.2rem); color: #fff; line-height: 1;">THE COMPLETE GRAIL ARCHIVE</h2>
+        </div>
+
+        <div style="max-width: 440px; font-size: 0.88rem; color: var(--c-text-200); line-height: 1.5;">
+          Explore our curated vault of verified deadstock grails, iconic retro colorways, and exclusive collaborative editions. Every pair undergoes rigorous multi-point laboratory authentication and ships securely in pristine collector condition.
+        </div>
+
+        <!-- View Mode Switcher: Magazine Spread vs Collector Table -->
+        <div class="archive-view-switch">
+          <button class="btn-archive-view active" data-view="spread" aria-label="Magazine Lookbook Spread View">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 5h16v4H4zm0 6h16v8H4z"></path>
+            </svg>
+            <span>Magazine Spread</span>
+          </button>
+          <button class="btn-archive-view" data-view="table" aria-label="Collector Technical Table View">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+            </svg>
+            <span>Collector Matrix</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW 1: Alternating Magazine Lookbook Spreads -->
+      <div class="lookbook-spread-container" id="lookbook-spread-container">
+        <!-- Rendered dynamically by assets/js/main2.js -->
+      </div>
+
+      <!-- VIEW 2: Collector Technical Table Matrix -->
+      <div class="collector-table-container" id="collector-table-container">
+        <table class="archive-spec-table">
+          <thead>
+            <tr>
+              <th>Specimen</th>
+              <th>SKU Code</th>
+              <th>Model &amp; Colorway</th>
+              <th>Brand</th>
+              <th>Year</th>
+              <th>Rarity Score</th>
+              <th>Condition</th>
+              <th>Vault Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="archive-table-body">
+            <!-- Rendered dynamically by assets/js/main2.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. SNEAKER ANATOMY DISSECTION DECK (EXCLUSIVE FEATURE) -->
+  <section class="anatomy-deck-section" id="anatomy">
+    <div class="shell-container">
+      <div style="margin-bottom: 40px;">
+        <span style="font-family: var(--f-mono); font-size: 0.72rem; color: var(--c-cyan); letter-spacing: 0.14em;">// INTERACTIVE DISSECTION</span>
+        <h2 style="font-family: var(--f-monumental); font-size: clamp(2.4rem, 4vw, 3.8rem); color: #fff; line-height: 1;">ANATOMICAL SNEAKER BREAKDOWN</h2>
+        <p style="color: var(--c-text-200); font-size: 0.95rem; margin-top: 8px;">
+          Examine the four technical construction layers engineered into every authentic Steppers grail.
+        </p>
+      </div>
+
+      <div class="anatomy-stage-box">
+        <!-- Left: Dissection Stage Media -->
+        <div class="anatomy-media-wrap">
+          <img src="assets/images/sneaker-chicago.jpg" alt="Sneaker Anatomy Inspection" id="anatomy-display-img">
+        </div>
+
+        <!-- Right: Layer Controls & Data -->
+        <div class="anatomy-controls">
+          <div class="anatomy-tabs-cluster">
+            <button class="btn-anatomy-tab active" data-layer="upper">01 // Leather &amp; Collar</button>
+            <button class="btn-anatomy-tab" data-layer="cushion">02 // Air / React Core</button>
+            <button class="btn-anatomy-tab" data-layer="outsole">03 // Pavement Tread</button>
+            <button class="btn-anatomy-tab" data-layer="rfid">04 // RFID Crypto Tag</button>
+          </div>
+
+          <div class="anatomy-content-card">
+            <h3 class="anatomy-spec-title" id="anatomy-spec-title">
+              LAYER 01: FULL-GRAIN PREMIUM VAMP &amp; ANKLE COLLAR
+            </h3>
+            <p class="anatomy-spec-desc" id="anatomy-spec-desc">
+              Anatomically constructed using 1.4mm premium tumbled bovine leather. Padded ankle foam collar ensures lockdown stability during aggressive pavement movement, detailed with high-frequency stitch gauge precision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. MASCOT SYNDICATE: HORIZONTAL FILMSTRIP LOOKBOOK -->
+  <section class="filmstrip-lookbook-section" id="filmstrip">
+    <div class="shell-container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom: 30px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <span style="font-family: var(--f-mono); font-size: 0.72rem; color: var(--c-gold); letter-spacing: 0.14em;">// THE MASCOT SYNDICATE</span>
+          <h2 style="font-family: var(--f-monumental); font-size: clamp(2.4rem, 4vw, 3.8rem); color: #fff; line-height: 1;">CONCRETE &amp; CANINE FILMSTRIP</h2>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="font-family: var(--f-mono); font-size: 0.75rem; color: var(--c-text-300);">SCROLL HORIZONTALLY</span>
+          <button class="filmstrip-ctrl-btn" id="btn-filmstrip-prev" aria-label="Previous Filmstrip">&larr;</button>
+          <button class="filmstrip-ctrl-btn" id="btn-filmstrip-next" aria-label="Next Filmstrip">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="filmstrip-scroll-row" id="filmstrip-scroll-row">
+        <!-- Filmstrip Item 1 -->
+        <div class="filmstrip-card">
+          <div class="filmstrip-img-wrap">
+            <img src="assets/images/french-bulldog.jpg" alt="Official Mascot Frenchie">
+          </div>
+          <div class="filmstrip-meta-pad">
+            <span class="filmstrip-tag">MASCOT ARCHIVE // 01</span>
+            <h3 class="filmstrip-card-title">The Street Guardian: Loyal to Every Pair</h3>
+          </div>
+        </div>
+
+        <!-- Filmstrip Item 2 -->
+        <div class="filmstrip-card">
+          <div class="filmstrip-img-wrap">
+            <img src="assets/images/lookbook-alley.jpg" alt="Tokyo Alley Runway">
+          </div>
+          <div class="filmstrip-meta-pad">
+            <span class="filmstrip-tag">TOKYO // SHIBUYA</span>
+            <h3 class="filmstrip-card-title">After-Hours Pavement Drip</h3>
+          </div>
+        </div>
+
+        <!-- Filmstrip Item 3 -->
+        <div class="filmstrip-card">
+          <div class="filmstrip-img-wrap">
+            <img src="assets/images/lookbook-neon.jpg" alt="Neon Reflections">
+          </div>
+          <div class="filmstrip-meta-pad">
+            <span class="filmstrip-tag">AESTHETICS // DRIP</span>
+            <h3 class="filmstrip-card-title">Neon Cyber Cyberpunk Reflections</h3>
+          </div>
+        </div>
+
+        <!-- Filmstrip Item 4 -->
+        <div class="filmstrip-card">
+          <div class="filmstrip-img-wrap">
+            <img src="assets/images/lookbook-street.jpg" alt="New York Sidewalk Grails">
+          </div>
+          <div class="filmstrip-meta-pad">
+            <span class="filmstrip-tag">NEW YORK // CONCRETE</span>
+            <h3 class="filmstrip-card-title">Concrete Walkers: Built for Heavy Rotation</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ATELIER CARE & SOLE LAB FORMULATIONS -->
+  <section class="atelier-care-section" id="care">
+    <div class="shell-container">
+      <div style="margin-bottom: 40px;">
+        <span style="font-family: var(--f-mono); font-size: 0.72rem; color: var(--c-cyan); letter-spacing: 0.14em;">// RESTORATION &amp; APPAREL</span>
+        <h2 style="font-family: var(--f-monumental); font-size: clamp(2.4rem, 4vw, 3.8rem); color: #fff; line-height: 1;">THE SOLE LAB FORMULATIONS</h2>
+      </div>
+
+      <div class="care-formulations-grid">
+        <!-- Item 1 -->
+        <div class="care-card">
+          <div class="care-thumb">
+            <img src="assets/images/sole-cleaning.jpg" alt="Steppers Pro Foam">
+          </div>
+          <span class="care-sku-tag">[LAB-FORM-01]</span>
+          <h3 class="care-title">Steppers Pro Foam Restoration Kit</h3>
+          <p class="care-desc">250ml biodegradable foaming solution with hog-bristle deep scrub brush and microfiber cloth.</p>
+          <div class="care-action-row">
+            <span class="care-price">$38</span>
+            <button class="btn-care-acquire" data-name="Steppers Pro Foam Restoration Kit" data-price="38" data-img="assets/images/sole-cleaning.jpg">Acquire</button>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="care-card">
+          <div class="care-thumb">
+            <img src="assets/images/hoodie-merch.jpg" alt="Steppers Heavyweight Hoodie">
+          </div>
+          <span class="care-sku-tag">[APPAREL-02]</span>
+          <h3 class="care-title">480GSM Boxy Heavyweight Hoodie</h3>
+          <p class="care-desc">Double-faced French terry with embroidered mascot on cuff and vibrant magenta backprint.</p>
+          <div class="care-action-row">
+            <span class="care-price">$120</span>
+            <button class="btn-care-acquire" data-name="480GSM Boxy Heavyweight Hoodie" data-price="120" data-img="assets/images/hoodie-merch.jpg">Acquire</button>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="care-card">
+          <div class="care-thumb">
+            <img src="assets/images/tee-merch.jpg" alt="Frenchie Mascot Tee">
+          </div>
+          <span class="care-sku-tag">[APPAREL-03]</span>
+          <h3 class="care-title">Mascot Graffiti Heavyweight Tee</h3>
+          <p class="care-desc">280GSM combed cotton featuring official Steppers bubble typography and fawn Frenchie screenprint.</p>
+          <div class="care-action-row">
+            <span class="care-price">$55</span>
+            <button class="btn-care-acquire" data-name="Mascot Graffiti Heavyweight Tee" data-price="55" data-img="assets/images/tee-merch.jpg">Acquire</button>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="care-card">
+          <div class="care-thumb">
+            <img src="assets/images/texture-graffiti.jpg" alt="3M Sole Shields">
+          </div>
+          <span class="care-sku-tag">[LAB-SHIELD-04]</span>
+          <h3 class="care-title">3M Heavy-Grip Sole Shields</h3>
+          <p class="care-desc">High-clarity polyurethane protective film with textured anti-slip surface. Stops sole yellowing.</p>
+          <div class="care-action-row">
+            <span class="care-price">$28</span>
+            <button class="btn-care-acquire" data-name="3M Heavy-Grip Sole Shields" data-price="28" data-img="assets/images/texture-graffiti.jpg">Acquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. ARCHITECTURAL MONUMENTAL FOOTER -->
+  <footer class="runway-monumental-footer">
+    <div class="shell-container">
+      <div class="footer-monumental-grid">
+        
+        <!-- Brand Crest & Manifesto -->
+        <div class="footer-crest-wrap">
+          <img src="assets/images/steppers-logo.jpg" alt="Steppers Official Logo" class="footer-official-logo">
+          <p class="footer-statement-text">
+            Steppers Sneakers &amp; Sole is an independent streetwear archive dedicated to preserving authentic sneakerhead history, graffiti culture, and zero-compromise physical footwear authentication.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-column-heading">Archive Matrix</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#runway">The Runway Slider</a></li>
+            <li><a href="#calendar">Drop Schedule</a></li>
+            <li><a href="#archive">Dual-View Catalog</a></li>
+            <li><a href="#anatomy">Anatomy Deck</a></li>
+            <li><a href="#filmstrip">Mascot Filmstrip</a></li>
+          </ul>
+        </div>
+
+        <!-- Syndicates -->
+        <div>
+          <h4 class="footer-column-heading">Syndicates</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#care">Sole Lab Formulations</a></li>
+            <li><a href="index.html">Switch to Concept 01 (Underground V1)</a></li>
+            <li><a href="#">RFID Verification Protocol</a></li>
+            <li><a href="#">Tokyo &amp; NYC Pop-Ups</a></li>
+          </ul>
+        </div>
+
+        <!-- Drop Dispatch Sign-Up -->
+        <div>
+          <h4 class="footer-column-heading">Drop Dispatch</h4>
+          <p style="font-size:0.88rem; color:var(--c-text-200); margin-bottom:14px;">
+            Receive secret early-access links 15 minutes before public drop countdowns hit zero.
+          </p>
+          <form onsubmit="event.preventDefault(); showToast('Subscribed to Steppers Drop Dispatch!');" style="display:flex; gap:8px;">
+            <input type="email" placeholder="enter email..." required style="flex:1; background:var(--c-panel); border:1px solid var(--c-border); border-radius:4px; padding:10px 14px; font-family:var(--f-mono); font-size:0.8rem; color:#fff;">
+            <button type="submit" style="padding:10px 18px; background:var(--c-magenta); color:#fff; border-radius:4px; font-family:var(--f-mono); font-size:0.75rem; font-weight:700; text-transform:uppercase;">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:30px; font-family:var(--f-mono); font-size:0.75rem; color:var(--c-text-300); flex-wrap:wrap; gap:16px;">
+        <span>&copy; 2026 STEPPERS SNEAKERS &amp; SOLE LLC. ALL RIGHTS RESERVED.</span>
+        <div style="display:flex; gap:24px;">
+          <a href="#">AUTHENTICITY GUARANTEE</a>
+          <a href="#">TERMS OF SPEC</a>
+          <a href="#">PRIVACY PROTOCOL</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Shopping Bag Drawer -->
+  <div class="atelier-cart-overlay" id="runway-cart-overlay">
+    <div class="atelier-cart-drawer">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">VAULT BAG</h3>
+        <button class="btn-cart-close" id="runway-cart-close" aria-label="Close Bag">✕</button>
+      </div>
+
+      <div class="cart-free-shipping-strip">
+        <span id="runway-shipping-text">Add $30 more for Free Courier</span>
+        <div class="shipping-progress-meter">
+          <div class="shipping-progress-fill" id="runway-shipping-fill"></div>
+        </div>
+      </div>
+
+      <div class="cart-items-scroll-area" id="runway-cart-items-list">
+        <!-- Rendered by assets/js/main2.js -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-promo-row">
+          <input type="text" id="runway-promo-input" class="cart-promo-input" placeholder="PROMO CODE (e.g. STEPPERS10)">
+          <button class="btn-promo-apply" id="btn-runway-promo-apply">Apply</button>
+        </div>
+
+        <div class="cart-subtotal-row">
+          <span class="cart-subtotal-label">Subtotal</span>
+          <span class="cart-subtotal-amount" id="runway-cart-subtotal">$220</span>
+        </div>
+
+        <button class="btn-cart-checkout" onclick="alert('Proceeding to Secure Steppers 256-bit Encrypted Checkout!');">
+          Secure Checkout • Authenticated
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript for Concept 2 -->
+  <script src="assets/js/main2.js"></script>
+</body>
+</html>

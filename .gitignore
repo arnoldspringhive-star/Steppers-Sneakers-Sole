@@ -1,0 +1,31 @@
+# OS & System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Verification and Test Assets
+assets/images/crop-*.png
+assets/images/preview-*.png
+assets/images/candidates-inspect.png
+assets/images/catalog-header-screenshot.png
+assets/images/catalog-real-shoes.png
+assets/images/chicago-test-1.jpg
+assets/images/dom.html
+assets/images/heritage-aligned-screenshot.png
+assets/images/heritage-option-*.jpg
+assets/images/heritage-perfect-aligned.png
+assets/images/heritage-updated-screenshot.png
+assets/images/heritage-viewport-test.png
+assets/images/index2-full-*.png
+assets/images/logo-enlarged-header.png
+assets/images/new-index2-full*.png
+assets/images/real-chicago-*.jpg
+assets/images/shoe-audit-sheet.png
+assets/images/shoes-contact-sheet.png
+assets/images/test-*.png
+assets/images/verified-*.png
+assets/images/watch-your-step-oneline.png
+assets/images/welcome-steppers-screenshot.png
+
+# External skill reference folder
+awesome-design-skills-main/
