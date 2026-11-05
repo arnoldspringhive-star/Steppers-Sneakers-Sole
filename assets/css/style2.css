@@ -633,12 +633,13 @@ img {
 /* Horizontal Miniature Runway Track Below Hero */
 .runway-mini-track {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 12px;
   margin-top: 40px;
 }
 
 .mini-track-item {
+  min-width: 0;
   background: var(--c-panel);
   border: 1px solid var(--c-border);
   border-radius: 6px;
