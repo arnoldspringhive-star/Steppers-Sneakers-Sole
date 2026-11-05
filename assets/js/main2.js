@@ -1,12 +1,9 @@
-/**
- * STEPPERS SNEAKERS & SOLE — INDEX2: EDITORIAL RUNWAY ENGINE
- * Technical Collector Archive & Exhibition Slider
- */
+/* ==========================================================================
+   STEPPERS SNEAKERS & SOLE — CONCEPT 02 CONTROLLER (STEPS WORKDO THEME)
+   ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ==========================================================================
-  // 1. VERIFIED SNEAKER DATABASE
-  // ==========================================================================
+  // 1. Authenticated Footwear Catalog (7 Verified Pairs)
   const catalog = [
     {
       id: 'step-01',
@@ -18,13 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 220,
       originalPrice: 260,
       releaseYear: '2018',
-      rarity: '98/100 Grail',
+      rating: 5.0,
+      reviewsCount: 142,
+      badge: 'OG Grail',
       materials: 'Full-Grain Tumbled Cowhide',
       cushioning: 'Encapsulated Air-Sole Unit',
       image: 'assets/images/sneaker-chicago.jpg',
-      badge: 'OG Grail',
-      sizes: ['8', '8.5', '9', '9.5', '10', '10.5', '11', '12'],
-      desc: "The legendary 2018 mashup of the 'Bred' and 'Black Toe' colorways. Premium tumbled leather with Gym Red toe box and collar, crisp white mid-panels, black Swoosh, and the iconic Jordan Wings insignia."
+      swatches: [
+        'assets/images/sneaker-chicago.jpg',
+        'assets/images/shoe-1.png',
+        'assets/images/sneaker-dunk.jpg'
+      ],
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11'],
+      desc: "The legendary 2018 mashup of the 'Bred' and 'Black Toe' colorways. Premium tumbled leather with Gym Red toe box and collar, crisp white mid-panels, black Swoosh, and the iconic Jordan Wings insignia.",
+      hotspots: {
+        heel: { title: "Ankle Collar Lockdown", tag: "STABILITY", desc: "Padded foam collar with high-frequency stitch gauge precision." },
+        cushion: { title: "Air-Sole Cushion Chamber", tag: "CUSHIONING", desc: "Encapsulated inert gas polyurethane unit absorbs heavy pavement impact." },
+        toe: { title: "Perforated Vamp Box", tag: "VENTILATION", desc: "Full-grain tumbled Gym Red leather perforated for maximum airflow." }
+      }
     },
     {
       id: 'step-02',
@@ -36,13 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 130,
       originalPrice: 155,
       releaseYear: '2020',
-      rarity: '88/100 Tier-1',
+      rating: 4.9,
+      reviewsCount: 98,
+      badge: 'Pastel Edition',
       materials: 'Stacked Nappa Leather & Suede',
       cushioning: 'Elevated Foam Midsole with Air',
       image: 'assets/images/sneaker-purple.jpg',
-      badge: 'Pastel Edition',
-      sizes: ['6.5', '7', '7.5', '8', '8.5', '9', '10'],
-      desc: "Layered deconstructed design featuring doubled eyestays, dual mudguards, stacked Swooshes in soft pastel lilac and sky blue, and the signature elevated midsole with double 'AIR' heel branding."
+      swatches: [
+        'assets/images/sneaker-purple.jpg',
+        'assets/images/shoe-2.png'
+      ],
+      sizes: ['US 6.5', 'US 7', 'US 7.5', 'US 8', 'US 8.5', 'US 9'],
+      desc: "Layered deconstructed design featuring doubled eyestays, dual mudguards, stacked Swooshes in soft pastel lilac and sky blue, and the signature elevated midsole with double 'AIR' heel branding.",
+      hotspots: {
+        heel: { title: "Double Air Heel Wrap", tag: "DECONSTRUCTED", desc: "Layered TPU foxing piece with embossed AIR typography." },
+        cushion: { title: "Elevated Foam Core", tag: "COMFORT", desc: "Thicker exaggerated foam midsole offering plush step-in comfort." },
+        toe: { title: "Dual Leather Mudguard", tag: "DURABILITY", desc: "Pastel stacked overlays engineered with double-stitch strength." }
+      }
     },
     {
       id: 'step-03',
@@ -54,13 +72,23 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 140,
       originalPrice: 165,
       releaseYear: '2021',
-      rarity: '90/100 Tech',
+      rating: 4.8,
+      reviewsCount: 86,
+      badge: 'React Series',
       materials: 'Ripstop Mesh & Smooth Leather',
       cushioning: 'Full-Length Nike React Drop-In',
       image: 'assets/images/sneaker-cyan.jpg',
-      badge: 'React Series',
-      sizes: ['7.5', '8.5', '9', '9.5', '10', '10.5', '12'],
-      desc: "Modern technical overhaul of the classic AF1 silhouette. Features an oversized outlined black Swoosh, translucent mesh quarter panels, responsive full-length Nike React drop-in insole, and red '-AIR' midsole detailing."
+      swatches: [
+        'assets/images/sneaker-cyan.jpg',
+        'assets/images/shoe-3.png'
+      ],
+      sizes: ['US 7.5', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      desc: "Modern technical overhaul of the classic AF1 silhouette. Features an oversized outlined black Swoosh, translucent mesh quarter panels, responsive full-length Nike React drop-in insole, and red '-AIR' midsole detailing.",
+      hotspots: {
+        heel: { title: "Enlarged Pull-Tab", tag: "TECH SPEC", desc: "Technical webbing heel pull with reflective micro-threads." },
+        cushion: { title: "Full React Drop-In", tag: "INNOVATION", desc: "Springy elastomeric foam bed replacing traditional cupsole." },
+        toe: { title: "Ripstop Breathable Vamp", tag: "BREATHABILITY", desc: "Translucent synthetic weave providing lightweight weatherproofing." }
+      }
     },
     {
       id: 'step-04',
@@ -72,13 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 165,
       originalPrice: 190,
       releaseYear: '2020',
-      rarity: '92/100 Special',
+      rating: 4.9,
+      reviewsCount: 114,
+      badge: 'Special Edition',
       materials: 'Smooth Box Leather & Heel Suede',
       cushioning: 'Midsole Encapsulated Air Unit',
       image: 'assets/images/sneaker-dunk.jpg',
-      badge: 'Special Edition',
-      sizes: ['8', '8.5', '9', '9.5', '10', '11'],
-      desc: "Distinctive mid-cut silhouette drawing heavy inspiration from the famed Union LA colorblock. White leather base with black toe overlay, matching black Swoosh, red suede heel wrap, and red stamped Jordan Wings logo."
+      swatches: [
+        'assets/images/sneaker-dunk.jpg',
+        'assets/images/shoe-4.png'
+      ],
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      desc: "Distinctive mid-cut silhouette drawing heavy inspiration from the famed Union LA colorblock. White leather base with black toe overlay, matching black Swoosh, red suede heel wrap, and red stamped Jordan Wings logo.",
+      hotspots: {
+        heel: { title: "Red Suede Heel Wrap", tag: "PREMIUM", desc: "Silky nap suede in vibrant varsity crimson with Wings crest." },
+        cushion: { title: "Concealed Air Unit", tag: "IMPACT", desc: "Time-tested heel air cushioning for all-day asphalt comfort." },
+        toe: { title: "Classic Black Toe Overlay", tag: "HERITAGE", desc: "Contrasting premium black leather mudguard." }
+      }
     },
     {
       id: 'step-05',
@@ -90,13 +128,23 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 150,
       originalPrice: 180,
       releaseYear: '1990/2021',
-      rarity: '93/100 Classic',
+      rating: 5.0,
+      reviewsCount: 128,
+      badge: 'Max Retro',
       materials: 'Curry Suede, Mesh & Molded TPU',
       cushioning: 'Visible Max Air Chamber Unit',
       image: 'assets/images/sneaker-bred.jpg',
-      badge: 'Max Retro',
-      sizes: ['8', '8.5', '9', '9.5', '10', '10.5', '11.5'],
-      desc: "Tinker Hatfield's 1990 masterpiece styled with rich curry wheat suede overlays, breathable white mesh toe, royal University Blue TPU accents, and the unmistakable visible Max Air cushioning unit in vibrant golden yellow."
+      swatches: [
+        'assets/images/sneaker-bred.jpg',
+        'assets/images/shoe-5.png'
+      ],
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      desc: "Tinker Hatfield's 1990 masterpiece styled with rich curry wheat suede overlays, breathable white mesh toe, royal University Blue TPU accents, and the unmistakable visible Max Air cushioning unit in vibrant golden yellow.",
+      hotspots: {
+        heel: { title: "TPU Shield Logo", tag: "VINTAGE", desc: "Embossed ribbed Nike Air heel tab badge." },
+        cushion: { title: "Visible Max Air Window", tag: "CHAMBER", desc: "High-volume air cushion framed in signature ribbed TPU cassette." },
+        toe: { title: "Open-Hole Mesh Vamp", tag: "AIRFLOW", desc: "Breathable ballistic mesh with soft wheat suede wrapping." }
+      }
     },
     {
       id: 'step-06',
@@ -108,13 +156,23 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 145,
       originalPrice: 170,
       releaseYear: '1982/2022',
-      rarity: '89/100 Court',
+      rating: 4.8,
+      reviewsCount: 79,
+      badge: 'High-Top Classic',
       materials: 'Full Leather & Gold Hardware',
       cushioning: 'Air-Sole Unit with Pivot Tread',
       image: 'assets/images/sneaker-retro4.jpg',
-      badge: 'High-Top Classic',
-      sizes: ['8.5', '9', '9.5', '10', '10.5', '11'],
-      desc: "The original 1982 basketball high-top icon. Clean crisp white leather upper, perforated toe vamp, gold metallic lace deubré, padded ankle collar with warm sail lining, and adjustable velcro ankle lock strap."
+      swatches: [
+        'assets/images/sneaker-retro4.jpg',
+        'assets/images/shoe-6.png'
+      ],
+      sizes: ['US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      desc: "The original 1982 basketball high-top icon. Clean crisp white leather upper, perforated toe vamp, gold metallic lace deubré, padded ankle collar with warm sail lining, and adjustable velcro ankle lock strap.",
+      hotspots: {
+        heel: { title: "Velcro Lockdown Strap", tag: "SECURITY", desc: "Removable woven strap providing custom high-top ankle security." },
+        cushion: { title: "Pivot-Circle Gum Tread", tag: "TRACTION", desc: "Radial circular traction rings on heavy solid rubber outsole." },
+        toe: { title: "Metallic Gold Deubré", tag: "ACCENT", desc: "Custom AF-1 engraved gold metal lace jewel." }
+      }
     },
     {
       id: 'step-07',
@@ -126,16 +184,27 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 135,
       originalPrice: 160,
       releaseYear: '2022',
-      rarity: '87/100 Runner',
+      rating: 4.9,
+      reviewsCount: 65,
+      badge: 'Flyknit Series',
       materials: 'Seamless Multi-Ply Flyknit Weave',
       cushioning: 'Auxetic Tri-Star Siped Foam',
       image: 'assets/images/sneaker-runner.jpg',
-      badge: 'Flyknit Series',
-      sizes: ['8', '8.5', '9', '9.5', '10', '11', '12'],
-      desc: "Engineered ultra-flexible runner built with featherweight heathered red Flyknit threading, supportive integrated Flywire cables, contrast white lateral Swoosh, and a dynamic tri-star auxetic Nike Free outsole."
+      swatches: [
+        'assets/images/sneaker-runner.jpg',
+        'assets/images/shoe-8.png'
+      ],
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      desc: "Engineered ultra-flexible runner built with featherweight heathered red Flyknit threading, supportive integrated Flywire cables, contrast white lateral Swoosh, and a dynamic tri-star auxetic Nike Free outsole.",
+      hotspots: {
+        heel: { title: "Anatomical Rounded Heel", tag: "NATURAL", desc: "Rolls smoothly with each footstrike mimicking barefoot motion." },
+        cushion: { title: "Auxetic Tri-Star Sipes", tag: "FLEXIBILITY", desc: "Laser-cut foam expands and contracts symmetrically in all directions." },
+        toe: { title: "One-Piece Flyknit Upper", tag: "FEATHERWEIGHT", desc: "Zero-waste continuous knit providing sock-like targeted compression." }
+      }
     }
   ];
 
+  // Cart State
   let cart = [
     {
       id: 'step-01',
@@ -148,285 +217,277 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   let promoApplied = false;
-  let promoDiscount = 0.10;
+  const promoDiscount = 0.10;
+  let currentHeroIndex = 0;
+  let currentSelectedSize = 'US 10';
 
   // ==========================================================================
-  // 2. HERO RUNWAY EXHIBITION SLIDER
+  // 2. HERO SNEAKER INTERACTIVE CONTROLLER (STEPS WORKDO STYLE)
   // ==========================================================================
-  let currentRunwayIndex = 0;
-  let selectedHeroSize = 'US 10';
+  const heroShoeImg = document.getElementById('hero-shoe-display');
+  const heroCardTitle = document.getElementById('hero-card-title');
+  const heroCardSubtitle = document.getElementById('hero-card-subtitle');
+  const heroCardDesc = document.getElementById('hero-card-desc');
+  const heroCardPrice = document.getElementById('hero-card-price');
+  const heroCardWasPrice = document.getElementById('hero-card-was-price');
+  const heroSwatchesBox = document.getElementById('hero-swatches-box');
+  const heroSizesBox = document.getElementById('hero-sizes-box');
+  const heroTabs = document.querySelectorAll('.hero-tab-item');
+  const btnHeroAddToCart = document.getElementById('btn-hero-add-cart');
 
-  const heroImg = document.getElementById('runway-main-shoe-img');
-  const heroBadge = document.getElementById('runway-spec-badge');
-  const heroCounter = document.getElementById('runway-current-step');
-  const heroHeadline = document.getElementById('runway-model-headline');
-  const heroColorway = document.getElementById('runway-colorway-text');
-  const heroDesc = document.getElementById('runway-desc-body');
-  const heroSkuVal = document.getElementById('spec-val-sku');
-  const heroMatVal = document.getElementById('spec-val-materials');
-  const heroCushVal = document.getElementById('spec-val-cushioning');
-  const heroRarityVal = document.getElementById('spec-val-rarity');
-  const heroPriceNow = document.getElementById('runway-price-now');
-  const heroPriceWas = document.getElementById('runway-price-was');
-  const heroSizesCluster = document.getElementById('runway-sizes-cluster');
-  const heroDirectCopBtn = document.getElementById('btn-runway-direct-cop');
+  // Hotspot elements
+  const pinHeelTitle = document.getElementById('pin-heel-title');
+  const pinHeelDesc = document.getElementById('pin-heel-desc');
+  const pinCushionTitle = document.getElementById('pin-cushion-title');
+  const pinCushionDesc = document.getElementById('pin-cushion-desc');
+  const pinToeTitle = document.getElementById('pin-toe-title');
+  const pinToeDesc = document.getElementById('pin-toe-desc');
 
-  const btnPrev = document.getElementById('btn-runway-prev');
-  const btnNext = document.getElementById('btn-runway-next');
-  const miniTrack = document.getElementById('runway-mini-track');
-
-  function renderMiniTrack() {
-    if (!miniTrack) return;
-    miniTrack.innerHTML = catalog.map((item, idx) => `
-      <div class="mini-track-item ${idx === currentRunwayIndex ? 'active' : ''}" data-idx="${idx}">
-        <div class="mini-track-thumb">
-          <img src="${item.image}" alt="${item.name}">
-        </div>
-        <span class="mini-track-name">${item.name}</span>
-        <span class="mini-track-price">$${item.price}</span>
-      </div>
-    `).join('');
-
-    miniTrack.querySelectorAll('.mini-track-item').forEach(el => {
-      el.addEventListener('click', () => {
-        const idx = parseInt(el.dataset.idx, 10);
-        showRunwayShoe(idx);
-      });
-    });
-  }
-
-  function showRunwayShoe(idx) {
-    if (idx < 0) idx = catalog.length - 1;
-    if (idx >= catalog.length) idx = 0;
-    currentRunwayIndex = idx;
+  function updateHeroShoe(idx) {
+    if (idx < 0 || idx >= catalog.length) return;
+    currentHeroIndex = idx;
     const item = catalog[idx];
 
-    if (heroImg) {
-      heroImg.style.opacity = '0';
-      heroImg.style.transform = 'scale(0.96)';
-
+    // Smooth image transition
+    if (heroShoeImg) {
+      heroShoeImg.style.opacity = '0';
+      heroShoeImg.style.transform = 'scale(0.96) rotate(-4deg)';
       setTimeout(() => {
-        heroImg.src = item.image;
-        heroImg.alt = item.name;
-        if (heroBadge) heroBadge.textContent = `[${item.sku} // ${item.badge}]`;
-        if (heroCounter) heroCounter.textContent = `0${idx + 1}`;
-        if (heroHeadline) heroHeadline.innerHTML = `${item.name.toUpperCase()} <span class="highlight-cyan">[${item.releaseYear}]</span>`;
-        if (heroColorway) heroColorway.innerHTML = `<strong>COLORWAY:</strong> ${item.colorway}`;
-        if (heroDesc) heroDesc.textContent = item.desc;
-        if (heroSkuVal) heroSkuVal.textContent = item.sku;
-        if (heroMatVal) heroMatVal.textContent = item.materials;
-        if (heroCushVal) heroCushVal.textContent = item.cushioning;
-        if (heroRarityVal) heroRarityVal.textContent = item.rarity;
-        if (heroPriceNow) heroPriceNow.textContent = `$${item.price}`;
-        if (heroPriceWas) heroPriceWas.textContent = `$${item.originalPrice}`;
-
-        selectedHeroSize = `US ${item.sizes[2] || item.sizes[0]}`;
-        if (heroSizesCluster) {
-          heroSizesCluster.innerHTML = item.sizes.slice(0, 6).map((s, sIdx) => `
-            <button class="btn-hero-size ${sIdx === 2 ? 'selected' : ''}" data-size="US ${s}">US ${s}</button>
-          `).join('');
-
-          heroSizesCluster.querySelectorAll('.btn-hero-size').forEach(btn => {
-            btn.addEventListener('click', () => {
-              heroSizesCluster.querySelectorAll('.btn-hero-size').forEach(b => b.classList.remove('selected'));
-              btn.classList.add('selected');
-              selectedHeroSize = btn.dataset.size;
-            });
-          });
-        }
-
-        heroImg.style.opacity = '1';
-        heroImg.style.transform = 'scale(1)';
-
-        // Update mini track active state
-        if (miniTrack) {
-          miniTrack.querySelectorAll('.mini-track-item').forEach((mi, mIdx) => {
-            if (mIdx === currentRunwayIndex) {
-              mi.classList.add('active');
-            } else {
-              mi.classList.remove('active');
-            }
-          });
-        }
+        heroShoeImg.src = item.image;
+        heroShoeImg.alt = item.name;
+        heroShoeImg.style.opacity = '1';
+        heroShoeImg.style.transform = 'scale(1) rotate(0deg)';
       }, 200);
     }
-  }
 
-  if (btnPrev) btnPrev.addEventListener('click', () => showRunwayShoe(currentRunwayIndex - 1));
-  if (btnNext) btnNext.addEventListener('click', () => showRunwayShoe(currentRunwayIndex + 1));
+    // Card details
+    if (heroCardTitle) heroCardTitle.textContent = item.name;
+    if (heroCardSubtitle) heroCardSubtitle.textContent = `${item.releaseYear} DEADSTOCK // ${item.badge.toUpperCase()}`;
+    if (heroCardDesc) heroCardDesc.textContent = item.desc;
+    if (heroCardPrice) heroCardPrice.textContent = `$${item.price}.00 USD`;
+    if (heroCardWasPrice) heroCardWasPrice.textContent = `$${item.originalPrice}.00 USD`;
 
-  if (heroDirectCopBtn) {
-    heroDirectCopBtn.addEventListener('click', () => {
-      const item = catalog[currentRunwayIndex];
-      addToCart(item, selectedHeroSize);
+    // Hotspot updates
+    if (item.hotspots) {
+      if (pinHeelTitle && pinHeelDesc) {
+        pinHeelTitle.textContent = item.hotspots.heel.title;
+        pinHeelDesc.textContent = item.hotspots.heel.desc;
+      }
+      if (pinCushionTitle && pinCushionDesc) {
+        pinCushionTitle.textContent = item.hotspots.cushion.title;
+        pinCushionDesc.textContent = item.hotspots.cushion.desc;
+      }
+      if (pinToeTitle && pinToeDesc) {
+        pinToeTitle.textContent = item.hotspots.toe.title;
+        pinToeDesc.textContent = item.hotspots.toe.desc;
+      }
+    }
+
+    // Swatches
+    if (heroSwatchesBox && item.swatches) {
+      heroSwatchesBox.innerHTML = item.swatches.map((sw, sIdx) => `
+        <div class="swatch-item-thumb ${sIdx === 0 ? 'active' : ''}" data-src="${sw}">
+          <img src="${sw}" alt="Angle ${sIdx + 1}">
+        </div>
+      `).join('');
+
+      heroSwatchesBox.querySelectorAll('.swatch-item-thumb').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          heroSwatchesBox.querySelectorAll('.swatch-item-thumb').forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          const src = thumb.dataset.src;
+          if (heroShoeImg) heroShoeImg.src = src;
+        });
+      });
+    }
+
+    // Sizes
+    if (heroSizesBox && item.sizes) {
+      currentSelectedSize = item.sizes[2] || item.sizes[0];
+      heroSizesBox.innerHTML = item.sizes.map(sz => `
+        <button class="size-chip ${sz === currentSelectedSize ? 'active' : ''}" data-size="${sz}">${sz}</button>
+      `).join('');
+
+      heroSizesBox.querySelectorAll('.size-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          heroSizesBox.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          currentSelectedSize = chip.dataset.size;
+        });
+      });
+    }
+
+    // Update bottom tabs active state
+    heroTabs.forEach((tab, tIdx) => {
+      if (tIdx === idx) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
     });
   }
 
-  renderMiniTrack();
-  showRunwayShoe(0);
+  // Hero Tab Clicks
+  heroTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idx = parseInt(tab.dataset.idx, 10);
+      updateHeroShoe(idx);
+    });
+  });
+
+  // Hero Add to Bag
+  if (btnHeroAddToCart) {
+    btnHeroAddToCart.addEventListener('click', () => {
+      const item = catalog[currentHeroIndex];
+      addToCart(item, currentSelectedSize);
+    });
+  }
+
+  // Initialize hero
+  updateHeroShoe(0);
 
   // ==========================================================================
-  // 3. DUAL-VIEW BROWSE ENGINE (Magazine Spread vs Collector Table)
+  // 3. PRODUCT CATALOG GRID ("ALL THE GRAILS")
   // ==========================================================================
-  const spreadContainer = document.getElementById('lookbook-spread-container');
-  const tableContainer = document.getElementById('collector-table-container');
-  const tableBody = document.getElementById('archive-table-body');
-  const viewBtns = document.querySelectorAll('.btn-archive-view');
+  const catalogGrid = document.getElementById('catalog-products-grid');
+  const filterTabs = document.querySelectorAll('.filter-tab-pill');
 
-  function renderLookbookSpread() {
-    if (!spreadContainer) return;
-    spreadContainer.innerHTML = catalog.map((item, idx) => `
-      <div class="spread-row ${idx % 2 === 1 ? 'reverse-layout' : ''}">
-        <div class="spread-media-frame">
-          <img src="${item.image}" alt="${item.name}" loading="lazy">
+  function renderCatalog(filter = 'all') {
+    if (!catalogGrid) return;
+
+    const filtered = filter === 'all' 
+      ? catalog 
+      : catalog.filter(item => item.category === filter);
+
+    catalogGrid.innerHTML = filtered.map(item => `
+      <div class="product-item-card" data-id="${item.id}">
+        <span class="card-badge-tag">${item.badge}</span>
+        
+        <div class="card-floating-actions">
+          <button class="btn-card-action btn-wishlist-action" title="Add to Wishlist" data-id="${item.id}">♥</button>
+          <button class="btn-card-action btn-quickview-action" title="Quick View" data-id="${item.id}">👁</button>
         </div>
-        <div class="spread-info-col">
-          <span class="spread-idx-tag">[ARCHIVE ENTRY 0${idx + 1} // ${item.sku}]</span>
-          <h3 class="spread-shoe-title">${item.name}</h3>
-          <div class="spread-colorway-badge">${item.colorway}</div>
-          <p class="spread-desc-body">${item.desc}</p>
-          <div class="spread-meta-strip">
-            <span class="spread-meta-item">MATERIALS: <strong>${item.materials}</strong></span>
-            <span class="spread-meta-item">RARITY: <strong>${item.rarity}</strong></span>
-            <span class="spread-meta-item">YEAR: <strong>${item.releaseYear}</strong></span>
+
+        <div class="card-img-wrap">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+
+        <div class="card-sizes-indicator">
+          <span>SIZES:</span>
+          <span class="chip">US 8</span>
+          <span class="chip">US 9</span>
+          <span class="chip">US 10</span>
+          <span>+</span>
+        </div>
+
+        <h3 class="card-product-title">${item.name}</h3>
+        <div class="card-product-meta">${item.colorway}</div>
+
+        <div class="card-bottom-price-row">
+          <div class="price-display-group">
+            <span class="card-price-amount">$${item.price}</span>
+            <span class="price-was">$${item.originalPrice}</span>
           </div>
-          <div class="spread-action-row">
-            <span class="spread-price-huge">$${item.price}</span>
-            <button class="btn-hero-cop-direct btn-spread-cop" data-id="${item.id}" style="padding: 12px 24px;">
-              <span>Acquire Grail</span>
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
-              </svg>
-            </button>
-          </div>
+          <button class="btn-card-add-cart btn-grid-add" data-id="${item.id}">Add to Cart</button>
         </div>
       </div>
     `).join('');
 
-    spreadContainer.querySelectorAll('.btn-spread-cop').forEach(btn => {
-      btn.addEventListener('click', () => {
+    // Attach Add to Cart
+    catalogGrid.querySelectorAll('.btn-grid-add').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.target.dataset.id;
+        const prod = catalog.find(p => p.id === id);
+        if (prod) addToCart(prod, 'US 10');
+      });
+    });
+
+    // Attach Quick View
+    catalogGrid.querySelectorAll('.btn-quickview-action').forEach(btn => {
+      btn.addEventListener('click', (e) => {
         const id = btn.dataset.id;
         const prod = catalog.find(p => p.id === id);
-        addToCart(prod, 'US 10');
+        if (prod) openQuickView(prod);
+      });
+    });
+
+    // Attach Wishlist
+    catalogGrid.querySelectorAll('.btn-wishlist-action').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        showToast('Saved to Collector Wishlist!');
       });
     });
   }
 
-  function renderCollectorTable() {
-    if (!tableBody) return;
-    tableBody.innerHTML = catalog.map(item => `
-      <tr>
-        <td>
-          <img src="${item.image}" alt="${item.name}" class="table-thumb">
-        </td>
-        <td class="table-sku">${item.sku}</td>
-        <td>
-          <span class="table-name">${item.name}</span>
-          <div style="font-size:0.72rem; color:var(--c-text-300);">${item.colorway}</div>
-        </td>
-        <td>${item.brand}</td>
-        <td>${item.releaseYear}</td>
-        <td><span style="color:var(--c-cyan);">${item.rarity}</span></td>
-        <td>10/10 Deadstock (RFID)</td>
-        <td class="table-price">$${item.price}</td>
-        <td>
-          <button class="btn-table-cop" data-id="${item.id}">Instant Cop</button>
-        </td>
-      </tr>
+  renderCatalog('all');
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.filter;
+      renderCatalog(cat);
+    });
+  });
+
+  // ==========================================================================
+  // 4. BESTSELLERS SLIDER
+  // ==========================================================================
+  const bestsellerSlider = document.getElementById('bestseller-slider');
+  const btnBestsellerPrev = document.getElementById('btn-bestseller-prev');
+  const btnBestsellerNext = document.getElementById('btn-bestseller-next');
+
+  if (bestsellerSlider) {
+    bestsellerSlider.innerHTML = catalog.map(item => `
+      <div class="product-item-card bestseller-card" data-id="${item.id}">
+        <span class="card-badge-tag">${item.badge}</span>
+        <div class="card-img-wrap">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+        <div class="stars-rating-wrap" style="margin-bottom:8px;">★★★★★ <span>(${item.reviewsCount})</span></div>
+        <h3 class="card-product-title">${item.name}</h3>
+        <div class="card-bottom-price-row">
+          <span class="card-price-amount">$${item.price}.00</span>
+          <button class="btn-card-add-cart btn-bestseller-add" data-id="${item.id}">Add to Cart</button>
+        </div>
+      </div>
     `).join('');
 
-    tableBody.querySelectorAll('.btn-table-cop').forEach(btn => {
+    bestsellerSlider.querySelectorAll('.btn-bestseller-add').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.dataset.id;
         const prod = catalog.find(p => p.id === id);
-        addToCart(prod, 'US 10');
+        if (prod) addToCart(prod, 'US 10');
       });
     });
   }
 
-  renderLookbookSpread();
-  renderCollectorTable();
-
-  // View toggle handler
-  viewBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      viewBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const v = btn.dataset.view;
-
-      if (v === 'spread') {
-        if (spreadContainer) spreadContainer.style.display = 'flex';
-        if (tableContainer) tableContainer.classList.remove('active');
-      } else {
-        if (spreadContainer) spreadContainer.style.display = 'none';
-        if (tableContainer) tableContainer.classList.add('active');
-      }
+  if (btnBestsellerPrev && bestsellerSlider) {
+    btnBestsellerPrev.addEventListener('click', () => {
+      bestsellerSlider.scrollBy({ left: -340, behavior: 'smooth' });
     });
-  });
+  }
 
-  // ==========================================================================
-  // 4. SNEAKER ANATOMY DISSECTION DECK
-  // ==========================================================================
-  const anatomyTabs = document.querySelectorAll('.btn-anatomy-tab');
-  const anatomyImg = document.getElementById('anatomy-display-img');
-  const anatomyTitle = document.getElementById('anatomy-spec-title');
-  const anatomyDesc = document.getElementById('anatomy-spec-desc');
-
-  const anatomyData = {
-    upper: {
-      title: "LAYER 01: FULL-GRAIN PREMIUM VAMP & ANKLE COLLAR",
-      desc: "Anatomically constructed using 1.4mm premium tumbled bovine leather. Padded ankle foam collar ensures lockdown stability during aggressive pavement movement, detailed with high-frequency stitch gauge precision.",
-      image: "assets/images/sneaker-chicago.jpg"
-    },
-    cushion: {
-      title: "LAYER 02: RESPONSIVE AIR-SOLE & REACT DROP-IN CORE",
-      desc: "Encapsulated polyurethane chambers pressurized with inert gas or dual-density Nike React elastomeric foam. Absorbs repetitive high-impact shock across asphalt and concrete while delivering instantaneous energy rebound.",
-      image: "assets/images/sneaker-cyan.jpg"
-    },
-    outsole: {
-      title: "LAYER 03: PIVOT-CIRCLE VULCANIZED RUBBER TREAD",
-      desc: "Hard-wearing solid gum and synthetic rubber compounds engineered with deep radial pivot flexion grooves. Maximizes rotational grip and pavement traction while preventing premature heel drag wear.",
-      image: "assets/images/sneaker-retro4.jpg"
-    },
-    rfid: {
-      title: "LAYER 04: STEPPERS CRYPTOGRAPHIC RFID SMART NFC CHIP",
-      desc: "Embedded in the woven tongue label and smart hang-tag. Stores a 256-bit cryptographic signature linked to the Steppers decentralized vault ledger. Guarantees 100% authenticity verifiable with any smartphone NFC tap.",
-      image: "assets/images/sneaker-dunk.jpg"
-    }
-  };
-
-  anatomyTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      anatomyTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const key = tab.dataset.layer;
-      const data = anatomyData[key];
-
-      if (data && anatomyTitle && anatomyDesc && anatomyImg) {
-        anatomyImg.style.opacity = '0';
-        setTimeout(() => {
-          anatomyImg.src = data.image;
-          anatomyTitle.textContent = data.title;
-          anatomyDesc.textContent = data.desc;
-          anatomyImg.style.opacity = '1';
-        }, 150);
-      }
+  if (btnBestsellerNext && bestsellerSlider) {
+    btnBestsellerNext.addEventListener('click', () => {
+      bestsellerSlider.scrollBy({ left: 340, behavior: 'smooth' });
     });
-  });
+  }
 
   // ==========================================================================
-  // 5. SHOPPING BAG DRAWER & PROMO CALCULATION
+  // 5. SLIDE-OUT CART DRAWER & PROMO DISCOUNTS
   // ==========================================================================
-  const cartOverlay = document.getElementById('runway-cart-overlay');
-  const cartOpenBtns = document.querySelectorAll('.cart-open-btn');
-  const cartCloseBtn = document.getElementById('runway-cart-close');
-  const cartItemsList = document.getElementById('runway-cart-items-list');
-  const cartCountBubbles = document.querySelectorAll('.cart-count-bubble');
-  const cartSubtotalEl = document.getElementById('runway-cart-subtotal');
-  const freeShippingFill = document.getElementById('runway-shipping-fill');
-  const freeShippingText = document.getElementById('runway-shipping-text');
-  const promoInput = document.getElementById('runway-promo-input');
-  const promoApplyBtn = document.getElementById('btn-runway-promo-apply');
+  const cartOverlay = document.getElementById('cart-drawer-overlay');
+  const cartOpenBtns = document.querySelectorAll('.cart-open-trigger');
+  const cartCloseBtn = document.getElementById('btn-cart-close');
+  const cartItemsList = document.getElementById('cart-items-container');
+  const cartCountBubbles = document.querySelectorAll('.cart-counter-bubble');
+  const cartSubtotalEl = document.getElementById('cart-subtotal-val');
+  const shippingFill = document.getElementById('shipping-fill-bar');
+  const shippingText = document.getElementById('shipping-status-text');
+  const promoInput = document.getElementById('cart-promo-code');
+  const btnApplyPromo = document.getElementById('btn-apply-promo');
 
   function openCart() {
     if (cartOverlay) cartOverlay.classList.add('open');
@@ -455,30 +516,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cartItemsList) {
       if (cart.length === 0) {
         cartItemsList.innerHTML = `
-          <div style="text-align: center; padding: 60px 20px; font-family: var(--f-mono); color: var(--c-text-300);">
-            <p style="color: #fff; font-size: 1rem; margin-bottom: 8px;">[VAULT BAG EMPTY]</p>
-            <p style="font-size: 0.8rem;">Select an authenticated drop from the exhibition.</p>
+          <div style="text-align: center; padding: 60px 20px; color: var(--text-muted); font-family: var(--font-tech);">
+            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 8px;">YOUR VAULT BAG IS EMPTY</p>
+            <p style="font-size: 0.85rem;">Select an authenticated deadstock pair from the store.</p>
           </div>
         `;
       } else {
         cartItemsList.innerHTML = cart.map(item => `
-          <div class="cart-item-card" data-id="${item.id}" data-size="${item.size}">
-            <div class="cart-item-thumb">
-              <img src="${item.image}" alt="${item.name}">
-            </div>
+          <div class="cart-item" data-id="${item.id}" data-size="${item.size}">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
             <div class="cart-item-details">
               <span class="cart-item-name">${item.name}</span>
-              <span class="cart-item-size-line">SIZE: ${item.size} • 100% AUTHENTIC</span>
+              <span class="cart-item-meta">SIZE: ${item.size} • 100% AUTHENTIC</span>
               <div class="cart-item-qty-row">
-                <div class="cart-qty-counter">
+                <div class="qty-counter">
                   <button class="btn-qty btn-minus" data-id="${item.id}" data-size="${item.size}">−</button>
                   <span>${item.quantity}</span>
                   <button class="btn-qty btn-plus" data-id="${item.id}" data-size="${item.size}">+</button>
                 </div>
-                <span class="cart-item-price-tag">$${item.price * item.quantity}</span>
+                <span style="font-weight:700; color:#fff; font-family:var(--font-tech);">$${item.price * item.quantity}.00</span>
               </div>
             </div>
-            <button class="btn-cart-remove-item" data-id="${item.id}" data-size="${item.size}">✕</button>
+            <button class="btn-cart-remove" data-id="${item.id}" data-size="${item.size}" style="background:none; border:none; color:var(--text-muted); font-size:1.1rem; cursor:pointer;">✕</button>
           </div>
         `).join('');
       }
@@ -489,20 +548,20 @@ document.addEventListener('DOMContentLoaded', () => {
       subtotal = Math.round(subtotal * (1 - promoDiscount));
     }
     if (cartSubtotalEl) {
-      cartSubtotalEl.textContent = `$${subtotal}`;
+      cartSubtotalEl.textContent = `$${subtotal}.00 USD`;
     }
 
     const freeThreshold = 250;
     const rawTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    if (freeShippingFill && freeShippingText) {
+    if (shippingFill && shippingText) {
       if (rawTotal >= freeThreshold) {
-        freeShippingFill.style.width = '100%';
-        freeShippingText.innerHTML = `✓ UNLOCKED: Free Priority Courier Shipping!`;
+        shippingFill.style.width = '100%';
+        shippingText.innerHTML = `✓ UNLOCKED: Free Priority Courier Shipping!`;
       } else {
         const remaining = freeThreshold - rawTotal;
         const pct = Math.min(100, Math.round((rawTotal / freeThreshold) * 100));
-        freeShippingFill.style.width = `${pct}%`;
-        freeShippingText.innerHTML = `Add <strong style="color:var(--c-magenta);">$${remaining}</strong> more for Free Courier`;
+        shippingFill.style.width = `${pct}%`;
+        shippingText.innerHTML = `Add <strong style="color:var(--accent-pink);">$${remaining}.00</strong> more for Free Courier`;
       }
     }
   }
@@ -522,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     updateCartUI();
-    showToast(`Acquired ${prod.name} (${size})!`);
+    showToast(`Added ${prod.name} (${size}) to Bag!`);
     openCart();
   }
 
@@ -548,16 +607,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      if (e.target.classList.contains('btn-cart-remove-item')) {
+      if (e.target.classList.contains('btn-cart-remove')) {
         cart = cart.filter(i => !(i.id === id && i.size === size));
         updateCartUI();
       }
     });
   }
 
-  // Promo Code
-  if (promoApplyBtn && promoInput) {
-    promoApplyBtn.addEventListener('click', () => {
+  if (btnApplyPromo && promoInput) {
+    btnApplyPromo.addEventListener('click', () => {
       const val = promoInput.value.trim().toUpperCase();
       if (val === 'STEPPERS10') {
         promoApplied = true;
@@ -569,35 +627,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Lab Care buttons
-  const careAcquireBtns = document.querySelectorAll('.btn-care-acquire');
-  careAcquireBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const name = btn.dataset.name;
-      const price = parseFloat(btn.dataset.price);
-      const img = btn.dataset.img;
-      const item = {
-        id: 'care-' + name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
-        name: name,
-        price: price,
-        size: 'One Size',
-        image: img,
-        quantity: 1
-      };
-      addToCart(item, 'One Size');
+  // Two-column feature buy buttons
+  const btnTwoColBuy1 = document.getElementById('btn-twocol-buy-1');
+  if (btnTwoColBuy1) {
+    btnTwoColBuy1.addEventListener('click', () => {
+      const prod = catalog.find(p => p.id === 'step-03');
+      if (prod) addToCart(prod, 'US 10');
     });
-  });
+  }
+
+  const btnTwoColBuy2 = document.getElementById('btn-twocol-buy-2');
+  if (btnTwoColBuy2) {
+    btnTwoColBuy2.addEventListener('click', () => {
+      const prod = catalog.find(p => p.id === 'step-04');
+      if (prod) addToCart(prod, 'US 10');
+    });
+  }
 
   // ==========================================================================
-  // 6. TOAST NOTIFICATION
+  // 6. QUICK VIEW MODAL
+  // ==========================================================================
+  function openQuickView(prod) {
+    let modal = document.getElementById('quickview-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'quickview-modal';
+      modal.className = 'cart-drawer-overlay';
+      modal.innerHTML = `
+        <div style="position:relative; width:800px; max-width:92vw; background:var(--bg-surface); border:1px solid var(--border-neon); border-radius:var(--radius-xl); padding:32px; box-shadow:0 30px 60px rgba(0,0,0,0.9); margin:auto; display:flex; gap:30px; flex-wrap:wrap;">
+          <button id="btn-close-quickview" style="position:absolute; top:18px; right:18px; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">✕</button>
+          <div style="flex:1; min-width:280px; aspect-ratio:1/1; background:#000; border-radius:var(--radius-lg); overflow:hidden;">
+            <img id="qv-img" src="${prod.image}" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="flex:1.2; min-width:280px; display:flex; flex-direction:column; gap:14px; justify-content:center;">
+            <span style="font-family:var(--font-tech); font-size:0.75rem; color:var(--accent-pink); font-weight:700;">${prod.badge.toUpperCase()} // ${prod.sku}</span>
+            <h2 style="font-family:var(--font-display); font-size:2.2rem; color:#fff; line-height:1.1;">${prod.name}</h2>
+            <div style="color:var(--accent-orange); font-size:0.9rem;">★★★★★ <span style="color:var(--text-muted); font-size:0.8rem;">(${prod.reviewsCount} verified collector reviews)</span></div>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">${prod.desc}</p>
+            <div style="font-family:var(--font-tech); font-size:1.6rem; font-weight:800; color:#fff;">$${prod.price}.00 USD</div>
+            <button id="btn-qv-add" style="padding:14px; border-radius:var(--radius-full); background:linear-gradient(135deg, var(--accent-pink), var(--accent-purple)); color:#fff; font-weight:700; font-family:var(--font-tech); cursor:pointer; text-transform:uppercase;">Add to Bag</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.id === 'btn-close-quickview') {
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    const qvImg = document.getElementById('qv-img');
+    if (qvImg) qvImg.src = prod.image;
+
+    const btnQvAdd = document.getElementById('btn-qv-add');
+    if (btnQvAdd) {
+      btnQvAdd.onclick = () => {
+        addToCart(prod, 'US 10');
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // ==========================================================================
+  // 7. TOAST NOTIFICATION
   // ==========================================================================
   let toastTimer = null;
   function showToast(msg) {
-    let t = document.getElementById('runway-toast');
+    let t = document.getElementById('site-toast');
     if (!t) {
       t = document.createElement('div');
-      t.id = 'runway-toast';
-      t.className = 'runway-toast';
+      t.id = 'site-toast';
+      t.className = 'site-toast';
       document.body.appendChild(t);
     }
     t.innerHTML = `<span>⚡</span><span>${msg}</span>`;
@@ -608,56 +715,8 @@ document.addEventListener('DOMContentLoaded', () => {
       t.classList.remove('show');
     }, 3200);
   }
-  // Expose globally for inline event handlers
   window.showToast = showToast;
 
-  // ==========================================================================
-  // 7. FILMSTRIP HORIZONTAL SCROLL CONTROLS
-  // ==========================================================================
-  const filmstripRow = document.getElementById('filmstrip-scroll-row');
-  const btnFilmPrev = document.getElementById('btn-filmstrip-prev');
-  const btnFilmNext = document.getElementById('btn-filmstrip-next');
-
-  if (btnFilmPrev && filmstripRow) {
-    btnFilmPrev.addEventListener('click', () => {
-      filmstripRow.scrollBy({ left: -400, behavior: 'smooth' });
-    });
-  }
-
-  if (btnFilmNext && filmstripRow) {
-    btnFilmNext.addEventListener('click', () => {
-      filmstripRow.scrollBy({ left: 400, behavior: 'smooth' });
-    });
-  }
-
-  // ==========================================================================
-  // 8. MOBILE NAV DRAWER TOGGLE
-  // ==========================================================================
-  const mobileToggle = document.getElementById('mobile-nav-toggle');
-  const mobileDrawer = document.getElementById('mobile-nav-drawer');
-  const mobileClose = document.getElementById('mobile-nav-close');
-
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
-    });
-  }
-
-  if (mobileClose && mobileDrawer) {
-    mobileClose.addEventListener('click', () => {
-      mobileDrawer.classList.remove('open');
-    });
-  }
-
-  // Close drawer on link click
-  if (mobileDrawer) {
-    mobileDrawer.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileDrawer.classList.remove('open');
-      });
-    });
-  }
-
-  // Initial UI refresh
+  // Initial cart UI
   updateCartUI();
 });
