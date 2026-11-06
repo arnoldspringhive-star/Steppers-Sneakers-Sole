@@ -831,6 +831,68 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.showToast = showToast;
 
+  // ==========================================================================
+  // 8. CULTURE ATELIER DISSECTION DECK CONTROLLER
+  // ==========================================================================
+  const deckTabs = document.querySelectorAll('.deck-tab-btn');
+  const deckPanels = {
+    culture: document.getElementById('deck-panel-culture'),
+    anatomy: document.getElementById('deck-panel-anatomy'),
+    testing: document.getElementById('deck-panel-testing')
+  };
+
+  deckTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      deckTabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tabName = btn.dataset.deckTab;
+      Object.keys(deckPanels).forEach(key => {
+        if (deckPanels[key]) {
+          deckPanels[key].classList.toggle('active', key === tabName);
+        }
+      });
+    });
+  });
+
+  // Soundboard synth audio pulse
+  const soundboardBtn = document.getElementById('btn-soundboard');
+  if (soundboardBtn) {
+    soundboardBtn.addEventListener('click', () => {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (AudioCtx) {
+          const ctx = new AudioCtx();
+          const osc1 = ctx.createOscillator();
+          const osc2 = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc1.type = 'sawtooth';
+          osc1.frequency.setValueAtTime(220, ctx.currentTime);
+          osc1.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.3);
+
+          osc2.type = 'sine';
+          osc2.frequency.setValueAtTime(440, ctx.currentTime);
+          osc2.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.3);
+
+          gain.gain.setValueAtTime(0.15, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+
+          osc1.connect(gain);
+          osc2.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc1.start();
+          osc2.start();
+          osc1.stop(ctx.currentTime + 0.5);
+          osc2.stop(ctx.currentTime + 0.5);
+        }
+      } catch (e) {
+        console.warn('AudioContext not allowed yet', e);
+      }
+      showToast('🔊 Playing Atelier Audio Dispatch 03 [432Hz Synth]');
+    });
+  }
+
   // Initial cart UI
   updateCartUI();
 });

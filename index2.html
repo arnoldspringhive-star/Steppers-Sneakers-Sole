@@ -257,42 +257,168 @@
     </section>
 
     <!-- ==========================================================================
-         4. TWO-COLUMN FEATURE BLOCK 01 (STEPS SHOE-TWO-COLUMN-LAYOUT)
+         4. UNIQUE ATELIER CULTURE & DISSECTION DECK (FEATURE BLOCK 01)
          ========================================================================== -->
-    <section class="shoe-two-column-layout" id="culture-section">
-      <div class="container two-col-grid">
+    <section class="culture-atelier-deck" id="culture-section">
+      <div class="container culture-deck-grid">
         
-        <!-- Left Editorial Column -->
-        <div class="two-col-info">
-          <span class="two-col-badge">// HYBRID HERITAGE &amp; CUSHIONING</span>
-          <h2 class="two-col-title">Nike Air Force 1 React 'White University Red'</h2>
-          <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.6;">
-            A futuristic evolution of the iconic 1982 silhouette. Featuring a drop-in Nike React foam footbed with an encapsulated heel Air unit, oversized outline Swoosh, and translucent ice-sole trim engineered for high-mileage urban roaming.
-          </p>
-
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--text-primary); margin:10px 0;">
-            <li style="display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--accent-cyan); font-weight:700;">✓</span> Drop-In Nike React Footbed for all-day energy return
-            </li>
-            <li style="display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--accent-cyan); font-weight:700;">✓</span> Oversized Graphic Swoosh with high-contrast University Red accents
-            </li>
-            <li style="display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--accent-cyan); font-weight:700;">✓</span> Micro-tuned pivot circles for street traction
-            </li>
-          </ul>
-
-          <div style="display:flex; gap:16px; align-items:center; margin-top:12px;">
-            <button id="btn-twocol-buy-1" class="btn-steps-add-cart" style="max-width:280px;">
-              COP AF1 REACT • $140
-            </button>
-            <span style="font-family:var(--font-tech); font-size:0.8rem; color:var(--accent-pink); font-weight:700;">IN STOCK // DEADSTOCK</span>
+        <!-- Left Stage: Gritty Streetwear Visual with Interactive Hotspots & Audio Bar -->
+        <div class="culture-media-stage">
+          
+          <!-- Top HUD Location Badge -->
+          <div class="culture-hud-tag">
+            <span class="live-dot"></span>
+            <span>SHIBUYA ROOFTOP // LAT 35.6628° N</span>
           </div>
+
+          <img src="assets/images/heritage-culture.jpg" alt="Sneaker Culture Hardwood Runway" class="culture-media-img">
+
+          <!-- Interactive Hotspot 1: Tumbled Leather Collar -->
+          <div class="hotspot-pin deck-pin-1" tabindex="0">
+            <button class="hotspot-pin-btn" aria-label="Collar Leather Spec">+</button>
+            <div class="hotspot-card">
+              <span class="hotspot-card-tag">LEATHER // 1.4MM</span>
+              <h4 class="hotspot-card-title">Full-Grain Tumbled Hide</h4>
+              <p class="hotspot-card-desc">Hand-buffed Italian cowhide collar with tonal double-stitched reinforcements.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Hotspot 2: Concentric Pivot Sole -->
+          <div class="hotspot-pin deck-pin-2" tabindex="0">
+            <button class="hotspot-pin-btn" aria-label="Pivot Sole Spec">+</button>
+            <div class="hotspot-card">
+              <span class="hotspot-card-tag">TRACTION // HARDWOOD</span>
+              <h4 class="hotspot-card-title">Concentric Pivot Circle</h4>
+              <p class="hotspot-card-desc">High-durometer rubber compound engineered for asphalt friction and board feel.</p>
+            </div>
+          </div>
+
+          <!-- Soundboard Audio Controller -->
+          <div class="culture-soundboard-bar" id="btn-soundboard" title="Click to play atelier audio synthesis log">
+            <div class="soundboard-play-icon">▶</div>
+            <div style="display:flex; flex-direction:column; line-height:1.2;">
+              <span style="font-family:var(--font-tech); font-size:0.65rem; color:#fff; font-weight:700;">AUDIO DISPATCH 03</span>
+              <span style="font-family:var(--font-tech); font-size:0.58rem; color:var(--accent-pink);">FREQ: 432HZ SYNTH</span>
+            </div>
+            <div class="soundwave-bars">
+              <span class="soundwave-bar"></span>
+              <span class="soundwave-bar"></span>
+              <span class="soundwave-bar"></span>
+              <span class="soundwave-bar"></span>
+              <span class="soundwave-bar"></span>
+              <span class="soundwave-bar"></span>
+            </div>
+          </div>
+
+          <!-- Picture-in-Picture Detail Card -->
+          <div class="culture-pip-card">
+            <img src="assets/images/sneaker-cyan.jpg" alt="Detail Macro Inset" class="culture-pip-thumb">
+            <div class="culture-pip-meta">
+              <span class="culture-pip-title">AIR REACT SOLE</span>
+              <span class="culture-pip-sub">SPEC 2026.04 // PASS</span>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Right Lifestyle Media Wrap -->
-        <div class="two-col-media-wrap">
-          <img src="assets/images/heritage-culture.jpg" alt="Sneaker Culture Heritage and Street Style" class="two-col-photo">
+        <!-- Right Stage: Interactive 3-Tab Dissection Dossier -->
+        <div class="culture-editorial-wrap">
+          
+          <span class="culture-section-badge">// SNEAKER LAB • ATELIER DISSECTION</span>
+          
+          <h2 class="culture-main-title">
+            THE PAVEMENT ARCHIVE: <span>FORGED FOR ASPHALT</span>
+          </h2>
+
+          <!-- 3-Tab Navigation Strip -->
+          <div class="deck-tabs-nav" role="tablist">
+            <button class="deck-tab-btn active" data-deck-tab="culture" role="tab">01 // CULTURE &amp; STREET</button>
+            <button class="deck-tab-btn" data-deck-tab="anatomy" role="tab">02 // SNEAKER ANATOMY</button>
+            <button class="deck-tab-btn" data-deck-tab="testing" role="tab">03 // PURITY AUDIT</button>
+          </div>
+
+          <!-- Tab Panel 1: Culture & Street -->
+          <div class="deck-panel-content active" id="deck-panel-culture" role="tabpanel">
+            <p class="deck-panel-text">
+              Born on 1980s hardwood courts and claimed by the global pavement vanguard. We dissect the cultural trajectory of iconic silhouettes—how raw athletic performance engineered for basketball morphed into high-density streetwear currency across Tokyo and New York.
+            </p>
+
+            <div class="deck-metrics-grid">
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">94%</span>
+                <span class="deck-metric-label">Impact Damping</span>
+              </div>
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">1.4mm</span>
+                <span class="deck-metric-label">Tumbled Nappa</span>
+              </div>
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">12 SPI</span>
+                <span class="deck-metric-label">Stitch Density</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Panel 2: Sneaker Anatomy -->
+          <div class="deck-panel-content" id="deck-panel-anatomy" role="tabpanel">
+            <p class="deck-panel-text">
+              Every curve, seam, and air pocket is calibrated for high-impact urban roaming. The deconstructed collar relieves pressure on the achilles tendon, while the high-rebound drop-in core absorbs heavy shock from concrete strides.
+            </p>
+
+            <div class="deck-metrics-grid">
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">REACT</span>
+                <span class="deck-metric-label">Drop-In Core</span>
+              </div>
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">365nm</span>
+                <span class="deck-metric-label">UV Certified</span>
+              </div>
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">DUAL</span>
+                <span class="deck-metric-label">Air Chamber</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Panel 3: Purity Audit -->
+          <div class="deck-panel-content" id="deck-panel-testing" role="tabpanel">
+            <p class="deck-panel-text">
+              Zero tolerance for synthetic counterfeit materials. Every admitted pair is exposed to high-frequency spectroscopic luminescence and microscopic grain analysis before receiving the tamper-evident Steppers smart tag.
+            </p>
+
+            <div class="deck-metrics-grid">
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">100%</span>
+                <span class="deck-metric-label">RFID Verified</span>
+              </div>
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">150K+</span>
+                <span class="deck-metric-label">Flex Cycles</span>
+              </div>
+              <div class="deck-metric-card">
+                <span class="deck-metric-val">LEDGER</span>
+                <span class="deck-metric-label">Node #8821</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Controls Row -->
+          <div class="deck-actions-row">
+            <button id="btn-twocol-buy-1" class="btn-deck-cta">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              COP THIS COLORWAY • $140
+            </button>
+            <button class="btn-deck-secondary" onclick="document.getElementById('catalog-section').scrollIntoView({behavior:'smooth'})">
+              EXPLORE ALL GRAILS ↓
+            </button>
+          </div>
+
+          <div style="font-family:var(--font-tech); font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:8px;">
+            <span style="color:var(--accent-pink);">⚡</span>
+            <span>ONLY 4 PAIRS REMAINING IN ATELIER VAULT // LIMIT 1 PER COLLECTOR</span>
+          </div>
+
         </div>
 
       </div>
