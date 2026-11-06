@@ -899,18 +899,19 @@ button {
 }
 
 .btn-steps-add-cart {
-  flex: 1;
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 24px;
+  padding: 14px 28px;
   border-radius: var(--radius-full);
   background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%);
   color: #fff;
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.04em;
+  white-space: nowrap;
   box-shadow: 0 8px 25px var(--accent-pink-glow);
   transition: all var(--trans);
 }
