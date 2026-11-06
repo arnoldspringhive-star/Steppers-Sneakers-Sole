@@ -1044,68 +1044,6 @@ button {
   color: var(--accent-cyan);
 }
 
-/* Audio Soundboard Bar */
-.culture-soundboard-bar {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  background: rgba(8, 8, 12, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 10;
-  cursor: pointer;
-  transition: all var(--trans);
-}
-
-.culture-soundboard-bar:hover {
-  border-color: var(--accent-pink);
-  box-shadow: 0 0 15px var(--accent-pink-glow);
-}
-
-.soundboard-play-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--accent-pink);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-}
-
-.soundwave-bars {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  height: 16px;
-}
-
-.soundwave-bar {
-  width: 2.5px;
-  height: 100%;
-  background: var(--accent-cyan);
-  border-radius: 2px;
-  transform-origin: bottom;
-  animation: soundwave-pulse 1.2s ease-in-out infinite alternate;
-}
-
-.soundwave-bar:nth-child(2) { animation-delay: 0.2s; height: 60%; }
-.soundwave-bar:nth-child(3) { animation-delay: 0.4s; height: 85%; }
-.soundwave-bar:nth-child(4) { animation-delay: 0.1s; height: 45%; }
-.soundwave-bar:nth-child(5) { animation-delay: 0.3s; height: 100%; }
-.soundwave-bar:nth-child(6) { animation-delay: 0.5s; height: 70%; }
-
-@keyframes soundwave-pulse {
-  0% { transform: scaleY(0.3); }
-  100% { transform: scaleY(1); }
-}
 
 /* Hotspots on Culture Image */
 .deck-pin-1 { top: 61%; left: 74%; }
