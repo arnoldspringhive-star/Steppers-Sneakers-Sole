@@ -223,7 +223,121 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
   // 2. HERO SNEAKER INTERACTIVE CONTROLLER (STEPS WORKDO STYLE)
+  // Transparent Cutout PNG Showcase just like the reference website
   // ==========================================================================
+  const heroProducts = [
+    {
+      id: 'hero-01',
+      sku: 'STP-EDGE-01',
+      name: "Classic 2.5 Edge 'Graphite Shadow'",
+      brand: 'Trendmark / Steppers Lab',
+      badge: 'Limited Edition',
+      colorway: 'Graphite Grey / Solar Amber',
+      price: 240,
+      originalPrice: 280,
+      releaseYear: '2024',
+      rating: 5.0,
+      reviewsCount: 142,
+      materials: 'Rugged Ripstop & Suede Guard',
+      cushioning: 'Hexalite Responsive Core',
+      image: 'assets/images/ref-hero-1.png',
+      swatches: [
+        'assets/images/ref-hero-1.png',
+        'assets/images/ref-hero-2.png',
+        'assets/images/ref-hero-3.png'
+      ],
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11'],
+      desc: "Engineered with deconstructed layered suede panels, rugged trail lugged outsoles, and Hexalite honeycomb cushioning. Built for aggressive pavement grip and all-day stability.",
+      hotspots: {
+        heel: { title: "Molded Heel Counter", tag: "HEEL // STABILITY", desc: "Thermoplastic counter locks down the calcaneus to eliminate lateral slippage." },
+        cushion: { title: "Gillie Lacing & Mid Core", tag: "LACES // FIT", desc: "Reinforced speed-lacing eyelets distribute tension evenly across the instep." },
+        toe: { title: "Toe Cap & Trail Lug", tag: "TOE CAP // TRACTION", desc: "Reinforced rubber abrasion cap wraps the forefoot for high-impact durability." }
+      }
+    },
+    {
+      id: 'hero-02',
+      sku: 'STP-LTHR-02',
+      name: "Classic Leather 'Ice Silver Glow'",
+      brand: 'Trendmark / Steppers Lab',
+      badge: 'Heritage Run',
+      colorway: 'Pure White / Metallic Silver',
+      price: 180,
+      originalPrice: 210,
+      releaseYear: '2023',
+      rating: 4.9,
+      reviewsCount: 98,
+      materials: 'Buttery Nappa Box Leather',
+      cushioning: 'Die-Cut EVA Foam Bed',
+      image: 'assets/images/ref-hero-4.png',
+      swatches: [
+        'assets/images/ref-hero-4.png',
+        'assets/images/ref-hero-5.png'
+      ],
+      sizes: ['US 7.5', 'US 8', 'US 8.5', 'US 9', 'US 10', 'US 10.5'],
+      desc: "Clean-line minimalist luxury silhouette crafted with premium tumbled glove leather, tonal vector stitching, and a crisp icy cupsole. An essential wardrobe cornerstone.",
+      hotspots: {
+        heel: { title: "Padded Collar Notch", tag: "COLLAR // COMFORT", desc: "Memory foam achilles wrap prevents blister friction during high-step walking." },
+        cushion: { title: "Perforated Mid-Foot", tag: "MIDFOOT // AIRFLOW", desc: "Micro-vented quarter panels allow continuous heat evacuation." },
+        toe: { title: "Contoured Toe Box", tag: "FOREFOOT // FLEX", desc: "Anatomically shaped toe cavity accommodates natural metatarsal spread." }
+      }
+    },
+    {
+      id: 'hero-03',
+      sku: 'STP-CLUBC-03',
+      name: "Club C 85 'Emerald Forest Suede'",
+      brand: 'Trendmark / Steppers Lab',
+      badge: 'Court Special',
+      colorway: 'Deep Emerald / Raw Gum',
+      price: 195,
+      originalPrice: 230,
+      releaseYear: '2024',
+      rating: 4.8,
+      reviewsCount: 86,
+      materials: 'Heavyweight Velvet Suede',
+      cushioning: 'Gum Rubber Low-Profile Sole',
+      image: 'assets/images/ref-hero-6.png',
+      swatches: [
+        'assets/images/ref-hero-6.png',
+        'assets/images/ref-hero-7.png',
+        'assets/images/ref-hero-8.png'
+      ],
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      desc: "Rich mossy emerald green velvet suede matched with an unbleached raw gum rubber sole. Vintage court heritage re-engineered with modern dual-density insoles.",
+      hotspots: {
+        heel: { title: "Reinforced Heel Wrap", tag: "HEEL // ARCHIVE", desc: "Embossed tonal brand emblem on double-stitched back tab." },
+        cushion: { title: "Cotton Flat Laces", tag: "INSTEP // FIT", desc: "Custom-dyed 100% organic cotton laces with matte metal aglets." },
+        toe: { title: "Low-Profile Gum Bumper", tag: "VAMP // GRIP", desc: "Natural vulcanized gum rubber wraps the toe for board-feel and abrasion shield." }
+      }
+    },
+    {
+      id: 'hero-04',
+      sku: 'STP-VINT-04',
+      name: "Club C 85 Vintage 'Cream Linen'",
+      brand: 'Trendmark / Steppers Lab',
+      badge: 'Vintage Archive',
+      colorway: 'Chalk White / Vintage Cream',
+      price: 210,
+      originalPrice: 250,
+      releaseYear: '2023',
+      rating: 4.9,
+      reviewsCount: 114,
+      materials: 'Distressed Full-Grain Calfskin',
+      cushioning: 'Arch-Support OrthoLite Socket',
+      image: 'assets/images/ref-hero-9.png',
+      swatches: [
+        'assets/images/ref-hero-9.png',
+        'assets/images/ref-hero-10.png'
+      ],
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 10', 'US 10.5', 'US 11'],
+      desc: "Authentic retro tennis silhouette treated with vintage cream patinas, raw exposed foam tongue edges, and classic collegiate lettering on the side window.",
+      hotspots: {
+        heel: { title: "Retro Foam Collar", tag: "HEEL // VINTAGE", desc: "Low-cut silhouette for ankle freedom with exposed foam styling." },
+        cushion: { title: "Dual EVA Wedge", tag: "MIDSOLE // DAMPING", desc: "Shock-absorbing dual-density ethylene-vinyl acetate midsole core." },
+        toe: { title: "Perforated Toe Radial", tag: "TOE // BREATHABILITY", desc: "Classic court perforation array keeps the interior dry and breathable." }
+      }
+    }
+  ];
+
   const heroShoeImg = document.getElementById('hero-shoe-display');
   const heroCardTitle = document.getElementById('hero-card-title');
   const heroCardSubtitle = document.getElementById('hero-card-subtitle');
@@ -244,9 +358,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const pinToeDesc = document.getElementById('pin-toe-desc');
 
   function updateHeroShoe(idx) {
-    if (idx < 0 || idx >= catalog.length) return;
+    if (idx < 0 || idx >= heroProducts.length) return;
     currentHeroIndex = idx;
-    const item = catalog[idx];
+    const item = heroProducts[idx];
 
     // Smooth image transition
     if (heroShoeImg) {
@@ -338,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hero Add to Bag
   if (btnHeroAddToCart) {
     btnHeroAddToCart.addEventListener('click', () => {
-      const item = catalog[currentHeroIndex];
+      const item = heroProducts[currentHeroIndex] || catalog[currentHeroIndex];
       addToCart(item, currentSelectedSize);
     });
   }
