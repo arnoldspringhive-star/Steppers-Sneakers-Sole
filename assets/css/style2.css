@@ -16,22 +16,27 @@
   --bg-glass: rgba(14, 14, 20, 0.85);
 
   /* Brand Accents - Exact Alignment with Official Steppers Logo */
-  --accent-pink: #ff2a85;            /* Dominant: Steppers bubble letter magenta/pink */
+  --accent-pink: #ff2a85;
+  /* Dominant: Steppers bubble letter magenta/pink */
   --accent-pink-hover: #ff4d9e;
   --accent-pink-glow: rgba(255, 42, 133, 0.45);
-  
-  --accent-purple: #9d4edd;          /* Dominant: 3D purple shadow and outline */
+
+  --accent-purple: #9d4edd;
+  /* Dominant: 3D purple shadow and outline */
   --accent-purple-deep: #5a189a;
   --accent-purple-glow: rgba(157, 78, 221, 0.45);
 
-  --accent-red: #e52535;             /* Secondary: Jordan 1 Chicago high-top sneaker */
+  --accent-red: #e52535;
+  /* Secondary: Jordan 1 Chicago high-top sneaker */
   --accent-red-glow: rgba(229, 37, 53, 0.4);
 
-  --accent-cyan: #00f0ff;            /* Subtle Complementary: "Sneakers & Sole" spray drips */
+  --accent-cyan: #00f0ff;
+  /* Subtle Complementary: "Sneakers & Sole" spray drips */
   --accent-cyan-dark: #00b4d8;
   --accent-cyan-glow: rgba(0, 240, 255, 0.4);
 
-  --accent-orange: #ff7b00;          /* Warm Street & Mascot Gold */
+  --accent-orange: #ff7b00;
+  /* Warm Street & Mascot Gold */
   --accent-orange-glow: rgba(255, 123, 0, 0.4);
 
   /* Typography */
@@ -64,7 +69,9 @@
 /* ==========================================================================
    RESET & BASE STYLES
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -98,7 +105,9 @@ a {
   transition: color var(--trans);
 }
 
-button, input, select {
+button,
+input,
+select {
   font-family: inherit;
   border: none;
   outline: none;
@@ -538,9 +547,20 @@ button {
 }
 
 @keyframes pulse-ring {
-  0% { transform: scale(0.9); opacity: 0.9; }
-  50% { transform: scale(1.4); opacity: 0.2; }
-  100% { transform: scale(1.8); opacity: 0; }
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }
 
 .hotspot-card {
@@ -550,7 +570,7 @@ button {
   transform: translateX(-50%) translateY(10px);
   background: var(--bg-card);
   border: 1px solid var(--border-neon);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 20px var(--accent-pink-glow);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px var(--accent-pink-glow);
   border-radius: var(--radius-md);
   padding: 12px 16px;
   width: 220px;
@@ -600,9 +620,20 @@ button {
 }
 
 /* Positions of Pins on Hero Shoe (Calibrated to Transparent Cutout PNG) */
-.pin-heel { top: 26%; left: 16%; }
-.pin-cushion { top: 28%; left: 48%; }
-.pin-toe { top: 68%; left: 74%; }
+.pin-heel {
+  top: 26%;
+  left: 16%;
+}
+
+.pin-cushion {
+  top: 28%;
+  left: 48%;
+}
+
+.pin-toe {
+  top: 68%;
+  left: 74%;
+}
 
 /* Hero Bottom Control Strip (Play Video + Numbered Tabs) */
 .hero-bottom-strip {
@@ -934,8 +965,8 @@ button {
   position: relative;
   padding: 110px 0;
   background: radial-gradient(circle at 25% 40%, rgba(255, 42, 133, 0.08) 0%, rgba(5, 5, 7, 0) 65%),
-              radial-gradient(circle at 80% 60%, rgba(0, 240, 255, 0.06) 0%, rgba(5, 5, 7, 0) 60%),
-              var(--bg-black);
+    radial-gradient(circle at 80% 60%, rgba(0, 240, 255, 0.06) 0%, rgba(5, 5, 7, 0) 60%),
+    var(--bg-black);
   border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
 }
@@ -1053,8 +1084,15 @@ button {
 
 
 /* Hotspots on Culture Image */
-.deck-pin-1 { top: 61%; left: 74%; }
-.deck-pin-2 { top: 88%; left: 50%; }
+.deck-pin-1 {
+  top: 61%;
+  left: 74%;
+}
+
+.deck-pin-2 {
+  top: 88%;
+  left: 50%;
+}
 
 /* Right Editorial Dissection Column */
 .culture-editorial-wrap {
@@ -1130,8 +1168,15 @@ button {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .deck-panel-text {
@@ -2304,22 +2349,28 @@ button {
   .hero-layout-grid {
     grid-template-columns: 1fr;
   }
+
   .products-cards-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .two-col-grid,
   .two-col-grid.reverse {
     grid-template-columns: 1fr;
   }
+
   .testing-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .categories-banners-grid {
     grid-template-columns: 1fr;
   }
+
   .category-banner-card.wide-banner {
     grid-column: span 1;
   }
+
   .footer-main-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2329,12 +2380,15 @@ button {
   .header-nav {
     display: none;
   }
+
   .mobile-menu-toggle {
     display: inline-flex;
   }
+
   .products-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
@@ -2344,16 +2398,20 @@ button {
   .products-cards-grid {
     grid-template-columns: 1fr;
   }
+
   .footer-main-grid {
     grid-template-columns: 1fr;
   }
+
   .hero-bottom-strip {
     flex-direction: column;
   }
+
   .hero-video-box {
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
   }
+
   .subscription-card-box {
     padding: 30px 20px;
   }
