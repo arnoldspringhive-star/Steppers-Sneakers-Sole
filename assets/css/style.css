@@ -2161,7 +2161,8 @@ ul {
   justify-content: space-between;
   padding-top: 30px;
   border-top: 1px solid var(--border-subtle);
-  font-size: 0.85rem;
+  font-size: 18px;
+  line-height: 1.5;
   color: var(--text-muted);
   flex-wrap: wrap;
   gap: 16px;
