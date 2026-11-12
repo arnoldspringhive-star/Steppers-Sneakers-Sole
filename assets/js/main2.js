@@ -545,19 +545,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Category Showcase Action Buttons (Links to Catalog Filter Tabs)
-  const categoryActionButtons = document.querySelectorAll('.btn-tile-action');
-  categoryActionButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetFilter = btn.dataset.filter;
-      if (!targetFilter) return;
-      const targetTab = document.querySelector(`.filter-tab-pill[data-filter="${targetFilter}"]`);
-      if (targetTab) {
-        targetTab.click();
-      }
-    });
-  });
-
   // ==========================================================================
   // 4. BESTSELLERS SLIDER (UNLIMITED INFINITE LOOP CAROUSEL WITH AUTOPLAY)
   // ==========================================================================
