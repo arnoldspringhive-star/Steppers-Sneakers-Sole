@@ -546,16 +546,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 4. BESTSELLERS SLIDER (UNLIMITED INFINITE CAROUSEL WITH AUTOPLAY)
+  // 4. BESTSELLERS SLIDER (UNLIMITED INFINITE LOOP CAROUSEL WITH AUTOPLAY)
   // ==========================================================================
   const bestsellerSlider = document.getElementById('bestseller-slider');
+  const bestsellerViewport = document.getElementById('bestseller-viewport') || (bestsellerSlider ? bestsellerSlider.parentElement : null);
   const btnBestsellerPrev = document.getElementById('btn-bestseller-prev');
   const btnBestsellerNext = document.getElementById('btn-bestseller-next');
+  const bestsellerProgressFill = document.getElementById('bestseller-progress-fill');
 
   if (bestsellerSlider && typeof catalog !== 'undefined' && catalog.length > 0) {
-    // 1. Triple the catalog items to create infinite looping buffers (pre, active, post)
-    const renderCard = (item, idx) => `
-      <div class="product-item-card bestseller-card" data-id="${item.id}" data-index="${idx}">
+    // Render the initial set of catalog items
+    bestsellerSlider.innerHTML = catalog.map((item, idx) => `
+      <div class="product-item-card bestseller-card" data-id="${item.id}" data-idx="${idx}">
         <span class="card-badge-tag">${item.badge}</span>
         <div class="card-img-wrap">
           <img src="${item.image}" alt="${item.name}" draggable="false" loading="lazy">
@@ -567,89 +569,81 @@ document.addEventListener('DOMContentLoaded', () => {
           <button class="btn-card-add-cart btn-bestseller-add" data-id="${item.id}">Add to Cart</button>
         </div>
       </div>
-    `;
+    `).join('');
 
-    // Clone 3 full sets for seamless infinite wrapping
-    const tripleList = [...catalog, ...catalog, ...catalog];
-    bestsellerSlider.innerHTML = tripleList.map((item, idx) => renderCard(item, idx)).join('');
-
-    let singleSetWidth = 0;
+    let isAnimating = false;
+    let activeLogicalIndex = 0;
+    const totalItems = catalog.length;
 
     function getStepDistance() {
-      const firstCard = bestsellerSlider.querySelector('.bestseller-card');
-      if (!firstCard) return 334;
-      const gap = parseFloat(window.getComputedStyle(bestsellerSlider).gap) || 24;
-      return firstCard.offsetWidth + gap;
+      const card = bestsellerSlider.firstElementChild;
+      if (!card) return 334;
+      const computedStyle = window.getComputedStyle(bestsellerSlider);
+      const gap = parseFloat(computedStyle.gap) || 24;
+      return card.offsetWidth + gap;
     }
 
-    function calculateDimensions() {
-      const step = getStepDistance();
-      singleSetWidth = catalog.length * step;
+    function updateProgressBar() {
+      if (!bestsellerProgressFill) return;
+      const progressPercent = (activeLogicalIndex / (totalItems - 1)) * 65;
+      bestsellerProgressFill.style.transform = `translateX(${progressPercent * 1.5}%)`;
     }
 
-    // Set initial scroll position to the start of the middle set
-    function initScrollPosition() {
-      calculateDimensions();
-      if (singleSetWidth > 0) {
-        bestsellerSlider.style.scrollBehavior = 'auto';
-        bestsellerSlider.scrollLeft = singleSetWidth;
-        bestsellerSlider.style.scrollBehavior = 'smooth';
-      }
-    }
-
-    // Initialize position after DOM paint
-    setTimeout(initScrollPosition, 60);
-    window.addEventListener('resize', calculateDimensions);
-
-    // Infinite Seamless Looping Guard on scroll
-    let isResetting = false;
-    bestsellerSlider.addEventListener('scroll', () => {
-      if (isResetting || singleSetWidth <= 0) return;
-
-      // When reaching near the end of set 3, seamlessly jump back to set 2
-      if (bestsellerSlider.scrollLeft >= singleSetWidth * 2 - 10) {
-        isResetting = true;
-        bestsellerSlider.style.scrollBehavior = 'auto';
-        bestsellerSlider.scrollLeft -= singleSetWidth;
-        void bestsellerSlider.offsetWidth;
-        bestsellerSlider.style.scrollBehavior = 'smooth';
-        isResetting = false;
-      }
-      // When reaching near the start of set 1, seamlessly jump forward to set 2
-      else if (bestsellerSlider.scrollLeft <= 10) {
-        isResetting = true;
-        bestsellerSlider.style.scrollBehavior = 'auto';
-        bestsellerSlider.scrollLeft += singleSetWidth;
-        void bestsellerSlider.offsetWidth;
-        bestsellerSlider.style.scrollBehavior = 'smooth';
-        isResetting = false;
-      }
-    }, { passive: true });
-
-    // Step Next (Infinite)
+    // Infinite Slide Forward (Loops endlessly)
     function slideNext() {
-      if (singleSetWidth <= 0) calculateDimensions();
+      if (isAnimating || bestsellerSlider.children.length === 0) return;
+      isAnimating = true;
+
       const step = getStepDistance();
-      if (bestsellerSlider.scrollLeft >= singleSetWidth * 2 - step * 2) {
-        bestsellerSlider.style.scrollBehavior = 'auto';
-        bestsellerSlider.scrollLeft -= singleSetWidth;
-        void bestsellerSlider.offsetWidth;
-      }
-      bestsellerSlider.style.scrollBehavior = 'smooth';
-      bestsellerSlider.scrollBy({ left: step, behavior: 'smooth' });
+      bestsellerSlider.style.transition = 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
+      bestsellerSlider.style.transform = `translateX(-${step}px)`;
+
+      const onTransitionEnd = () => {
+        bestsellerSlider.removeEventListener('transitionend', onTransitionEnd);
+        bestsellerSlider.style.transition = 'none';
+        bestsellerSlider.appendChild(bestsellerSlider.firstElementChild);
+        bestsellerSlider.style.transform = 'translateX(0)';
+        isAnimating = false;
+        activeLogicalIndex = (activeLogicalIndex + 1) % totalItems;
+        updateProgressBar();
+      };
+
+      bestsellerSlider.addEventListener('transitionend', onTransitionEnd);
+      setTimeout(() => {
+        if (isAnimating) {
+          onTransitionEnd();
+        }
+      }, 550);
     }
 
-    // Step Prev (Infinite)
+    // Infinite Slide Backward (Loops endlessly)
     function slidePrev() {
-      if (singleSetWidth <= 0) calculateDimensions();
+      if (isAnimating || bestsellerSlider.children.length === 0) return;
+      isAnimating = true;
+
       const step = getStepDistance();
-      if (bestsellerSlider.scrollLeft <= singleSetWidth * 0.5) {
-        bestsellerSlider.style.scrollBehavior = 'auto';
-        bestsellerSlider.scrollLeft += singleSetWidth;
-        void bestsellerSlider.offsetWidth;
-      }
-      bestsellerSlider.style.scrollBehavior = 'smooth';
-      bestsellerSlider.scrollBy({ left: -step, behavior: 'smooth' });
+      bestsellerSlider.prepend(bestsellerSlider.lastElementChild);
+      bestsellerSlider.style.transition = 'none';
+      bestsellerSlider.style.transform = `translateX(-${step}px)`;
+
+      void bestsellerSlider.offsetWidth; // flush layout
+
+      bestsellerSlider.style.transition = 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
+      bestsellerSlider.style.transform = 'translateX(0)';
+
+      const onTransitionEnd = () => {
+        bestsellerSlider.removeEventListener('transitionend', onTransitionEnd);
+        isAnimating = false;
+        activeLogicalIndex = (activeLogicalIndex - 1 + totalItems) % totalItems;
+        updateProgressBar();
+      };
+
+      bestsellerSlider.addEventListener('transitionend', onTransitionEnd);
+      setTimeout(() => {
+        if (isAnimating) {
+          onTransitionEnd();
+        }
+      }, 550);
     }
 
     // ========================================================================
@@ -657,12 +651,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========================================================================
     let autoplayTimer = null;
     const AUTOPLAY_INTERVAL = 3200; // Slide every 3.2 seconds
-    let isHovered = false;
+    let isUserInteracting = false;
 
     function startAutoplay() {
       stopAutoplay();
       autoplayTimer = setInterval(() => {
-        if (!isHovered && document.visibilityState !== 'hidden') {
+        if (!isUserInteracting && document.visibilityState !== 'hidden') {
           slideNext();
         }
       }, AUTOPLAY_INTERVAL);
@@ -680,25 +674,42 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoplay();
     }
 
-    // Start autoplay
+    // Start autoplay immediately
     startAutoplay();
 
-    // Pause on Hover & Touch interactions so user can inspect items or click add to cart
-    bestsellerSlider.addEventListener('mouseenter', () => { isHovered = true; });
-    bestsellerSlider.addEventListener('mouseleave', () => { isHovered = false; });
-    bestsellerSlider.addEventListener('touchstart', () => { isHovered = true; }, { passive: true });
-    bestsellerSlider.addEventListener('touchend', () => {
-      setTimeout(() => { isHovered = false; }, 1500);
+    // Pause on Hover & Touch interactions
+    const interactionZone = bestsellerViewport || bestsellerSlider;
+    interactionZone.addEventListener('mouseenter', () => { isUserInteracting = true; });
+    interactionZone.addEventListener('mouseleave', () => { isUserInteracting = false; });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    interactionZone.addEventListener('touchstart', (e) => {
+      isUserInteracting = true;
+      touchStartX = e.changedTouches[0].clientX;
     }, { passive: true });
 
-    // Connect Arrow Buttons with Autoplay Reset
+    interactionZone.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchEndX - touchStartX;
+      if (Math.abs(diffX) > 45) {
+        if (diffX < 0) {
+          slideNext();
+        } else {
+          slidePrev();
+        }
+      }
+      setTimeout(() => { isUserInteracting = false; }, 1800);
+    }, { passive: true });
+
+    // Connect Arrow Buttons
     if (btnBestsellerNext) {
       btnBestsellerNext.addEventListener('click', () => {
         restartAutoplay();
         slideNext();
       });
-      btnBestsellerNext.addEventListener('mouseenter', () => { isHovered = true; });
-      btnBestsellerNext.addEventListener('mouseleave', () => { isHovered = false; });
+      btnBestsellerNext.addEventListener('mouseenter', () => { isUserInteracting = true; });
+      btnBestsellerNext.addEventListener('mouseleave', () => { isUserInteracting = false; });
     }
 
     if (btnBestsellerPrev) {
@@ -706,11 +717,11 @@ document.addEventListener('DOMContentLoaded', () => {
         restartAutoplay();
         slidePrev();
       });
-      btnBestsellerPrev.addEventListener('mouseenter', () => { isHovered = true; });
-      btnBestsellerPrev.addEventListener('mouseleave', () => { isHovered = false; });
+      btnBestsellerPrev.addEventListener('mouseenter', () => { isUserInteracting = true; });
+      btnBestsellerPrev.addEventListener('mouseleave', () => { isUserInteracting = false; });
     }
 
-    // Handle Background Tab Visibility
+    // Handle Tab Visibility
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         stopAutoplay();
@@ -719,7 +730,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Delegated Add to Cart for all items (original + infinite clones)
+    // Delegated Add to Cart
     bestsellerSlider.addEventListener('click', (e) => {
       const addBtn = e.target.closest('.btn-bestseller-add');
       if (addBtn) {
