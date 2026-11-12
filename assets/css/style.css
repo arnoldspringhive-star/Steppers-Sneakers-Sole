@@ -1144,20 +1144,135 @@ ul {
 
 .sneaker-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid transparent;
   border-radius: 16px;
   padding: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #ff2a85 0%, #9d4edd 50%, #00f0ff 100%);
+  box-shadow: 0 4px 20px rgba(157, 78, 221, 0.16);
   transition: all var(--transition-smooth);
-  box-shadow: var(--shadow-card);
 }
 
 .sneaker-card:hover {
   transform: translateY(-8px);
-  border-color: var(--border-pink);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 42, 133, 0.2);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 42, 133, 0.35);
+}
+
+/* Card 1: AJ1 Retro High OG 'Bred Toe' (Chicago Red & Neon Pink) */
+.sneaker-card.card-step-01,
+.sneaker-card:nth-child(8n+1) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #e52535 0%, #ff2a85 100%);
+  box-shadow: 0 4px 20px rgba(229, 37, 53, 0.18);
+}
+.sneaker-card.card-step-01:hover,
+.sneaker-card:nth-child(8n+1):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #e52535 0%, #ff2a85 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(229, 37, 53, 0.35);
+}
+
+/* Card 2: AF1 Shadow 'Pastel Pale Ivory' (Lilac Purple & Neon Pink) */
+.sneaker-card.card-step-02,
+.sneaker-card:nth-child(8n+2) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #9d4edd 0%, #ff2a85 100%);
+  box-shadow: 0 4px 20px rgba(157, 78, 221, 0.18);
+}
+.sneaker-card.card-step-02:hover,
+.sneaker-card:nth-child(8n+2):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #9d4edd 0%, #ff2a85 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(157, 78, 221, 0.35);
+}
+
+/* Card 3: AF1 React 'White University Red' (Electric Cyan & Lab Blue) */
+.sneaker-card.card-step-03,
+.sneaker-card:nth-child(8n+3) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #00f0ff 0%, #0077b6 100%);
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.18);
+}
+.sneaker-card.card-step-03:hover,
+.sneaker-card:nth-child(8n+3):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #00f0ff 0%, #0077b6 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(0, 240, 255, 0.35);
+}
+
+/* Card 4: AJ1 Mid SE 'Red / Black Toe' (Street Orange & Chicago Red) */
+.sneaker-card.card-step-04,
+.sneaker-card:nth-child(8n+4) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #ff7b00 0%, #e52535 100%);
+  box-shadow: 0 4px 20px rgba(255, 123, 0, 0.18);
+}
+.sneaker-card.card-step-04:hover,
+.sneaker-card:nth-child(8n+4):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #ff7b00 0%, #e52535 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 123, 0, 0.35);
+}
+
+/* Card 5: AM90 'Curry & University Blue' (Wheat Gold & Sky Blue) */
+.sneaker-card.card-step-05,
+.sneaker-card:nth-child(8n+5) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #ffb703 0%, #0077b6 100%);
+  box-shadow: 0 4px 20px rgba(255, 183, 3, 0.18);
+}
+.sneaker-card.card-step-05:hover,
+.sneaker-card:nth-child(8n+5):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #ffb703 0%, #0077b6 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 183, 3, 0.35);
+}
+
+/* Card 6: AF1 High '07 'White Sail' (Metallic Gold & Crisp Silver) */
+.sneaker-card.card-step-06,
+.sneaker-card:nth-child(8n+6) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #ffd166 0%, #00f0ff 100%);
+  box-shadow: 0 4px 20px rgba(255, 209, 102, 0.18);
+}
+.sneaker-card.card-step-06:hover,
+.sneaker-card:nth-child(8n+6):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #ffd166 0%, #00f0ff 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 209, 102, 0.35);
+}
+
+/* Card 7: Converse Chuck Taylor High 'Red' (Bold Crimson & Flame Orange) */
+.sneaker-card.card-step-07,
+.sneaker-card:nth-child(8n+7) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #e52535 0%, #ff7b00 100%);
+  box-shadow: 0 4px 20px rgba(229, 37, 53, 0.18);
+}
+.sneaker-card.card-step-07:hover,
+.sneaker-card:nth-child(8n+7):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #e52535 0%, #ff7b00 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(229, 37, 53, 0.35);
+}
+
+/* Card 8: Nike Free RN Flyknit 'University Red' (Vibrant Magenta & Violet) */
+.sneaker-card.card-step-08,
+.sneaker-card:nth-child(8n+8) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #ff2a85 0%, #9d4edd 100%);
+  box-shadow: 0 4px 20px rgba(255, 42, 133, 0.18);
+}
+.sneaker-card.card-step-08:hover,
+.sneaker-card:nth-child(8n+8):hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #ff2a85 0%, #9d4edd 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 42, 133, 0.35);
 }
 
 .card-top-badges {

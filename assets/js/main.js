@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filtered.forEach(p => {
       const card = document.createElement('div');
-      card.className = 'sneaker-card';
+      card.className = `sneaker-card card-${p.id}`;
       card.dataset.id = p.id;
 
       const isWishlisted = wishlist.has(p.id);
