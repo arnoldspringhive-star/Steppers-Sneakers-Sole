@@ -1852,31 +1852,108 @@ ul {
 
 .auth-step-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid transparent;
   border-radius: 16px;
   padding: 28px 24px;
   text-align: center;
   position: relative;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
   transition: all var(--transition-fast);
 }
 
-.auth-step-card:hover {
-  border-color: var(--border-pink);
+/* Stage 01: UV Purple to Magenta */
+.auth-step-card.stage-1 {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #9d4edd 0%, #ff2a85 100%);
+  box-shadow: 0 4px 20px rgba(157, 78, 221, 0.18);
+}
+.auth-step-card.stage-1:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #9d4edd 0%, #ff2a85 100%);
+  box-shadow: 0 8px 30px rgba(157, 78, 221, 0.35);
   transform: translateY(-5px);
-  background: var(--bg-card);
+}
+.auth-step-card.stage-1 .auth-step-num {
+  color: #c77dff;
+  background: rgba(157, 78, 221, 0.15);
+  border: 1px solid rgba(157, 78, 221, 0.4);
+}
+.auth-step-card.stage-1 .auth-icon-circle {
+  background: rgba(157, 78, 221, 0.12);
+  border: 1px solid rgba(157, 78, 221, 0.45);
+  box-shadow: 0 0 16px rgba(157, 78, 221, 0.2);
+}
+
+/* Stage 02: Golden Amber to Street Orange */
+.auth-step-card.stage-2 {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #ffb703 0%, #ff7b00 100%);
+  box-shadow: 0 4px 20px rgba(255, 183, 3, 0.18);
+}
+.auth-step-card.stage-2:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #ffb703 0%, #ff7b00 100%);
+  box-shadow: 0 8px 30px rgba(255, 183, 3, 0.35);
+  transform: translateY(-5px);
+}
+.auth-step-card.stage-2 .auth-step-num {
+  color: #ffb703;
+  background: rgba(255, 183, 3, 0.15);
+  border: 1px solid rgba(255, 183, 3, 0.4);
+}
+.auth-step-card.stage-2 .auth-icon-circle {
+  background: rgba(255, 183, 3, 0.12);
+  border: 1px solid rgba(255, 183, 3, 0.45);
+  box-shadow: 0 0 16px rgba(255, 183, 3, 0.2);
+}
+
+/* Stage 03: Electric Cyan to Lab Blue */
+.auth-step-card.stage-3 {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #00f0ff 0%, #0077b6 100%);
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.18);
+}
+.auth-step-card.stage-3:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #00f0ff 0%, #0077b6 100%);
+  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.35);
+  transform: translateY(-5px);
+}
+.auth-step-card.stage-3 .auth-step-num {
+  color: #00f0ff;
+  background: rgba(0, 240, 255, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+}
+.auth-step-card.stage-3 .auth-icon-circle {
+  background: rgba(0, 240, 255, 0.12);
+  border: 1px solid rgba(0, 240, 255, 0.45);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.2);
+}
+
+/* Stage 04: Chicago Red to Neon Pink */
+.auth-step-card.stage-4 {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #e52535 0%, #ff2a85 100%);
+  box-shadow: 0 4px 20px rgba(229, 37, 53, 0.18);
+}
+.auth-step-card.stage-4:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #e52535 0%, #ff2a85 100%);
+  box-shadow: 0 8px 30px rgba(229, 37, 53, 0.35);
+  transform: translateY(-5px);
+}
+.auth-step-card.stage-4 .auth-step-num {
+  color: #ff4d6d;
+  background: rgba(229, 37, 53, 0.15);
+  border: 1px solid rgba(229, 37, 53, 0.4);
+}
+.auth-step-card.stage-4 .auth-icon-circle {
+  background: rgba(229, 37, 53, 0.12);
+  border: 1px solid rgba(229, 37, 53, 0.45);
+  box-shadow: 0 0 16px rgba(229, 37, 53, 0.2);
 }
 
 .auth-step-num {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 800;
-  color: var(--accent-pink);
   margin-bottom: 14px;
   display: inline-block;
   padding: 4px 12px;
   border-radius: 999px;
-  background: rgba(255, 42, 133, 0.1);
-  border: 1px solid var(--border-pink);
 }
 
 .auth-icon-circle {
@@ -1884,20 +1961,15 @@ ul {
   height: 64px;
   border-radius: 50%;
   margin: 0 auto 18px;
-  background: rgba(157, 78, 221, 0.12);
-  border: 1px solid var(--border-purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-purple);
   font-size: 1.6rem;
+  transition: all var(--transition-fast);
 }
 
 .auth-step-card:hover .auth-icon-circle {
-  background: rgba(255, 42, 133, 0.2);
-  border-color: var(--accent-pink);
-  color: var(--accent-pink);
-  box-shadow: 0 0 20px var(--accent-pink-glow);
+  transform: scale(1.08);
 }
 
 .auth-step-title {
