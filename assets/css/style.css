@@ -935,16 +935,56 @@ ul {
 
 .pillar-item {
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid transparent;
   border-radius: 12px;
   padding: 20px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
   transition: all var(--transition-fast);
 }
 
-.pillar-item:hover {
-  border-color: var(--border-purple);
-  transform: translateY(-3px);
-  background: var(--bg-card);
+.pillar-item.pillar-pink {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #ff2a85 0%, #9d4edd 100%);
+  box-shadow: 0 4px 20px rgba(255, 42, 133, 0.15);
+}
+
+.pillar-item.pillar-pink:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #ff2a85 0%, #c77dff 100%);
+  box-shadow: 0 8px 28px rgba(255, 42, 133, 0.35);
+  transform: translateY(-4px);
+}
+
+.pillar-item.pillar-red {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #e52535 0%, #ff6b6b 100%);
+  box-shadow: 0 4px 20px rgba(229, 37, 53, 0.15);
+}
+
+.pillar-item.pillar-red:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #e52535 0%, #ff5252 100%);
+  box-shadow: 0 8px 28px rgba(229, 37, 53, 0.35);
+  transform: translateY(-4px);
+}
+
+.pillar-item.pillar-dog {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #ff7b00 0%, #ffc300 100%);
+  box-shadow: 0 4px 20px rgba(255, 123, 0, 0.15);
+}
+
+.pillar-item.pillar-dog:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #ff7b00 0%, #ffd166 100%);
+  box-shadow: 0 8px 28px rgba(255, 123, 0, 0.35);
+  transform: translateY(-4px);
+}
+
+.pillar-item.pillar-cyan {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), linear-gradient(135deg, #00f0ff 0%, #0077b6 100%);
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);
+}
+
+.pillar-item.pillar-cyan:hover {
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, #00f0ff 0%, #48cae4 100%);
+  box-shadow: 0 8px 28px rgba(0, 240, 255, 0.35);
+  transform: translateY(-4px);
 }
 
 .pillar-icon-box {
