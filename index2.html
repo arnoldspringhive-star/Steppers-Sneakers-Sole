@@ -791,52 +791,155 @@
     </section>
 
     <!-- ==========================================================================
-         9. OUR SHOES DURING TESTING (SHOES-DURING-TESTING SECTION)
+         9. OUR SHOES DURING TESTING (STEPPERS ZERO-COUNTERFEIT PROTOCOL COCKPIT)
          ========================================================================== -->
     <section class="shoes-during-testing" id="testing-section">
       <div class="container">
 
-        <div class="section-title-wrap" style="text-align:center; align-items:center; max-width:760px; margin:0 auto;">
+        <div class="section-title-wrap" style="text-align:center; align-items:center; max-width:760px; margin:0 auto 30px;">
           <span class="section-eyebrow">// STEPPERS ZERO-COUNTERFEIT PROTOCOL</span>
           <h2 class="section-main-heading">OUR SHOES DURING <span>TESTING</span></h2>
-          <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.6; margin-top:10px;">
-            Every single pair admitted into the Steppers Vault undergoes our mandatory 4-phase spectroscopic and
-            biometric inspection before it can ever be added to cart.
+          <p style="font-size:16px; color:var(--text-secondary); line-height:1.6; margin-top:10px;">
+            Every single pair admitted into the Steppers Vault undergoes our mandatory 4-phase spectroscopic,
+            ultrasonic, and cryptographic inspection before it can ever be added to cart.
           </p>
         </div>
 
-        <div class="testing-cards-grid">
+        <!-- Cleanroom Live Telemetry Bar -->
+        <div class="testing-telemetry-strip">
+          <div class="telemetry-col">
+            <div class="telemetry-num" style="color:var(--accent-cyan);">99.98%</div>
+            <div class="telemetry-txt">SPECTROSCOPIC<br>AUDIT ACCURACY</div>
+          </div>
+          <div class="telemetry-col">
+            <div class="telemetry-num" style="color:var(--accent-pink);">12,480+</div>
+            <div class="telemetry-txt">PAIRS VERIFIED<br>&amp; RFID SEALED</div>
+          </div>
+          <div class="telemetry-col">
+            <div class="telemetry-num" style="color:#10b981;">0.00%</div>
+            <div class="telemetry-txt">COUNTERFEIT<br>TOLERANCE</div>
+          </div>
+          <div class="telemetry-col">
+            <div class="telemetry-num" style="color:#a855f7;">DUAL-NFC</div>
+            <div class="telemetry-txt">IMMUTABLE<br>LEDGER TAG</div>
+          </div>
+        </div>
 
-          <div class="testing-feature-card">
-            <div class="testing-icon-box">🔬</div>
-            <span class="testing-card-step">PHASE 01 // SPECTROSCOPY</span>
-            <h3 class="testing-card-title">UV Glue &amp; Stitch Audit</h3>
-            <p class="testing-card-desc">High-intensity 365nm ultraviolet examination verifies factory stitch counts,
-              thread luminescence, and midsole adhesive lines.</p>
+        <!-- Testing Cockpit Master Grid -->
+        <div class="testing-cockpit-grid">
+
+          <!-- Left: Specimen Diagnostic Chamber -->
+          <div class="specimen-chamber-card">
+            <div class="chamber-header-hud">
+              <div class="chamber-live-badge">
+                <div class="chamber-pulse-dot"></div>
+                <span>ATELIER CLEANROOM BAY 04 // ACTIVE</span>
+              </div>
+              <span class="chamber-spec-label">// OPTICAL SCAN HUD</span>
+            </div>
+
+            <div class="chamber-monitor-frame">
+              <div class="corner-bracket bracket-tl"></div>
+              <div class="corner-bracket bracket-tr"></div>
+              <div class="corner-bracket bracket-bl"></div>
+              <div class="corner-bracket bracket-br"></div>
+              <div class="chamber-laser-line"></div>
+
+              <img src="assets/images/af1-high-profile.jpg" alt="Sneaker Specimen Under Test" class="chamber-monitor-img">
+
+              <!-- Reticle Callouts -->
+              <div class="chamber-hud-pin pin-collar active-pin" data-pin="1">[365NM UV GLUE AUDIT: PASS]</div>
+              <div class="chamber-hud-pin pin-vamp" data-pin="2">[1.42MM FULL-GRAIN NAPPA]</div>
+              <div class="chamber-hud-pin pin-sole" data-pin="3">[18.2 PSI AIR-SOLE CURVE]</div>
+              <div class="chamber-hud-pin pin-tag" data-pin="4">[NFC TAG: #STP-8841-VAULT]</div>
+            </div>
+
+            <div class="chamber-footer-telemetry">
+              <span>SPECIMEN: NIKE AIR FORCE 1 'WHITE SAIL'</span>
+              <span>SPECTROMETRY: 365NM OEM</span>
+              <span id="chamber-telemetry-verdict" style="color:#10b981; font-weight:700;">VERDICT: 100% DEADSTOCK GENUINE</span>
+            </div>
           </div>
 
-          <div class="testing-feature-card">
-            <div class="testing-icon-box">📐</div>
-            <span class="testing-card-step">PHASE 02 // TENSILE STRENGTH</span>
-            <h3 class="testing-card-title">Leather Gauge &amp; Grain</h3>
-            <p class="testing-card-desc">Digital micrometer grain verification ensures authentic tumbled Nappa cowhide
-              density, eliminating synthetic counterfeit PU leathers.</p>
-          </div>
+          <!-- Right: 4-Phase Protocol Cards -->
+          <div class="phases-protocol-column">
 
-          <div class="testing-feature-card">
-            <div class="testing-icon-box">💨</div>
-            <span class="testing-card-step">PHASE 03 // HYDRO-PNEUMATIC</span>
-            <h3 class="testing-card-title">Air-Sole Pressure Test</h3>
-            <p class="testing-card-desc">Acoustic wave chamber measures the bounce compression profile of encapsulated
-              inert gas bladders to match OEM factory curves.</p>
-          </div>
+            <!-- Phase 1 -->
+            <div class="phase-protocol-card card-theme-uv active" data-phase="1">
+              <div class="protocol-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <div class="protocol-content-body">
+                <div class="protocol-eyebrow-row">
+                  <span class="protocol-step-tag">// PHASE 01 // SPECTROSCOPY</span>
+                  <span class="protocol-metric-badge">365NM UV PASS</span>
+                </div>
+                <h3 class="protocol-heading">UV Glue &amp; <span>Stitch Audit</span></h3>
+                <p class="protocol-desc">High-intensity 365nm ultraviolet examination verifies factory stitch counts, thread luminescence, and midsole adhesive lines.</p>
+              </div>
+            </div>
 
-          <div class="testing-feature-card">
-            <div class="testing-icon-box">🏷️</div>
-            <span class="testing-card-step">PHASE 04 // CRYPTOGRAPHY</span>
-            <h3 class="testing-card-title">Encrypted RFID Vault Tag</h3>
-            <p class="testing-card-desc">A tamper-evident Steppers smart tag with dual-frequency NFC is attached to the
-              eyelet, linking each pair to an immutable ledger.</p>
+            <!-- Phase 2 -->
+            <div class="phase-protocol-card card-theme-amber" data-phase="2">
+              <div class="protocol-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16v4H4zM4 16h16v4H4z"/>
+                  <path d="M8 8v8M12 8v8M16 8v8"/>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="protocol-content-body">
+                <div class="protocol-eyebrow-row">
+                  <span class="protocol-step-tag">// PHASE 02 // TENSILE STRENGTH</span>
+                  <span class="protocol-metric-badge">&plusmn;0.02MM PRECISION</span>
+                </div>
+                <h3 class="protocol-heading">Leather Gauge &amp; <span>Grain</span></h3>
+                <p class="protocol-desc">Digital micrometer grain verification ensures authentic tumbled Nappa cowhide density, eliminating synthetic counterfeit PU leathers.</p>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-protocol-card card-theme-cyan" data-phase="3">
+              <div class="protocol-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12c3-4 6-6 9 0s6 4 9 0"/>
+                  <path d="M3 17c3-4 6-6 9 0s6 4 9 0" opacity="0.4"/>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="protocol-content-body">
+                <div class="protocol-eyebrow-row">
+                  <span class="protocol-step-tag">// PHASE 03 // HYDRO-PNEUMATIC</span>
+                  <span class="protocol-metric-badge">18.2 PSI DYNAMICS</span>
+                </div>
+                <h3 class="protocol-heading">Air-Sole <span>Pressure Test</span></h3>
+                <p class="protocol-desc">Acoustic wave chamber measures the bounce compression profile of encapsulated inert gas bladders to match OEM factory curves.</p>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase-protocol-card card-theme-emerald" data-phase="4">
+              <div class="protocol-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l7 4v6c0 5-3.5 9.5-7 10-3.5-.5-7-5-7-10V6l7-4z"/>
+                  <circle cx="12" cy="11" r="3" stroke-dasharray="2 2"/>
+                  <path d="M10 11l1.5 1.5L14 10"/>
+                </svg>
+              </div>
+              <div class="protocol-content-body">
+                <div class="protocol-eyebrow-row">
+                  <span class="protocol-step-tag">// PHASE 04 // CRYPTOGRAPHY</span>
+                  <span class="protocol-metric-badge">AES-256 RFID</span>
+                </div>
+                <h3 class="protocol-heading">Encrypted <span>RFID Vault Tag</span></h3>
+                <p class="protocol-desc">A tamper-evident Steppers smart tag with dual-frequency NFC is attached to the eyelet, linking each pair to an immutable ledger.</p>
+              </div>
+            </div>
+
           </div>
 
         </div>

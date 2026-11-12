@@ -1059,6 +1059,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  // ==========================================================================
+  // 12. TESTING COCKPIT PROTOCOL INTERACTIVE SWITCHER
+  // ==========================================================================
+  const protocolCards = document.querySelectorAll('.phase-protocol-card');
+  const hudPins = document.querySelectorAll('.chamber-hud-pin');
+  const telemetryVerdict = document.getElementById('chamber-telemetry-verdict');
+
+  if (protocolCards.length > 0) {
+    const phaseVerdicts = {
+      '1': { text: 'PHASE 01: 365NM UV GLUE SCAN VERIFIED', color: '#c084fc' },
+      '2': { text: 'PHASE 02: 1.42MM NAPPA DENSITY CALIBRATED', color: '#fbbf24' },
+      '3': { text: 'PHASE 03: 18.2 PSI AIR-SOLE DYNAMICS OEM', color: '#22d3ee' },
+      '4': { text: 'PHASE 04: DUAL-BAND NFC CRYPTO SEAL LINKED', color: '#34d399' }
+    };
+
+    protocolCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        protocolCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        const phase = card.dataset.phase;
+
+        hudPins.forEach(pin => {
+          if (pin.dataset.pin === phase) {
+            pin.classList.add('active-pin');
+          } else {
+            pin.classList.remove('active-pin');
+          }
+        });
+
+        if (telemetryVerdict && phaseVerdicts[phase]) {
+          telemetryVerdict.textContent = phaseVerdicts[phase].text;
+          telemetryVerdict.style.color = phaseVerdicts[phase].color;
+        }
+      });
+    });
+  }
+
   // Initial cart UI
   updateCartUI();
 });

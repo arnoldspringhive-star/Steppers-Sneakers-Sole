@@ -2441,7 +2441,7 @@ button {
 }
 
 /* ==========================================================================
-   8. "OUR SHOES DURING TESTING" (SHOES-DURING-TESTING)
+   8. "OUR SHOES DURING TESTING" (STEPPERS ZERO-COUNTERFEIT PROTOCOL COCKPIT)
    ========================================================================== */
 .shoes-during-testing {
   position: relative;
@@ -2450,62 +2450,373 @@ button {
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.testing-cards-grid {
+/* 1. Cleanroom Live Telemetry Bar */
+.testing-telemetry-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.testing-feature-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  gap: 20px;
+  background: rgba(14, 14, 22, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  padding: 30px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: all var(--trans);
+  padding: 18px 28px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.testing-feature-card:hover {
-  border-color: var(--border-cyan);
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px var(--accent-cyan-glow);
-}
-
-.testing-icon-box {
-  width: 54px;
-  height: 54px;
-  border-radius: var(--radius-md);
-  background: rgba(0, 240, 255, 0.12);
-  border: 1px solid var(--border-cyan);
-  color: var(--accent-cyan);
+.telemetry-col {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
+  gap: 14px;
 }
 
-.testing-card-step {
+.telemetry-col:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.telemetry-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+.telemetry-txt {
   font-family: var(--font-tech);
-  font-size: 0.72rem;
-  color: var(--accent-pink);
-  font-weight: 700;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
   letter-spacing: 0.1em;
-}
-
-.testing-card-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
   line-height: 1.3;
 }
 
-.testing-card-desc {
+/* 2. Main Cockpit Master Grid */
+.testing-cockpit-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Left Specimen Chamber */
+.specimen-chamber-card {
+  position: relative;
+  background: #0b0b12;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 240, 255, 0.12);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.specimen-chamber-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.8), rgba(0, 240, 255, 0.1) 40%, rgba(255, 42, 133, 0.1) 60%, rgba(255, 42, 133, 0.8));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.chamber-header-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 5;
+}
+
+.chamber-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-tech);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.12);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  letter-spacing: 0.1em;
+}
+
+.chamber-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+  animation: chamberPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes chamberPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.75); }
+}
+
+.chamber-spec-label {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: var(--accent-pink);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+/* Optical Laboratory Feed Monitor */
+.chamber-monitor-frame {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000000;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chamber-monitor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Corner Reticle Brackets */
+.corner-bracket {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #00f0ff;
+  border-style: solid;
+  pointer-events: none;
+  z-index: 6;
+}
+.bracket-tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.bracket-tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.bracket-bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.bracket-br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+/* Scanning Laser Line */
+.chamber-laser-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent 0%, #00f0ff 20%, #ffffff 50%, #00f0ff 80%, transparent 100%);
+  box-shadow: 0 0 16px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.6);
+  z-index: 5;
+  animation: sweepLaser 3s ease-in-out infinite alternate;
+}
+
+@keyframes sweepLaser {
+  0% { top: 10%; opacity: 0.4; }
+  100% { top: 90%; opacity: 1; }
+}
+
+/* Reticle Callout Pins */
+.chamber-hud-pin {
+  position: absolute;
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(5, 5, 8, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 7;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.pin-collar { top: 15%; right: 8%; border-color: rgba(168, 85, 247, 0.6); color: #c084fc; }
+.pin-vamp { top: 48%; left: 8%; border-color: rgba(251, 191, 36, 0.6); color: #fbbf24; }
+.pin-sole { bottom: 14%; right: 14%; border-color: rgba(0, 240, 255, 0.6); color: #22d3ee; }
+.pin-tag { bottom: 24%; left: 12%; border-color: rgba(16, 185, 129, 0.6); color: #34d399; }
+
+.chamber-hud-pin.active-pin {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px currentColor;
+  border-color: currentColor;
+}
+
+.chamber-footer-telemetry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-top: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Right Protocol Phases Column */
+.phases-protocol-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.phase-protocol-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.phase-protocol-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.phase-protocol-card:hover,
+.phase-protocol-card.active {
+  transform: translateX(8px);
+  background: #171724;
+}
+
+.phase-protocol-card:hover::before,
+.phase-protocol-card.active::before {
+  opacity: 1;
+}
+
+/* Phase Theme 1: UV Violet */
+.card-theme-uv::before { background: linear-gradient(135deg, #a855f7, transparent 60%, #a855f7); }
+.card-theme-uv:hover, .card-theme-uv.active {
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(168, 85, 247, 0.25);
+}
+.card-theme-uv .protocol-icon-wrap { background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.4); color: #c084fc; }
+.card-theme-uv .protocol-step-tag { color: #c084fc; }
+.card-theme-uv .protocol-heading span { color: #c084fc; }
+
+/* Phase Theme 2: Caliper Amber */
+.card-theme-amber::before { background: linear-gradient(135deg, #f59e0b, transparent 60%, #f59e0b); }
+.card-theme-amber:hover, .card-theme-amber.active {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.25);
+}
+.card-theme-amber .protocol-icon-wrap { background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24; }
+.card-theme-amber .protocol-step-tag { color: #fbbf24; }
+.card-theme-amber .protocol-heading span { color: #fbbf24; }
+
+/* Phase Theme 3: Pneumatic Cyan */
+.card-theme-cyan::before { background: linear-gradient(135deg, #00f0ff, transparent 60%, #00f0ff); }
+.card-theme-cyan:hover, .card-theme-cyan.active {
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 240, 255, 0.25);
+}
+.card-theme-cyan .protocol-icon-wrap { background: rgba(0, 240, 255, 0.12); border-color: rgba(0, 240, 255, 0.4); color: #22d3ee; }
+.card-theme-cyan .protocol-step-tag { color: #22d3ee; }
+.card-theme-cyan .protocol-heading span { color: #22d3ee; }
+
+/* Phase Theme 4: Crypto Emerald */
+.card-theme-emerald::before { background: linear-gradient(135deg, #10b981, transparent 60%, #10b981); }
+.card-theme-emerald:hover, .card-theme-emerald.active {
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(16, 185, 129, 0.25);
+}
+.card-theme-emerald .protocol-icon-wrap { background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.4); color: #34d399; }
+.card-theme-emerald .protocol-step-tag { color: #34d399; }
+.card-theme-emerald .protocol-heading span { color: #34d399; }
+
+.protocol-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.protocol-icon-wrap svg {
+  width: 24px;
+  height: 24px;
+}
+
+.phase-protocol-card:hover .protocol-icon-wrap {
+  transform: scale(1.1);
+}
+
+.protocol-content-body {
+  flex-grow: 1;
+}
+
+.protocol-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.protocol-step-tag {
+  font-family: var(--font-tech);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.protocol-metric-badge {
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.protocol-heading {
+  font-family: var(--font-tech);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.protocol-desc {
   font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.5;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -3042,8 +3353,15 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .testing-cards-grid {
+  .testing-cockpit-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .phases-protocol-column {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .category-tiles-grid {
@@ -3083,6 +3401,24 @@ button {
 }
 
 @media (max-width: 640px) {
+  .testing-telemetry-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 16px 18px;
+  }
+
+  .telemetry-col:not(:last-child) {
+    border-right: none;
+  }
+
+  .phases-protocol-column {
+    grid-template-columns: 1fr;
+  }
+
+  .chamber-monitor-frame {
+    height: 250px;
+  }
+
   .category-tiles-grid {
     grid-template-columns: 1fr;
   }
