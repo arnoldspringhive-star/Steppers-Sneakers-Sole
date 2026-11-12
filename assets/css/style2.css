@@ -1630,11 +1630,18 @@ button {
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 16px;
+  padding: 8px 0 20px;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
 }
 
 .bestseller-slider-row::-webkit-scrollbar {
   height: 6px;
+}
+
+.bestseller-slider-row::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
 }
 
 .bestseller-slider-row::-webkit-scrollbar-thumb {
@@ -1645,6 +1652,12 @@ button {
 .bestseller-card {
   min-width: 310px;
   flex: 0 0 310px;
+  user-select: none;
+}
+
+.bestseller-card img {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* ==========================================================================

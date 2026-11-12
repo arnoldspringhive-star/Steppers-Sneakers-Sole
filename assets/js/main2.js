@@ -546,18 +546,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 4. BESTSELLERS SLIDER
+  // 4. BESTSELLERS SLIDER (UNLIMITED INFINITE CAROUSEL WITH AUTOPLAY)
   // ==========================================================================
   const bestsellerSlider = document.getElementById('bestseller-slider');
   const btnBestsellerPrev = document.getElementById('btn-bestseller-prev');
   const btnBestsellerNext = document.getElementById('btn-bestseller-next');
 
-  if (bestsellerSlider) {
-    bestsellerSlider.innerHTML = catalog.map(item => `
-      <div class="product-item-card bestseller-card" data-id="${item.id}">
+  if (bestsellerSlider && typeof catalog !== 'undefined' && catalog.length > 0) {
+    // 1. Triple the catalog items to create infinite looping buffers (pre, active, post)
+    const renderCard = (item, idx) => `
+      <div class="product-item-card bestseller-card" data-id="${item.id}" data-index="${idx}">
         <span class="card-badge-tag">${item.badge}</span>
         <div class="card-img-wrap">
-          <img src="${item.image}" alt="${item.name}">
+          <img src="${item.image}" alt="${item.name}" draggable="false" loading="lazy">
         </div>
         <div class="stars-rating-wrap" style="margin-bottom:8px;">★★★★★ <span>(${item.reviewsCount})</span></div>
         <h3 class="card-product-title">${item.name}</h3>
@@ -566,26 +567,168 @@ document.addEventListener('DOMContentLoaded', () => {
           <button class="btn-card-add-cart btn-bestseller-add" data-id="${item.id}">Add to Cart</button>
         </div>
       </div>
-    `).join('');
+    `;
 
-    bestsellerSlider.querySelectorAll('.btn-bestseller-add').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.dataset.id;
-        const prod = catalog.find(p => p.id === id);
-        if (prod) addToCart(prod, 'US 10');
+    // Clone 3 full sets for seamless infinite wrapping
+    const tripleList = [...catalog, ...catalog, ...catalog];
+    bestsellerSlider.innerHTML = tripleList.map((item, idx) => renderCard(item, idx)).join('');
+
+    let singleSetWidth = 0;
+
+    function getStepDistance() {
+      const firstCard = bestsellerSlider.querySelector('.bestseller-card');
+      if (!firstCard) return 334;
+      const gap = parseFloat(window.getComputedStyle(bestsellerSlider).gap) || 24;
+      return firstCard.offsetWidth + gap;
+    }
+
+    function calculateDimensions() {
+      const step = getStepDistance();
+      singleSetWidth = catalog.length * step;
+    }
+
+    // Set initial scroll position to the start of the middle set
+    function initScrollPosition() {
+      calculateDimensions();
+      if (singleSetWidth > 0) {
+        bestsellerSlider.style.scrollBehavior = 'auto';
+        bestsellerSlider.scrollLeft = singleSetWidth;
+        bestsellerSlider.style.scrollBehavior = 'smooth';
+      }
+    }
+
+    // Initialize position after DOM paint
+    setTimeout(initScrollPosition, 60);
+    window.addEventListener('resize', calculateDimensions);
+
+    // Infinite Seamless Looping Guard on scroll
+    let isResetting = false;
+    bestsellerSlider.addEventListener('scroll', () => {
+      if (isResetting || singleSetWidth <= 0) return;
+
+      // When reaching near the end of set 3, seamlessly jump back to set 2
+      if (bestsellerSlider.scrollLeft >= singleSetWidth * 2 - 10) {
+        isResetting = true;
+        bestsellerSlider.style.scrollBehavior = 'auto';
+        bestsellerSlider.scrollLeft -= singleSetWidth;
+        void bestsellerSlider.offsetWidth;
+        bestsellerSlider.style.scrollBehavior = 'smooth';
+        isResetting = false;
+      }
+      // When reaching near the start of set 1, seamlessly jump forward to set 2
+      else if (bestsellerSlider.scrollLeft <= 10) {
+        isResetting = true;
+        bestsellerSlider.style.scrollBehavior = 'auto';
+        bestsellerSlider.scrollLeft += singleSetWidth;
+        void bestsellerSlider.offsetWidth;
+        bestsellerSlider.style.scrollBehavior = 'smooth';
+        isResetting = false;
+      }
+    }, { passive: true });
+
+    // Step Next (Infinite)
+    function slideNext() {
+      if (singleSetWidth <= 0) calculateDimensions();
+      const step = getStepDistance();
+      if (bestsellerSlider.scrollLeft >= singleSetWidth * 2 - step * 2) {
+        bestsellerSlider.style.scrollBehavior = 'auto';
+        bestsellerSlider.scrollLeft -= singleSetWidth;
+        void bestsellerSlider.offsetWidth;
+      }
+      bestsellerSlider.style.scrollBehavior = 'smooth';
+      bestsellerSlider.scrollBy({ left: step, behavior: 'smooth' });
+    }
+
+    // Step Prev (Infinite)
+    function slidePrev() {
+      if (singleSetWidth <= 0) calculateDimensions();
+      const step = getStepDistance();
+      if (bestsellerSlider.scrollLeft <= singleSetWidth * 0.5) {
+        bestsellerSlider.style.scrollBehavior = 'auto';
+        bestsellerSlider.scrollLeft += singleSetWidth;
+        void bestsellerSlider.offsetWidth;
+      }
+      bestsellerSlider.style.scrollBehavior = 'smooth';
+      bestsellerSlider.scrollBy({ left: -step, behavior: 'smooth' });
+    }
+
+    // ========================================================================
+    // AUTOPLAY CONTROLLER
+    // ========================================================================
+    let autoplayTimer = null;
+    const AUTOPLAY_INTERVAL = 3200; // Slide every 3.2 seconds
+    let isHovered = false;
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => {
+        if (!isHovered && document.visibilityState !== 'hidden') {
+          slideNext();
+        }
+      }, AUTOPLAY_INTERVAL);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    // Start autoplay
+    startAutoplay();
+
+    // Pause on Hover & Touch interactions so user can inspect items or click add to cart
+    bestsellerSlider.addEventListener('mouseenter', () => { isHovered = true; });
+    bestsellerSlider.addEventListener('mouseleave', () => { isHovered = false; });
+    bestsellerSlider.addEventListener('touchstart', () => { isHovered = true; }, { passive: true });
+    bestsellerSlider.addEventListener('touchend', () => {
+      setTimeout(() => { isHovered = false; }, 1500);
+    }, { passive: true });
+
+    // Connect Arrow Buttons with Autoplay Reset
+    if (btnBestsellerNext) {
+      btnBestsellerNext.addEventListener('click', () => {
+        restartAutoplay();
+        slideNext();
       });
-    });
-  }
+      btnBestsellerNext.addEventListener('mouseenter', () => { isHovered = true; });
+      btnBestsellerNext.addEventListener('mouseleave', () => { isHovered = false; });
+    }
 
-  if (btnBestsellerPrev && bestsellerSlider) {
-    btnBestsellerPrev.addEventListener('click', () => {
-      bestsellerSlider.scrollBy({ left: -340, behavior: 'smooth' });
-    });
-  }
+    if (btnBestsellerPrev) {
+      btnBestsellerPrev.addEventListener('click', () => {
+        restartAutoplay();
+        slidePrev();
+      });
+      btnBestsellerPrev.addEventListener('mouseenter', () => { isHovered = true; });
+      btnBestsellerPrev.addEventListener('mouseleave', () => { isHovered = false; });
+    }
 
-  if (btnBestsellerNext && bestsellerSlider) {
-    btnBestsellerNext.addEventListener('click', () => {
-      bestsellerSlider.scrollBy({ left: 340, behavior: 'smooth' });
+    // Handle Background Tab Visibility
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    // Delegated Add to Cart for all items (original + infinite clones)
+    bestsellerSlider.addEventListener('click', (e) => {
+      const addBtn = e.target.closest('.btn-bestseller-add');
+      if (addBtn) {
+        const id = addBtn.dataset.id;
+        const prod = catalog.find(p => p.id === id);
+        if (prod) {
+          addToCart(prod, 'US 10');
+        }
+      }
     });
   }
 
