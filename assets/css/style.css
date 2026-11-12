@@ -2150,7 +2150,7 @@ ul {
 
 .footer-link {
   color: var(--text-secondary);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   transition: color var(--transition-fast);
 }
@@ -2166,7 +2166,7 @@ ul {
   justify-content: space-between;
   padding-top: 30px;
   border-top: 1px solid var(--border-subtle);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--text-muted);
   flex-wrap: wrap;
