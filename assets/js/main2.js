@@ -935,7 +935,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnSpotlightQuickview = document.getElementById('btn-spotlight-quickview');
   if (btnSpotlightQuickview) {
     btnSpotlightQuickview.addEventListener('click', () => {
-      const prod = catalog.find(p => p.id === 'step-04');
+      const prodId = btnSpotlightQuickview.getAttribute('data-id') || 'step-06';
+      const prod = catalog.find(p => p.id === prodId);
       if (prod) openQuickView(prod);
     });
   }
@@ -943,7 +944,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnTwoColBuy2 = document.getElementById('btn-twocol-buy-2');
   if (btnTwoColBuy2) {
     btnTwoColBuy2.addEventListener('click', () => {
-      const prod = catalog.find(p => p.id === 'step-04');
+      const prod = catalog.find(p => p.id === 'step-06');
       if (prod) addToCart(prod, selectedSpotlightSize);
     });
   }
