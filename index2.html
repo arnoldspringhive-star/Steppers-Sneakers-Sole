@@ -504,53 +504,168 @@
     </section>
 
     <!-- ==========================================================================
-         7. TWO-COLUMN FEATURE BLOCK 02 (REVERSE LAYOUT — SHIBUYA STREETWEAR)
+         7. TWO-COLUMN FEATURE BLOCK 02 (SHIBUYA EDITORIAL RUNWAY SPOTLIGHT)
          ========================================================================== -->
-    <section class="shoe-two-column-layout">
-      <div class="container two-col-grid reverse">
+    <section class="shoe-two-column-layout" id="editorial-spotlight">
+      <div class="container">
+        
+        <div class="editorial-spotlight-card">
+          <div class="two-col-grid reverse">
 
-        <!-- Left Shibuya Street Visual -->
-        <div class="two-col-media-wrap">
-          <img src="assets/images/lookbook-street.jpg" alt="Tokyo Shibuya Lookbook Street Runway" class="two-col-photo">
-        </div>
+            <!-- Left Visual Showcase Stage (Multi-Angle Gallery + Floating Spec HUD) -->
+            <div class="two-col-media-wrap">
+              <div class="spotlight-photo-frame">
+                <img id="spotlight-main-img" src="assets/images/sneaker-dunk.jpg" alt="Air Jordan 1 Mid SE 'Red / Black Toe'" class="two-col-photo">
+                
+                <!-- Floating HUD Badges -->
+                <div class="spotlight-hud-badge top-left">
+                  <span class="hud-dot-live"></span>
+                  <span>ATELIER SPECIMEN #04 // VERIFIED RFID</span>
+                </div>
+                <div class="spotlight-hud-badge top-right">
+                  <span>DEADSTOCK GRAIL</span>
+                </div>
+                <div class="spotlight-hud-badge bottom-left">
+                  <span style="color:var(--accent-cyan);">COLORWAY:</span> GYM RED / BLACK / WHITE
+                </div>
+              </div>
 
-        <!-- Right Editorial Column -->
-        <div class="two-col-info">
-          <span class="two-col-badge">// SHIBUYA MID RUNWAY</span>
-          <h2 class="two-col-title">Air Jordan 1 Mid SE 'Red / Black Toe'</h2>
-          <p style="font-size:16px; color:var(--text-secondary); line-height:1.6;">
-            A high-energy Tokyo street rendition of the legendary Chicago palette. Constructed with smooth matte red
-            leather collar overlays, jet-black nubuck forefoot guards, and a clean white leather midfoot foundation.
-          </p>
+              <!-- Interactive Angle & Lookbook Thumbnails Switcher -->
+              <div class="spotlight-thumbs-row">
+                <button type="button" class="spotlight-thumb-btn active" data-src="assets/images/sneaker-dunk.jpg" aria-label="Studio Angle">
+                  <img src="assets/images/sneaker-dunk.jpg" alt="Studio Specimen">
+                  <div class="spotlight-thumb-info">
+                    <span class="spotlight-thumb-label">STUDIO SPEC</span>
+                    <span class="spotlight-thumb-sub">Split Backdrop</span>
+                  </div>
+                </button>
+                <button type="button" class="spotlight-thumb-btn" data-src="assets/images/lookbook-street.jpg" aria-label="Shibuya Street Runway">
+                  <img src="assets/images/lookbook-street.jpg" alt="Street Runway">
+                  <div class="spotlight-thumb-info">
+                    <span class="spotlight-thumb-label">ON RUNWAY</span>
+                    <span class="spotlight-thumb-sub">Tokyo Shibuya</span>
+                  </div>
+                </button>
+                <button type="button" class="spotlight-thumb-btn" data-src="assets/images/shoe-4.png" aria-label="Profile Specimen">
+                  <img src="assets/images/shoe-4.png" alt="Profile Cutout">
+                  <div class="spotlight-thumb-info">
+                    <span class="spotlight-thumb-label">PROFILE</span>
+                    <span class="spotlight-thumb-sub">Lateral Anvil</span>
+                  </div>
+                </button>
+              </div>
+            </div>
 
-          <ul
-            style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--text-primary); margin:10px 0;">
-            <li style="display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--accent-pink); font-weight:700;">✓</span> Mid-cut silhouette offers optimal ankle
-              support and streetwear flexibility
-            </li>
-            <li style="display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--accent-pink); font-weight:700;">✓</span> Classic Wings logo stamped in crisp
-              tonal black on lateral collar
-            </li>
-            <li style="display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--accent-pink); font-weight:700;">✓</span> Solid rubber cupsole with deep flex
-              grooves
-            </li>
-          </ul>
+            <!-- Right Editorial Content Column -->
+            <div class="two-col-info">
+              
+              <!-- Eyebrow & Badges Row -->
+              <div class="spotlight-eyebrow-row">
+                <span class="two-col-badge">// SHIBUYA MID RUNWAY</span>
+                <span class="spotlight-release-chip">FALL 2020 RELEASE</span>
+                <span class="spotlight-rating-chip">★ 4.9 <span>(114 collector reviews)</span></span>
+              </div>
 
-          <div style="display:flex; gap:16px; align-items:center; margin-top:16px; flex-wrap:wrap;">
-            <button id="btn-twocol-buy-2" class="btn-steps-add-cart">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-              <span>SECURE RED / BLACK TOE • $165</span>
-            </button>
-            <span
-              style="font-family:var(--font-tech); font-size:0.8rem; color:var(--accent-cyan); font-weight:700;">LIMIT 1
-              PAIR PER COLLECTOR</span>
+              <!-- Main Title with Gradient Emphasis -->
+              <h2 class="two-col-title">
+                AIR JORDAN 1 MID SE <span class="gradient-text">'RED / BLACK TOE'</span>
+              </h2>
+
+              <!-- 16px Description -->
+              <p class="spotlight-desc">
+                A high-energy Tokyo street rendition of the legendary Chicago palette. Constructed with smooth matte red leather collar overlays, jet-black nubuck forefoot guards, and a clean white leather midfoot foundation.
+              </p>
+
+              <!-- Technical Specification Matrix (2x2 Grid) -->
+              <div class="spotlight-specs-grid">
+                <div class="spotlight-spec-item">
+                  <div class="spec-icon-chip">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="spec-text-wrap">
+                    <div class="spec-label">COLLAR PROFILE</div>
+                    <div class="spec-val">Mid-Cut Ankle Support</div>
+                  </div>
+                </div>
+
+                <div class="spotlight-spec-item">
+                  <div class="spec-icon-chip">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="spec-text-wrap">
+                    <div class="spec-label">HERITAGE EMBLEM</div>
+                    <div class="spec-val">Tonal Black Wings Logo</div>
+                  </div>
+                </div>
+
+                <div class="spotlight-spec-item">
+                  <div class="spec-icon-chip">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="spec-text-wrap">
+                    <div class="spec-label">OUTSOLE TRACTION</div>
+                    <div class="spec-val">Deep Flex Grooves</div>
+                  </div>
+                </div>
+
+                <div class="spotlight-spec-item">
+                  <div class="spec-icon-chip">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="spec-text-wrap">
+                    <div class="spec-label">AIR-SOLE UNIT</div>
+                    <div class="spec-val">Encapsulated Heel Cushion</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Size Selection Strip -->
+              <div class="spotlight-size-box">
+                <div class="size-header-row">
+                  <span class="size-label">SELECT COLLECTOR SIZE (US MEN):</span>
+                  <span class="size-guide-link">TRUE TO SIZE // RFID VERIFIED</span>
+                </div>
+                <div class="spotlight-sizes-strip" id="spotlight-sizes-list">
+                  <button type="button" class="spotlight-size-pill" data-size="US 8">US 8</button>
+                  <button type="button" class="spotlight-size-pill" data-size="US 8.5">US 8.5</button>
+                  <button type="button" class="spotlight-size-pill active" data-size="US 9">US 9</button>
+                  <button type="button" class="spotlight-size-pill" data-size="US 9.5">US 9.5</button>
+                  <button type="button" class="spotlight-size-pill" data-size="US 10">US 10</button>
+                  <button type="button" class="spotlight-size-pill" data-size="US 10.5">US 10.5</button>
+                  <button type="button" class="spotlight-size-pill" data-size="US 11">US 11</button>
+                </div>
+              </div>
+
+              <!-- Price & CTA Actions Strip -->
+              <div class="spotlight-cta-block">
+                <div class="spotlight-price-row">
+                  <div class="spotlight-price-val">$165.00 <span class="currency-tag">USD</span></div>
+                  <span class="spotlight-orig-price">$195.00</span>
+                  <span class="spotlight-save-badge">SAVE $30</span>
+                </div>
+
+                <div class="spotlight-buttons-group">
+                  <button id="btn-twocol-buy-2" class="btn-spotlight-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>SECURE RED / BLACK TOE • $165</span>
+                  </button>
+
+                  <button id="btn-spotlight-quickview" type="button" class="btn-spotlight-secondary" data-id="step-04">
+                    <span>QUICK VIEW</span>
+                  </button>
+                </div>
+
+                <div class="spotlight-scarcity-row">
+                  <span class="scarcity-pulse"></span>
+                  <span>ONLY 3 PAIRS REMAINING IN TOKYO ATELIER // LIMIT 1 PER COLLECTOR</span>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
 

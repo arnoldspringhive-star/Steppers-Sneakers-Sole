@@ -904,11 +904,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Editorial Spotlight (Shibuya Mid Runway) Interactivity
+  let selectedSpotlightSize = 'US 9';
+  const spotlightSizePills = document.querySelectorAll('.spotlight-size-pill');
+  spotlightSizePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      spotlightSizePills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      selectedSpotlightSize = pill.getAttribute('data-size') || 'US 9';
+    });
+  });
+
+  const spotlightMainImg = document.getElementById('spotlight-main-img');
+  const spotlightThumbBtns = document.querySelectorAll('.spotlight-thumb-btn');
+  spotlightThumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newSrc = btn.getAttribute('data-src');
+      if (newSrc && spotlightMainImg) {
+        spotlightThumbBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        spotlightMainImg.style.opacity = '0.35';
+        setTimeout(() => {
+          spotlightMainImg.src = newSrc;
+          spotlightMainImg.style.opacity = '1';
+        }, 150);
+      }
+    });
+  });
+
+  const btnSpotlightQuickview = document.getElementById('btn-spotlight-quickview');
+  if (btnSpotlightQuickview) {
+    btnSpotlightQuickview.addEventListener('click', () => {
+      const prod = catalog.find(p => p.id === 'step-04');
+      if (prod) openQuickView(prod);
+    });
+  }
+
   const btnTwoColBuy2 = document.getElementById('btn-twocol-buy-2');
   if (btnTwoColBuy2) {
     btnTwoColBuy2.addEventListener('click', () => {
       const prod = catalog.find(p => p.id === 'step-04');
-      if (prod) addToCart(prod, 'US 10');
+      if (prod) addToCart(prod, selectedSpotlightSize);
     });
   }
 
