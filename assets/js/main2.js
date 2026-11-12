@@ -931,7 +931,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span style="font-family:var(--font-tech); font-size:0.75rem; color:var(--accent-pink); font-weight:700;">${prod.badge.toUpperCase()} // ${prod.sku}</span>
             <h2 style="font-family:var(--font-display); font-size:2.2rem; color:#fff; line-height:1.1;">${prod.name}</h2>
             <div style="color:var(--accent-orange); font-size:0.9rem;">★★★★★ <span style="color:var(--text-muted); font-size:0.8rem;">(${prod.reviewsCount} verified collector reviews)</span></div>
-            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">${prod.desc}</p>
+            <p style="font-size:16px; color:var(--text-secondary); line-height:1.5;">${prod.desc}</p>
             <div style="font-family:var(--font-tech); font-size:1.6rem; font-weight:800; color:#fff;">$${prod.price}.00 USD</div>
             <button id="btn-qv-add" style="padding:14px; border-radius:var(--radius-full); background:linear-gradient(135deg, var(--accent-pink), var(--accent-purple)); color:#fff; font-weight:700; font-family:var(--font-tech); cursor:pointer; text-transform:uppercase;">Add to Bag</button>
           </div>
