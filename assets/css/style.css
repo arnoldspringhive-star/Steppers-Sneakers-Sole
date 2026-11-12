@@ -170,9 +170,10 @@ ul {
    TOP STREETWEAR MARQUEE
    ========================================================================== */
 .top-ticker {
-  background: #000000;
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 8px 0;
+  background: linear-gradient(90deg, #380826 0%, #1f083d 50%, #08283a 100%);
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, #ff2a85 0%, #9d4edd 50%, #00f0ff 100%) 1;
+  padding: 9px 0;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
@@ -181,6 +182,7 @@ ul {
   overflow: hidden;
   position: relative;
   z-index: 110;
+  box-shadow: 0 2px 16px rgba(157, 78, 221, 0.2);
 }
 
 .ticker-track {
@@ -195,7 +197,7 @@ ul {
   align-items: center;
   gap: 16px;
   padding: 0 28px;
-  color: var(--text-secondary);
+  color: #e8eaf6;
 }
 
 .ticker-item span.highlight-pink {
