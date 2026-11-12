@@ -1995,18 +1995,18 @@ ul {
 }
 
 .newsletter-box {
-  background: linear-gradient(135deg, #2a0720 0%, #15072b 45%, #071c2b 100%);
+  background: linear-gradient(90deg, #380826 0%, #1f083d 50%, #08283a 100%);
   border: 1.5px solid transparent;
   border-radius: 24px;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: linear-gradient(135deg, #2a0720 0%, #15072b 45%, #071c2b 100%),
-                    linear-gradient(135deg, #ff2a85 0%, #9d4edd 50%, #00f0ff 100%);
+  background-image: linear-gradient(90deg, #380826 0%, #1f083d 50%, #08283a 100%),
+                    linear-gradient(90deg, #ff2a85 0%, #9d4edd 50%, #00f0ff 100%);
   padding: 60px 40px;
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 50px rgba(157, 78, 221, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 50px rgba(157, 78, 221, 0.3);
   position: relative;
   overflow: hidden;
 }
