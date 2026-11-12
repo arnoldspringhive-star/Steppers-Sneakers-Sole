@@ -94,6 +94,10 @@ body {
   line-height: 1.6;
 }
 
+p {
+  font-size: 16px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -545,7 +549,7 @@ ul {
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.6;
   max-width: 540px;
@@ -892,7 +896,7 @@ ul {
 }
 
 .heritage-caption-sub {
-  font-size: 0.9rem;
+  font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -922,7 +926,7 @@ ul {
 
 .heritage-content-col p {
   color: var(--text-secondary);
-  font-size: 1.05rem;
+  font-size: 16px;
   line-height: 1.7;
   margin-bottom: 30px;
 }
@@ -1031,7 +1035,7 @@ ul {
 }
 
 .pillar-desc {
-  font-size: 0.85rem;
+  font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -1078,7 +1082,7 @@ ul {
 .section-desc-right {
   max-width: 480px;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -1591,7 +1595,7 @@ ul {
 
 .doghouse-desc {
   color: var(--text-secondary);
-  font-size: 1.05rem;
+  font-size: 16px;
   line-height: 1.65;
   margin-bottom: 22px;
 }
@@ -1679,7 +1683,7 @@ ul {
 .quote-card-body {
   font-style: italic;
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 16px;
   line-height: 1.55;
   margin-bottom: 12px;
 }
@@ -1813,7 +1817,7 @@ ul {
 }
 
 .care-card-desc {
-  font-size: 0.9rem;
+  font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 20px;
@@ -1981,7 +1985,7 @@ ul {
 }
 
 .auth-step-desc {
-  font-size: 0.85rem;
+  font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -2022,7 +2026,7 @@ ul {
 
 .newsletter-box p {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 16px;
   max-width: 580px;
   margin: 0 auto 36px;
 }
@@ -2084,7 +2088,7 @@ ul {
 
 .footer-brand-bio {
   color: var(--text-secondary);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   margin-bottom: 24px;
 }
@@ -2544,7 +2548,7 @@ ul {
 }
 
 .modal-desc {
-  font-size: 0.95rem;
+  font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 24px;
