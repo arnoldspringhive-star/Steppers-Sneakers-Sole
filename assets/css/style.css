@@ -1765,18 +1765,69 @@ ul {
 
 .sole-care-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid transparent;
   border-radius: 16px;
   padding: 24px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
   transition: all var(--transition-smooth);
 }
 
-.sole-care-card:hover {
+/* Care Card 1: Electric Cyan to Lab Blue (Sole Shield Protection) */
+.sole-care-card.care-shield,
+.sole-care-card:nth-of-type(1) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #00f0ff 0%, #0077b6 100%);
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);
+}
+.sole-care-card.care-shield:hover,
+.sole-care-card:nth-of-type(1):hover {
   transform: translateY(-6px);
-  border-color: var(--border-cyan);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px var(--accent-cyan-glow);
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #00f0ff 0%, #0077b6 100%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.35);
+}
+.sole-care-card.care-shield .care-card-tag {
+  color: #00f0ff;
+}
+
+/* Care Card 2: Hot Magenta to Neon Purple (Drip Heavy Hoodie) */
+.sole-care-card.care-hoodie,
+.sole-care-card:nth-of-type(2) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #ff2a85 0%, #9d4edd 100%);
+  box-shadow: 0 4px 20px rgba(255, 42, 133, 0.15);
+}
+.sole-care-card.care-hoodie:hover,
+.sole-care-card:nth-of-type(2):hover {
+  transform: translateY(-6px);
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #ff2a85 0%, #9d4edd 100%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 42, 133, 0.35);
+}
+.sole-care-card.care-hoodie .care-card-tag {
+  color: #ff2a85;
+}
+
+/* Care Card 3: Street Amber Gold to Neon Cyan (Doghouse Frenchie Tee) */
+.sole-care-card.care-tee,
+.sole-care-card:nth-of-type(3) {
+  background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), 
+                    linear-gradient(135deg, #ffb703 0%, #00f0ff 100%);
+  box-shadow: 0 4px 20px rgba(255, 183, 3, 0.15);
+}
+.sole-care-card.care-tee:hover,
+.sole-care-card:nth-of-type(3):hover {
+  transform: translateY(-6px);
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                    linear-gradient(135deg, #ffb703 0%, #00f0ff 100%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 183, 3, 0.35);
+}
+.sole-care-card.care-tee .care-card-tag {
+  color: #ffb703;
 }
 
 .care-img-wrap {
