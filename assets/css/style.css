@@ -2084,7 +2084,7 @@ ul {
 
 .footer-brand-bio {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 24px;
 }
