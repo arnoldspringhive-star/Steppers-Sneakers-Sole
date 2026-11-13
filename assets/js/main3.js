@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
       brand: 'STEPPERS ATELIER',
       name: 'TACTICAL UTILITY CARGO PANTS',
       price: 165,
-      image: 'assets/images/sole-shield-pro.jpg',
+      image: 'assets/images/cargo-pants.png',
       description: 'Custom enzyme-washed olive drab cotton twill with articulated knees, deep cargo pockets, and adjustable cinch cuffs.'
     },
     {
@@ -306,54 +306,60 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  // 8. "SHOP THE LOOK" HOTSPOT LOGIC
+  // 8. "SHOP THE LOOK" HOTSPOT & 2-CARD STACK LOGIC
   const hotspotPins = document.querySelectorAll('.hotspot-pin');
-  const lookItemThumb = document.getElementById('look-item-thumb');
-  const lookItemBrand = document.getElementById('look-item-brand');
-  const lookItemTitle = document.getElementById('look-item-title');
-  const lookItemPrice = document.getElementById('look-item-price');
-  const lookPagination = document.getElementById('look-pagination');
-  const btnViewLookProduct = document.getElementById('btn-view-look-product');
+  const lookCards = document.querySelectorAll('.look-preview-col');
+  const btnLook1 = document.getElementById('btn-view-look-product');
+  const btnLook2 = document.getElementById('btn-view-look-product-2');
 
-  function updateLookItem(index) {
+  function setActiveLook(index) {
     currentLookIndex = index;
-    const item = LOOK_ITEMS[index];
-    if (!item) return;
-
-    if (lookItemThumb) lookItemThumb.src = item.image;
-    if (lookItemBrand) lookItemBrand.textContent = item.brand;
-    if (lookItemTitle) lookItemTitle.textContent = item.name;
-    if (lookItemPrice) lookItemPrice.textContent = `$${item.price.toFixed(2)} USD`;
-
+    // Update hotspot pins
     hotspotPins.forEach((pin, i) => {
       pin.classList.toggle('active', i === index);
     });
 
-    if (lookPagination) {
-      lookPagination.querySelectorAll('.dot-btn').forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-    }
+    // Update cards active glow
+    lookCards.forEach((card, i) => {
+      card.classList.toggle('active', i === index);
+    });
   }
 
+  // Hotspots click
   hotspotPins.forEach((pin, index) => {
     pin.addEventListener('click', () => {
-      updateLookItem(index);
+      setActiveLook(index);
+      if (lookCards[index]) {
+        lookCards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     });
   });
 
-  if (lookPagination) {
-    lookPagination.querySelectorAll('.dot-btn').forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        updateLookItem(index);
-      });
+  // Cards click/hover activation
+  lookCards.forEach((card, index) => {
+    card.addEventListener('mouseenter', () => {
+      setActiveLook(index);
+    });
+    card.addEventListener('click', (e) => {
+      if (!e.target.closest('.btn-look-product')) {
+        setActiveLook(index);
+      }
+    });
+  });
+
+  // Button 1: Add Vintage Washed Tee
+  if (btnLook1) {
+    btnLook1.addEventListener('click', (e) => {
+      e.stopPropagation();
+      addToCart('look-1', 'STANDARD', 1, LOOK_ITEMS[0]);
     });
   }
 
-  if (btnViewLookProduct) {
-    btnViewLookProduct.addEventListener('click', () => {
-      const activeItem = LOOK_ITEMS[currentLookIndex];
-      addToCart(activeItem.id, 'STANDARD', 1, activeItem);
+  // Button 2: Add Tactical Cargo Pants
+  if (btnLook2) {
+    btnLook2.addEventListener('click', (e) => {
+      e.stopPropagation();
+      addToCart('look-2', 'STANDARD', 1, LOOK_ITEMS[1]);
     });
   }
 

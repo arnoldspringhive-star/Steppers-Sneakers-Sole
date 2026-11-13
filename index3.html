@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Index 3 Stylesheet (Exact Grandeur Style Architecture) -->
-  <link rel="stylesheet" href="assets/css/style3.css?v=3.0">
+  <link rel="stylesheet" href="assets/css/style3.css?v=3.1">
 </head>
 <body>
 
@@ -343,21 +343,24 @@
           <button class="hotspot-pin" style="top: 84%; left: 50%;" data-index="2" aria-label="View Sneakers Item"></button>
         </div>
 
-        <!-- Right: Active Featured Item Showcase -->
-        <div class="look-preview-col">
-          <img src="assets/images/tee-merch.jpg" alt="Selected Streetwear Item" class="look-item-thumb" id="look-item-thumb">
-          
-          <span class="look-item-brand" id="look-item-brand">STEPPERS ATELIER</span>
-          <h3 class="look-item-title" id="look-item-title">VINTAGE WASHED OVERSIZED TEE</h3>
-          <div class="look-item-price" id="look-item-price">$85.00 USD</div>
+        <!-- Right Column: 2 Vertically Stacked Product Boxes -->
+        <div class="look-preview-stack">
+          <!-- Box 1 (Vintage Washed Oversized Tee) -->
+          <div class="look-preview-col active" id="look-card-1" data-index="0">
+            <img src="assets/images/tee-merch.jpg" alt="Vintage Washed Oversized Tee" class="look-item-thumb" id="look-item-thumb">
+            <span class="look-item-brand" id="look-item-brand">STEPPERS ATELIER</span>
+            <h3 class="look-item-title" id="look-item-title">VINTAGE WASHED OVERSIZED TEE</h3>
+            <div class="look-item-price" id="look-item-price">$85.00 USD</div>
+            <button class="btn-grandeur-center btn-look-product" id="btn-view-look-product" data-id="look-1">VIEW PRODUCT</button>
+          </div>
 
-          <button class="btn-grandeur-center" id="btn-view-look-product">VIEW PRODUCT</button>
-
-          <!-- Carousel Dots -->
-          <div class="look-pagination" id="look-pagination">
-            <button class="dot-btn active" data-index="0" aria-label="Item 1"></button>
-            <button class="dot-btn" data-index="1" aria-label="Item 2"></button>
-            <button class="dot-btn" data-index="2" aria-label="Item 3"></button>
+          <!-- Box 2 (Tactical Utility Cargo Pants - Added Vertically) -->
+          <div class="look-preview-col" id="look-card-2" data-index="1">
+            <img src="assets/images/cargo-pants.png" alt="Tactical Utility Cargo Pants" class="look-item-thumb" id="look-item-thumb-2">
+            <span class="look-item-brand" id="look-item-brand-2">STEPPERS ATELIER</span>
+            <h3 class="look-item-title" id="look-item-title-2">TACTICAL UTILITY CARGO PANTS</h3>
+            <div class="look-item-price" id="look-item-price-2">$165.00 USD</div>
+            <button class="btn-grandeur-center btn-look-product" id="btn-view-look-product-2" data-id="look-2">VIEW PRODUCT</button>
           </div>
         </div>
       </div>
@@ -642,6 +645,6 @@
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Core JavaScript -->
-  <script src="assets/js/main3.js?v=3.0"></script>
+  <script src="assets/js/main3.js?v=3.1"></script>
 </body>
 </html>
