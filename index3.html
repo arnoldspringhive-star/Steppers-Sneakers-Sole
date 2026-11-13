@@ -24,20 +24,25 @@
        ========================================================================== -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <!-- Left: Hamburger Menu Button (Opens Slide-out Drawer) -->
+      <!-- Left: Refined Hamburger Menu Button -->
       <div class="header-left">
-        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Navigation Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Navigation Menu" title="Menu">
+          <svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="0" y1="1" x2="22" y2="1" />
+            <line x1="0" y1="8" x2="22" y2="8" />
+            <line x1="0" y1="15" x2="22" y2="15" />
+          </svg>
         </button>
       </div>
 
-      <!-- Center: Brand Logo Mark -->
+      <!-- Center: Official Steppers Logo from Index 2 -->
       <div class="header-center">
-        <a href="index3.html" class="brand-title" aria-label="Steppers Sneakers and Sole">
-          STEPPERS
-          <span class="brand-subtitle">SNEAKERS &amp; SOLE</span>
+        <a href="index3.html" class="header-brand" aria-label="Steppers Sneakers &amp; Sole Home">
+          <img src="assets/images/steppers-logo-transparent.png" alt="Steppers Sneakers &amp; Sole Emblem" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-name-title">STEPPERS</span>
+            <span class="brand-edition-tag">SNEAKERS &amp; SOLE</span>
+          </div>
         </a>
       </div>
 
@@ -443,7 +448,10 @@
        ========================================================================== -->
   <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
     <div class="mobile-nav-header">
-      <span style="font-family: var(--font-brand); font-size: 18px; font-weight: 700;">STEPPERS</span>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/images/steppers-logo-transparent.png" alt="Steppers Logo" style="height: 38px; width: auto;">
+        <span style="font-family: var(--font-heading); font-size: 16px; font-weight: 800; letter-spacing: 0.1em;">STEPPERS</span>
+      </div>
       <button id="close-mobile-nav-btn" style="font-size: 24px; cursor: pointer;">&times;</button>
     </div>
 
