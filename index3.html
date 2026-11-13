@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Index 3 Stylesheet (Exact Grandeur Style Architecture) -->
-  <link rel="stylesheet" href="assets/css/style3.css?v=3.5">
+  <link rel="stylesheet" href="assets/css/style3.css?v=3.7">
 </head>
 <body>
 
@@ -457,29 +457,123 @@
       <h2 class="section-title-grandeur">SHOP THE LOOK</h2>
 
       <div class="look-grid-wrap">
-        <!-- Left: Flat Lay Photo Clean Showcase -->
+        <!-- Left: Flat Lay Outfit Slider Stage (Synchronized with Right Controls) -->
         <div class="look-media-box">
-          <img src="assets/images/grandeur-outfit-flatlay.jpg" alt="Curated Steppers Streetwear Flat Lay" class="look-media-img">
-        </div>
-
-        <!-- Right Column: 2 Vertically Stacked Product Boxes -->
-        <div class="look-preview-stack">
-          <!-- Box 1 (Vintage Washed Oversized Tee) -->
-          <div class="look-preview-col active" id="look-card-1" data-index="0">
-            <img src="assets/images/tee-merch.jpg" alt="Vintage Washed Oversized Tee" class="look-item-thumb" id="look-item-thumb">
-            <span class="look-item-brand" id="look-item-brand">STEPPERS ATELIER</span>
-            <h3 class="look-item-title" id="look-item-title">VINTAGE WASHED OVERSIZED TEE</h3>
-            <div class="look-item-price" id="look-item-price">$85.00 USD</div>
-            <button class="btn-grandeur-center btn-look-product" id="btn-view-look-product" data-id="look-1">VIEW PRODUCT</button>
+          <div class="outfit-top-hud">
+            <span class="outfit-counter-tag" id="outfit-counter-tag">OUTFIT 01 // THE DOWNTOWN CARGO FIT</span>
           </div>
 
-          <!-- Box 2 (Tactical Utility Cargo Pants - Added Vertically) -->
-          <div class="look-preview-col" id="look-card-2" data-index="1">
-            <img src="assets/images/cargo-pants.png" alt="Tactical Utility Cargo Pants" class="look-item-thumb" id="look-item-thumb-2">
-            <span class="look-item-brand" id="look-item-brand-2">STEPPERS ATELIER</span>
-            <h3 class="look-item-title" id="look-item-title-2">TACTICAL UTILITY CARGO PANTS</h3>
-            <div class="look-item-price" id="look-item-price-2">$165.00 USD</div>
-            <button class="btn-grandeur-center btn-look-product" id="btn-view-look-product-2" data-id="look-2">VIEW PRODUCT</button>
+          <div class="look-media-track" id="look-media-track">
+            <!-- Outfit 1: The Downtown Cargo Fit -->
+            <div class="look-media-slide">
+              <img src="assets/images/grandeur-outfit-flatlay.jpg" alt="Curated Steppers Streetwear Flat Lay - Downtown Cargo Fit" class="look-media-img">
+            </div>
+            <!-- Outfit 2: The Hoodie Grail Capsule -->
+            <div class="look-media-slide">
+              <img src="assets/images/outfit-hoodie-grail.jpg" alt="Curated Steppers Streetwear Flat Lay - Hoodie Grail Capsule" class="look-media-img">
+            </div>
+            <!-- Outfit 3: The Urban Speed Syndicate -->
+            <div class="look-media-slide">
+              <img src="assets/images/outfit-runner-track.jpg" alt="Curated Steppers Streetwear Flat Lay - Urban Speed Syndicate" class="look-media-img">
+            </div>
+          </div>
+
+          <!-- Prominent Arrow Icons Overlaid on Image Stage -->
+          <button class="outfit-slide-arrow arrow-left" id="outfit-prev-arrow" aria-label="Previous Outfit">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="outfit-slide-arrow arrow-right" id="outfit-next-arrow" aria-label="Next Outfit">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Right Column: Interactive Curated Outfit Product Showcase -->
+        <div class="look-carousel-wrapper">
+          <!-- Carousel Top Header with Arrows & Badge -->
+          <div class="look-carousel-nav-header">
+            <span class="look-carousel-tag" id="look-carousel-tag">// OUTFIT CAPSULE 01 OF 03</span>
+            <div class="look-carousel-controls">
+              <button class="look-arrow-btn" id="look-prev-btn" aria-label="Previous Outfit">←</button>
+              <span class="look-counter" id="look-slide-counter">01 / 03</span>
+              <button class="look-arrow-btn" id="look-next-btn" aria-label="Next Outfit">→</button>
+            </div>
+          </div>
+
+          <!-- Carousel Viewport -->
+          <div class="look-carousel-viewport">
+            <div class="look-carousel-track" id="look-carousel-track">
+              
+              <!-- Slide 1: Downtown Cargo Fit -->
+              <div class="look-carousel-slide" data-slide="0">
+                <div class="look-preview-col active-card-glow">
+                  <span class="view-perspective-badge">01 // THE DOWNTOWN CARGO FIT</span>
+                  <div class="look-card-hero-thumb">
+                    <img src="assets/images/tee-merch.jpg" alt="Vintage Washed Oversized Tee" class="look-item-thumb">
+                  </div>
+                  <span class="look-item-brand">STEPPERS ATELIER</span>
+                  <h3 class="look-item-title">VINTAGE WASHED OVERSIZED TEE</h3>
+                  <div class="look-item-price">$85.00 USD</div>
+                  
+                  <div class="outfit-pieces-pills">
+                    <span class="piece-pill active">01 // TEE $85</span>
+                    <span class="piece-pill">02 // CARGO $165</span>
+                    <span class="piece-pill">03 // FORUM $195</span>
+                  </div>
+
+                  <button class="btn-grandeur-center btn-look-product" data-id="look-1">VIEW PRODUCT</button>
+                </div>
+              </div>
+
+              <!-- Slide 2: Hoodie Grail Capsule -->
+              <div class="look-carousel-slide" data-slide="1">
+                <div class="look-preview-col active-card-glow">
+                  <span class="view-perspective-badge">02 // THE HOODIE GRAIL CAPSULE</span>
+                  <div class="look-card-hero-thumb">
+                    <img src="assets/images/hoodie-front.png" alt="Steppers 480GSM Drip Hoodie" class="look-item-thumb">
+                  </div>
+                  <span class="look-item-brand">STEPPERS ATELIER</span>
+                  <h3 class="look-item-title">STEPPERS 480GSM DRIP HOODIE</h3>
+                  <div class="look-item-price">$120.00 USD</div>
+
+                  <div class="outfit-pieces-pills">
+                    <span class="piece-pill active">01 // HOODIE $120</span>
+                    <span class="piece-pill">02 // DENIM $145</span>
+                    <span class="piece-pill">03 // AJ1 CHI $180</span>
+                  </div>
+
+                  <button class="btn-grandeur-center btn-look-product" data-id="step-08">VIEW PRODUCT</button>
+                </div>
+              </div>
+
+              <!-- Slide 3: Urban Speed Syndicate -->
+              <div class="look-carousel-slide" data-slide="2">
+                <div class="look-preview-col active-card-glow">
+                  <span class="view-perspective-badge">03 // THE URBAN SPEED SYNDICATE</span>
+                  <div class="look-card-hero-thumb">
+                    <img src="assets/images/free-red-profile.png" alt="Nike Free RN Flyknit University Red" class="look-item-thumb">
+                  </div>
+                  <span class="look-item-brand">NIKE RUNNING</span>
+                  <h3 class="look-item-title">NIKE FREE RN FLYKNIT 'UNIVERSITY RED'</h3>
+                  <div class="look-item-price">$140.00 USD</div>
+
+                  <div class="outfit-pieces-pills">
+                    <span class="piece-pill">01 // JACKET $155</span>
+                    <span class="piece-pill">02 // JOGGERS $110</span>
+                    <span class="piece-pill active">03 // FLYKNIT $140</span>
+                  </div>
+
+                  <button class="btn-grandeur-center btn-look-product" data-id="step-06">VIEW PRODUCT</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Carousel Dots / Outfit Selector -->
+          <div class="look-carousel-dots">
+            <button class="look-dot-btn active" data-slide="0" aria-label="Downtown Cargo Fit"><span>01 // DOWNTOWN CARGO</span></button>
+            <button class="look-dot-btn" data-slide="1" aria-label="Hoodie Grail Capsule"><span>02 // HOODIE GRAIL</span></button>
+            <button class="look-dot-btn" data-slide="2" aria-label="Urban Speed Syndicate"><span>03 // SPEED SYNDICATE</span></button>
           </div>
         </div>
       </div>
@@ -802,6 +896,6 @@
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Core JavaScript -->
-  <script src="assets/js/main3.js?v=3.5"></script>
+  <script src="assets/js/main3.js?v=3.7"></script>
 </body>
 </html>

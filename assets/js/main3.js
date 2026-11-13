@@ -210,7 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'VINTAGE WASHED OVERSIZED TEE',
       price: 85,
       image: 'assets/images/tee-merch.jpg',
-      description: 'Boxy 300GSM washed vintage black cotton t-shirt with dropped shoulders and tonal archival chest monogram.'
+      hoverImage: 'assets/images/steppers-tee-back.jpg',
+      sizes: ['S', 'M', 'L', 'XL', '2XL'],
+      description: 'Heavyweight 300GSM washed vintage black cotton t-shirt with dropped shoulders, signature French Bulldog street art graphic, and arched graffiti branding.'
     },
     {
       id: 'look-2',
@@ -354,62 +356,79 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  // 8. "SHOP THE LOOK" HOTSPOT & 2-CARD STACK LOGIC
-  const hotspotPins = document.querySelectorAll('.hotspot-pin');
-  const lookCards = document.querySelectorAll('.look-preview-col');
-  const btnLook1 = document.getElementById('btn-view-look-product');
-  const btnLook2 = document.getElementById('btn-view-look-product-2');
+  // 8. SYNCHRONIZED "SHOP THE LOOK" OUTFIT & PRODUCT CAROUSEL
+  let currentLookSlide = 0;
+  const totalLookSlides = 3;
+  const outfitTitles = [
+    'OUTFIT 01 // THE DOWNTOWN CARGO FIT',
+    'OUTFIT 02 // THE HOODIE GRAIL CAPSULE',
+    'OUTFIT 03 // THE URBAN SPEED SYNDICATE'
+  ];
+  const lookMediaTrack = document.getElementById('look-media-track');
+  const lookTrack = document.getElementById('look-carousel-track');
+  const lookCounter = document.getElementById('look-slide-counter');
+  const lookCarouselTag = document.getElementById('look-carousel-tag');
+  const outfitCounterTag = document.getElementById('outfit-counter-tag');
+  const lookDots = document.querySelectorAll('.look-dot-btn');
+  const lookPrevBtn = document.getElementById('look-prev-btn');
+  const lookNextBtn = document.getElementById('look-next-btn');
+  const outfitPrevArrow = document.getElementById('outfit-prev-arrow');
+  const outfitNextArrow = document.getElementById('outfit-next-arrow');
 
-  function setActiveLook(index) {
-    currentLookIndex = index;
-    // Update hotspot pins
-    hotspotPins.forEach((pin, i) => {
-      pin.classList.toggle('active', i === index);
-    });
+  function updateLookCarousel(idx) {
+    currentLookSlide = (idx + totalLookSlides) % totalLookSlides;
 
-    // Update cards active glow
-    lookCards.forEach((card, i) => {
-      card.classList.toggle('active', i === index);
+    // 1. Simultaneously slide Left Outfit Flat Lay Track (Image 2)
+    if (lookMediaTrack) {
+      lookMediaTrack.style.transform = `translateX(-${currentLookSlide * 100}%)`;
+    }
+
+    // 2. Simultaneously slide Right Product Card Track
+    if (lookTrack) {
+      lookTrack.style.transform = `translateX(-${currentLookSlide * 100}%)`;
+    }
+
+    // 3. Update Counters & Tags
+    if (lookCounter) {
+      lookCounter.textContent = `0${currentLookSlide + 1} / 03`;
+    }
+    if (lookCarouselTag) {
+      lookCarouselTag.textContent = `// OUTFIT CAPSULE 0${currentLookSlide + 1} OF 03`;
+    }
+    if (outfitCounterTag) {
+      outfitCounterTag.textContent = outfitTitles[currentLookSlide];
+    }
+
+    // 4. Update Navigation Dots
+    lookDots.forEach((btn, i) => {
+      btn.classList.toggle('active', i === currentLookSlide);
     });
   }
 
-  // Hotspots click
-  hotspotPins.forEach((pin, index) => {
-    pin.addEventListener('click', () => {
-      setActiveLook(index);
-      if (lookCards[index]) {
-        lookCards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+  // Right card arrow buttons (Image 1 in user directive)
+  lookPrevBtn?.addEventListener('click', () => updateLookCarousel(currentLookSlide - 1));
+  lookNextBtn?.addEventListener('click', () => updateLookCarousel(currentLookSlide + 1));
+
+  // Left outfit image arrow buttons (Image 2 in user directive)
+  outfitPrevArrow?.addEventListener('click', () => updateLookCarousel(currentLookSlide - 1));
+  outfitNextArrow?.addEventListener('click', () => updateLookCarousel(currentLookSlide + 1));
+
+  // Bottom dots listeners
+  lookDots.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const slide = parseInt(btn.dataset.slide, 10);
+      updateLookCarousel(slide);
     });
   });
 
-  // Cards click/hover activation
-  lookCards.forEach((card, index) => {
-    card.addEventListener('mouseenter', () => {
-      setActiveLook(index);
-    });
-    card.addEventListener('click', (e) => {
-      if (!e.target.closest('.btn-look-product')) {
-        setActiveLook(index);
-      }
+  // Connect carousel "VIEW PRODUCT" buttons
+  document.querySelectorAll('.btn-look-product').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const pid = btn.dataset.id || 'look-1';
+      openQuickView(pid);
     });
   });
-
-  // Button 1: Add Vintage Washed Tee
-  if (btnLook1) {
-    btnLook1.addEventListener('click', (e) => {
-      e.stopPropagation();
-      addToCart('look-1', 'STANDARD', 1, LOOK_ITEMS[0]);
-    });
-  }
-
-  // Button 2: Add Tactical Cargo Pants
-  if (btnLook2) {
-    btnLook2.addEventListener('click', (e) => {
-      e.stopPropagation();
-      addToCart('look-2', 'STANDARD', 1, LOOK_ITEMS[1]);
-    });
-  }
 
   // 9. CART DRAWER SYSTEM
   function openCart() {
@@ -543,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalGalleryThumbs = document.getElementById('modal-gallery-thumbs');
 
   function openQuickView(productId) {
-    const product = CATALOG.find(p => p.id === productId);
+    const product = CATALOG.find(p => p.id === productId) || LOOK_ITEMS.find(p => p.id === productId);
     if (!product || !quickviewModal) return;
 
     currentModalProduct = product;
@@ -730,5 +749,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // INITIALIZE
   renderGrids();
   updateCartUI();
-  updateLookItem(0);
+  updateLookCarousel(0);
 });
