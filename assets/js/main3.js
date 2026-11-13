@@ -5,6 +5,25 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. HERO VIDEO AUTOPLAY GUARANTEE
+  const heroVid = document.querySelector('.hero-video');
+  if (heroVid) {
+    heroVid.muted = true;
+    heroVid.defaultMuted = true;
+    heroVid.setAttribute('playsinline', '');
+    heroVid.setAttribute('muted', '');
+    const triggerPlay = () => {
+      const p = heroVid.play();
+      if (p !== undefined) {
+        p.catch(() => {});
+      }
+    };
+    triggerPlay();
+    ['click', 'touchstart', 'scroll', 'mousemove'].forEach(evt => {
+      window.addEventListener(evt, triggerPlay, { once: true, passive: true });
+    });
+  }
+
   // 1. PRODUCT CATALOG DATA
   const CATALOG = [
     {
