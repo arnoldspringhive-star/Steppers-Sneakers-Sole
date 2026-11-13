@@ -288,7 +288,7 @@ ul, ol {
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.62) contrast(1.12);
+  filter: brightness(0.72) contrast(1.1);
 }
 
 .hero-img {
