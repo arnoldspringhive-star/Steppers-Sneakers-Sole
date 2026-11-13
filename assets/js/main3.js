@@ -103,6 +103,54 @@ document.addEventListener('DOMContentLoaded', () => {
       hoverImage: 'assets/images/hoodie-back.png',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       description: "Custom milled 480GSM French terry cotton hoodie in pitch black, engineered with double-lined crossover hood and tonal high-density Steppers monogram."
+    },
+    {
+      id: 'step-09',
+      name: "Air Jordan 4 Retro 'Black Cat'",
+      brand: 'JORDAN BRAND',
+      price: 310,
+      badge: 'GRAIL VAULT',
+      badgeClass: '',
+      image: 'assets/images/aj4-blackcat-profile.png',
+      hoverImage: 'assets/images/aj4-blackcat-hover.png',
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11'],
+      description: "Triple black monochromatic luxury with matte deep charcoal nubuck upper, molded TPU wings, and encapsulated Air-Sole cushioning."
+    },
+    {
+      id: 'step-10',
+      name: "Nike Dunk Low Retro 'Panda'",
+      brand: 'NIKE SPORTSWEAR',
+      price: 115,
+      badge: 'RESTOCK',
+      badgeClass: '',
+      image: 'assets/images/dunk-panda-profile.png',
+      hoverImage: 'assets/images/dunk-panda-hover.png',
+      sizes: ['US 7.5', 'US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      description: "Clean two-tone black and white leather low-top with contrasting overlays and padded collar."
+    },
+    {
+      id: 'step-11',
+      name: "Air Jordan 3 Retro 'White Cement Reimagined'",
+      brand: 'JORDAN BRAND',
+      price: 210,
+      badge: 'OG ARCHIVE',
+      badgeClass: '',
+      image: 'assets/images/aj3-cement-profile.png',
+      hoverImage: 'assets/images/aj3-cement-hover.png',
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 10', 'US 10.5', 'US 11', 'US 12'],
+      description: "Archival 1988 silhouette with crisp summit white tumbled leather, pre-aged vintage sail midsole, and iconic elephant print overlays."
+    },
+    {
+      id: 'step-12',
+      name: "Travis Scott x Air Jordan 1 Low OG 'Reverse Mocha'",
+      brand: 'JORDAN BRAND',
+      price: 350,
+      badge: 'LIMITED GRAIL',
+      badgeClass: '',
+      image: 'assets/images/travis-mocha-profile.png',
+      hoverImage: 'assets/images/travis-mocha-hover.png',
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5'],
+      description: "Signature oversized reverse cream Swoosh, rich dark mocha nubuck base, crisp sail leather overlays, and red Cactus Jack accents."
     }
   ];
 
@@ -217,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
       arrivalsGrid.innerHTML = CATALOG.slice(0, 4).map(p => createCardHtml(p)).join('');
     }
     if (staffGrid) {
-      staffGrid.innerHTML = CATALOG.slice(4, 8).map(p => createCardHtml(p)).join('');
+      staffGrid.innerHTML = CATALOG.slice(4, 12).map(p => createCardHtml(p)).join('');
     }
 
     // Attach card click & quick view handlers
