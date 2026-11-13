@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steppers Sneakers & Sole — Luxury Footwear & Streetwear Boutique</title>
+  <meta name="description" content="Steppers Sneakers & Sole is a premium sneaker and streetwear boutique curating iconic grails, verified deadstock, and contemporary urban apparel.">
+  
+  <!-- Favicon placeholder / styling -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c89b4f'><path d='M2 18h20v2H2zM4 14l2-8h4l1 4h5l2-4h2l2 8H4z'/></svg>">
+  
+  <!-- Google Fonts: Bebas Neue, Outfit, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Index 3 Luxury Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style3.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <aside class="announcement-bar" aria-label="Store Announcements">
+    <div class="container announcement-inner">
+      <div class="announcement-messages">
+        <span>COMPLIMENTARY DOMESTIC DISPATCH ON ORDERS OVER <strong class="announcement-highlight">$150</strong></span>
+        <span>•</span>
+        <span>100% VERIFIED AUTHENTIC FOOTWEAR GUARANTEE</span>
+      </div>
+      <div class="announcement-currency">
+        <span>CURRENCY: <strong>USD ($)</strong></span>
+        <span>|</span>
+        <span>BOUTIQUE: <strong>GLOBAL DISPATCH</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       2. MAIN NAVIGATION HEADER
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Brand Identity -->
+      <a href="index3.html" class="brand-logo" aria-label="Steppers Sneakers and Sole Home">
+        <div class="brand-name">STEPPERS <span>&amp;</span> SOLE</div>
+        <div class="brand-sub">SNEAKERS • GRAILS • STREETWEAR</div>
+      </a>
+
+      <!-- Primary Navigation Links -->
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+        <a href="#categories" class="nav-link">Sneakers</a>
+        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#brand-story" class="nav-link">About Us</a>
+        <a href="#footer" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Utilities -->
+      <div class="header-actions">
+        <!-- Live Search Trigger -->
+        <button class="action-icon-btn" id="open-search-btn" title="Search Sneakers" aria-label="Search Sneakers">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Account Profile Icon -->
+        <a href="#brand-story" class="action-icon-btn" title="My Steppers Vault" aria-label="My Account">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <!-- Shopping Cart Trigger -->
+        <button class="action-icon-btn" id="open-cart-btn" title="Shopping Bag" aria-label="View Shopping Bag">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge-count" id="cart-badge-count">1</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="action-icon-btn mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. HOMEPAGE HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-media">
+      <img src="assets/images/grandeur-hero-lifestyle.jpg" alt="Steppers Sneakers Editorial Lifestyle" class="hero-bg-img" loading="eager">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#c89b4f"><circle cx="12" cy="12" r="10"/></svg>
+          THE WINTER 2026 ARCHIVAL CURATION
+        </div>
+        
+        <h1 class="hero-headline">STEP INTO <span>YOUR STYLE.</span></h1>
+        
+        <p class="hero-subtext">
+          Discover your next favorite pair. Elevate every step with sneakers that define your style.
+        </p>
+        
+        <div class="hero-cta-group">
+          <a href="#new-arrivals" class="btn-primary">SHOP NOW</a>
+          <a href="#collections" class="btn-secondary">EXPLORE COLLECTION</a>
+        </div>
+
+        <div class="hero-pillars-bar">
+          <div class="hero-pillar-item">
+            <span>01 //</span> VERIFIED AUTHENTIC
+          </div>
+          <div class="hero-pillar-item">
+            <span>02 //</span> CURATED EDITIONS
+          </div>
+          <div class="hero-pillar-item">
+            <span>03 //</span> GLOBAL EXPRESS SHIP
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. FEATURED SHOPPING CATEGORIES
+       ========================================================================== -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-head-wrap">
+        <span class="section-eyebrow">CURATED SILHOUETTES</span>
+        <h2 class="section-title">FEATURED <span>CATEGORIES</span></h2>
+        <p class="section-desc">
+          Explore precision-crafted departments tailored for collectors, athletes, and daily streetwear purists.
+        </p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- Category 1: Men's Sneakers -->
+        <a href="#new-arrivals" class="category-card" aria-label="Shop Men's Sneakers">
+          <img src="assets/images/sneaker-chicago.jpg" alt="Men's Sneakers Department" class="category-img" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-chip">ARCHIVE HIGHS &amp; CLASSICS</span>
+            <h3 class="category-name">MEN'S SNEAKERS</h3>
+            <span class="category-cta-pill">
+              SHOP DEPARTMENT
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Category 2: Women's Sneakers -->
+        <a href="#new-arrivals" class="category-card" aria-label="Shop Women's Sneakers">
+          <img src="assets/images/sneaker-purple.jpg" alt="Women's Sneakers Department" class="category-img" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-chip">CONTEMPORARY PASTELS &amp; LOWS</span>
+            <h3 class="category-name">WOMEN'S SNEAKERS</h3>
+            <span class="category-cta-pill">
+              SHOP DEPARTMENT
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Category 3: Basketball Shoes -->
+        <a href="#new-arrivals" class="category-card" aria-label="Shop Basketball Shoes">
+          <img src="assets/images/sneaker-dunk.jpg" alt="Basketball Shoes Department" class="category-img" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-chip">HARDWOOD PERFORMANCE &amp; RETROS</span>
+            <h3 class="category-name">BASKETBALL SHOES</h3>
+            <span class="category-cta-pill">
+              SHOP DEPARTMENT
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Category 4: Running Shoes -->
+        <a href="#new-arrivals" class="category-card" aria-label="Shop Running Shoes">
+          <img src="assets/images/sneaker-runner.jpg" alt="Running Shoes Department" class="category-img" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-chip">MARATHON CARBON &amp; CUSHIONING</span>
+            <h3 class="category-name">RUNNING SHOES</h3>
+            <span class="category-cta-pill">
+              SHOP DEPARTMENT
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Category 5: Lifestyle Sneakers -->
+        <a href="#new-arrivals" class="category-card" aria-label="Shop Lifestyle Sneakers">
+          <img src="assets/images/af1-high-studio34.jpg" alt="Lifestyle Sneakers Department" class="category-img" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-chip">TIMELESS DAILY SILHOUETTES</span>
+            <h3 class="category-name">LIFESTYLE SNEAKERS</h3>
+            <span class="category-cta-pill">
+              SHOP DEPARTMENT
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Category 6: Streetwear & Accessories -->
+        <a href="#new-arrivals" class="category-card" aria-label="Shop Streetwear & Accessories">
+          <img src="assets/images/steppers-drip-hoodie.jpg" alt="Streetwear & Accessories Department" class="category-img" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-chip">480GSM HEAVYWEIGHT APPAREL &amp; CARE</span>
+            <h3 class="category-name">STREETWEAR &amp; ACCESSORIES</h3>
+            <span class="category-cta-pill">
+              SHOP DEPARTMENT
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. NEW ARRIVALS SECTION (PREMIUM PRODUCT SHOWCASE)
+       ========================================================================== -->
+  <section class="new-arrivals-section" id="new-arrivals">
+    <div class="container">
+      <div class="arrivals-header-row">
+        <div>
+          <span class="section-eyebrow">JUST UNBOXED IN ATELIER</span>
+          <h2 class="section-title">NEW <span>ARRIVALS</span></h2>
+        </div>
+
+        <!-- Filter Navigation Pills -->
+        <div class="arrivals-filter-tabs">
+          <button class="filter-pill active" data-filter="ALL">ALL NEW ARRIVALS</button>
+          <button class="filter-pill" data-filter="RETRO HIGH">RETRO HIGH</button>
+          <button class="filter-pill" data-filter="MODERN LOW">MODERN LOW</button>
+          <button class="filter-pill" data-filter="RUNNING">RUNNING</button>
+          <button class="filter-pill" data-filter="APPAREL">APPAREL</button>
+        </div>
+      </div>
+
+      <!-- Dynamic Product Grid rendered by main3.js -->
+      <div class="products-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. FEATURED COLLECTIONS (EDITORIAL STYLE)
+       ========================================================================== -->
+  <section class="featured-collection-section" id="collections">
+    <div class="container">
+      <div class="collection-editorial-grid">
+        <div class="collection-media-box">
+          <span class="collection-badge-float">EDITORIAL VOLUME 03 // WINTER 2026</span>
+          <img src="assets/images/heritage-culture.jpg" alt="Featured Sneaker Collection" class="collection-media-img" loading="lazy">
+        </div>
+
+        <div class="collection-content-col">
+          <span class="collection-sub-eyebrow">EXCLUSIVE VAULT CURATION</span>
+          <h2 class="collection-main-heading">FIND YOUR NEXT <span>FAVORITE PAIR.</span></h2>
+          <p class="collection-desc">
+            From the electric hardwood of 1985 Chicago to the bustling metropolitan runways of Tokyo, our signature collections capture the pinnacle of sneaker heritage. Every silhouette is strictly vetted for craftsmanship, deadstock pedigree, and aesthetic impact.
+          </p>
+
+          <div class="collection-perks-list">
+            <div class="perk-item">
+              <span class="perk-bullet"></span>
+              <span>100% Deadstock Condition</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-bullet"></span>
+              <span>RFID Encrypted Authentication</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-bullet"></span>
+              <span>Archival Temperature Storage</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-bullet"></span>
+              <span>Signature Vault Collector Box</span>
+            </div>
+          </div>
+
+          <div>
+            <a href="#new-arrivals" class="btn-primary">VIEW COLLECTION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. BRAND STORY SECTION (ABOUT US)
+       ========================================================================== -->
+  <section class="brand-story-section" id="brand-story">
+    <div class="container">
+      <div class="story-layout-grid">
+        <div class="story-media-composition">
+          <img src="assets/images/lookbook-street.jpg" alt="Steppers Culture & Lifestyle Editorial" class="story-main-photo" loading="lazy">
+          <div class="story-floating-card">
+            <div class="story-stat-num">100%</div>
+            <div class="story-stat-label">AUTHENTICITY VERIFIED // ZERO TOLERANCE</div>
+          </div>
+        </div>
+
+        <div class="story-content-col">
+          <span class="section-eyebrow">THE STEPPERS PHILOSOPHY</span>
+          <h2 class="story-headline">MORE THAN JUST SNEAKERS. <span>IT'S A LIFESTYLE.</span></h2>
+          
+          <p class="story-body-copy">
+            Steppers Sneakers &amp; Sole was founded on a simple conviction: what you put on your feet is the foundation of how you present yourself to the world. We live at the intersection of sneaker culture, personal style, comfort, and uncompromising individuality.
+          </p>
+          <p class="story-body-copy">
+            Whether you are hunting for an elusive deadstock retro grail, securing an all-day comfort runner, or styling high-end urban heavyweight garments, our atelier bridges the gap between historical sport heritage and modern fashion.
+          </p>
+
+          <div class="story-values-grid">
+            <div class="value-item">
+              <h4>HERITAGE</h4>
+              <p>Honoring the iconic designs, designers, and courts that defined generations.</p>
+            </div>
+            <div class="value-item">
+              <h4>INDIVIDUALITY</h4>
+              <p>Curating silhouettes that empower you to express your distinctive voice.</p>
+            </div>
+            <div class="value-item">
+              <h4>COMFORT</h4>
+              <p>Unmatched cushioning innovations engineered for modern city life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. PROMOTIONAL BANNER
+       ========================================================================== -->
+  <section class="promo-banner-section">
+    <div class="container">
+      <div class="promo-banner-inner">
+        <span class="promo-eyebrow">LIMITED TIME ATELIER RELEASE</span>
+        <h2 class="promo-headline">YOUR STYLE. YOUR STEPS. <span>YOUR STATEMENT.</span></h2>
+        <p class="promo-subtext">
+          Step into a world where premium craftsmanship meets contemporary street culture. Explore our complete gallery of verified grails and apparel before drops sell out.
+        </p>
+        <a href="#new-arrivals" class="btn-primary">SHOP THE COLLECTION</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. NEWSLETTER SUBSCRIPTION SECTION
+       ========================================================================== -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-card-box">
+        <div>
+          <span class="section-eyebrow">THE INNER CIRCLE</span>
+          <h2 class="newsletter-title">STAY IN <span>STEP.</span></h2>
+          <p class="newsletter-desc">
+            Get updates on new arrivals, exclusive collections, and the latest sneaker trends.
+          </p>
+        </div>
+
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <div class="newsletter-input-group">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address..." required>
+            <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+          </div>
+          <span class="newsletter-disclaimer">By subscribing, you agree to receive Steppers editorial drops. Unsubscribe at any time.</span>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-col">
+          <div class="brand-name">STEPPERS <span>&amp;</span> SOLE</div>
+          <p class="footer-brand-desc">
+            A premium footwear boutique and contemporary streetwear atelier dedicated to authenticity, comfort, and timeless urban style.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Instagram" aria-label="Steppers Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Twitter / X" aria-label="Steppers Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="YouTube" aria-label="Steppers YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#hero">Home</a></li>
+            <li class="footer-link-item"><a href="#new-arrivals">New Arrivals</a></li>
+            <li class="footer-link-item"><a href="#categories">Featured Categories</a></li>
+            <li class="footer-link-item"><a href="#collections">Curated Collections</a></li>
+            <li class="footer-link-item"><a href="#brand-story">Brand Philosophy</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div>
+          <h4 class="footer-col-title">ASSISTANCE</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#footer">Authenticity Guarantee</a></li>
+            <li class="footer-link-item"><a href="#footer">Shipping &amp; Global Delivery</a></li>
+            <li class="footer-link-item"><a href="#footer">Returns &amp; Exchanges</a></li>
+            <li class="footer-link-item"><a href="#footer">Size Guide &amp; Fit Advisory</a></li>
+            <li class="footer-link-item"><a href="#footer">Terms &amp; Conditions</a></li>
+            <li class="footer-link-item"><a href="#footer">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Atelier Details -->
+        <div>
+          <h4 class="footer-col-title">ATELIER CONTACT</h4>
+          <ul class="footer-links-list" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            <li>Steppers Sneakers &amp; Sole Atelier</li>
+            <li>Concierge: concierge@steppersboutique.com</li>
+            <li>Direct: +1 (800) 843-STEP</li>
+            <li>Hours: Mon – Sat, 10:00 AM – 8:00 PM EST</li>
+            <li style="margin-top: 8px; color: var(--accent-gold-light);">Authenticity Vault: Global Verified</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          &copy; 2026 Steppers Sneakers &amp; Sole. All rights reserved. Designed for discerning collectors.
+        </div>
+        <div class="footer-badges">
+          <span>ENCRYPTED SECURE 256-BIT CHECKOUT</span>
+          <span>•</span>
+          <span>RFID VAULT VERIFIED</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       11. CART DRAWER (SLIDE-OUT)
+       ========================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Bag Drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">YOUR SHOPPING BAG</div>
+      <button class="btn-close-drawer" id="close-cart-btn" aria-label="Close Shopping Bag">&times;</button>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-drawer-items" id="cart-drawer-items">
+      <!-- Injected by main3.js -->
+    </div>
+
+    <!-- Subtotal and Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">ESTIMATED SUBTOTAL</span>
+        <span class="cart-subtotal-val" id="cart-subtotal-val">$180.00</span>
+      </div>
+      <button class="btn-checkout" id="btn-checkout">PROCEED TO CHECKOUT</button>
+      <div style="font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
+        Taxes and shipping calculated at checkout. Frontend demonstration mode.
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       12. QUICK VIEW MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="quickview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button class="btn-close-modal" id="close-modal-btn" aria-label="Close Modal">&times;</button>
+      
+      <div class="modal-grid">
+        <div class="modal-image-box">
+          <img src="assets/images/sneaker-chicago.jpg" alt="Sneaker Preview" id="modal-img">
+        </div>
+
+        <div class="modal-info-col">
+          <span class="product-brand-tag" id="modal-brand">JORDAN BRAND</span>
+          <h2 class="modal-title" id="modal-title">Air Jordan 1 Retro High OG 'Chicago'</h2>
+          <div class="modal-price" id="modal-price">$180.00 USD</div>
+          <p class="modal-desc" id="modal-desc">
+            The timeless 1985 silhouette in its truest archival form. Premium Varsity Red, White, and Black Nappa leather upper with encapsulated Nike Air cushioning.
+          </p>
+
+          <div class="modal-sizes-group">
+            <span class="modal-sizes-label">SELECT COLLECTOR SIZE (US MEN)</span>
+            <div class="modal-sizes-strip" id="modal-sizes-strip">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 14px;">
+            <button class="btn-primary" id="modal-add-bag-btn" style="flex-grow: 1;">ADD TO BAG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       13. SEARCH OVERLAY
+       ========================================================================== -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Product Search">
+    <div class="search-header-row">
+      <button class="btn-close-drawer" id="close-search-btn" aria-label="Close Search">&times;</button>
+    </div>
+
+    <div class="search-bar-wrap">
+      <input type="text" id="search-input" class="search-input-field" placeholder="Search by model, brand, or style..." autocomplete="off">
+    </div>
+
+    <div class="search-results-grid" id="search-results-grid">
+      <!-- Live Search Results Injected Here -->
+    </div>
+  </div>
+
+  <!-- Toast Notification Host -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Core JavaScript for Index 3 -->
+  <script src="assets/js/main3.js"></script>
+</body>
+</html>
