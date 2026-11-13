@@ -435,11 +435,11 @@ ul, ol {
 
 .marquee-item {
   font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0 24px;
+  padding: 0 22px;
   white-space: nowrap;
 }
 
@@ -447,7 +447,7 @@ ul, ol {
   color: var(--brand-orange);
   text-shadow: 0 0 10px var(--brand-orange-glow);
   padding: 0 12px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .marquee-dot {
