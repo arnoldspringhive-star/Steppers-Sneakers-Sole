@@ -151,6 +151,54 @@ document.addEventListener('DOMContentLoaded', () => {
       hoverImage: 'assets/images/travis-mocha-hover.png',
       sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5'],
       description: "Signature oversized reverse cream Swoosh, rich dark mocha nubuck base, crisp sail leather overlays, and red Cactus Jack accents."
+    },
+    {
+      id: 'step-13',
+      name: "Air Jordan 1 Retro High OG 'Lost & Found'",
+      brand: 'JORDAN BRAND',
+      price: 240,
+      badge: 'VINTAGE 1985',
+      badgeClass: '',
+      image: 'assets/images/aj1-lostfound-profile.png',
+      hoverImage: 'assets/images/aj1-lostfound-hover.png',
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11', 'US 12'],
+      description: "Archival 1985 Chicago high-top aesthetic reimagined with cracked black leather collar, vintage sail leather quarter panels, pre-aged off-white midsole, and iconic varsity red leather overlays."
+    },
+    {
+      id: 'step-14',
+      name: "Nike Dunk Low 'Grey Fog'",
+      brand: 'NIKE SPORTSWEAR',
+      price: 125,
+      badge: 'NEW ARRIVAL',
+      badgeClass: '',
+      image: 'assets/images/dunk-greyfog-profile.png',
+      hoverImage: 'assets/images/dunk-greyfog-hover.png',
+      sizes: ['US 7.5', 'US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
+      description: "Subtle two-tone elegance featuring smooth white leather underlays, muted Grey Fog leather overlays, matching Swoosh, and durable rubber cupsole cushioning."
+    },
+    {
+      id: 'step-15',
+      name: "Air Jordan 11 Retro 'Concord'",
+      brand: 'JORDAN BRAND',
+      price: 260,
+      badge: 'CONCORD OG',
+      badgeClass: '',
+      image: 'assets/images/aj11-concord-profile.png',
+      hoverImage: 'assets/images/aj11-concord-hover.png',
+      sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11', 'US 12'],
+      description: "Tinker Hatfield's masterpiece combining high-gloss black patent leather, pristine white ballistic cordura mesh, carbon fiber shank plate, and icy translucent outsole."
+    },
+    {
+      id: 'step-16',
+      name: "Yeezy Boost 350 V2 'Zebra'",
+      brand: 'ADIDAS YEEZY',
+      price: 230,
+      badge: 'ICONIC GRAIL',
+      badgeClass: '',
+      image: 'assets/images/yeezy-zebra-profile.png',
+      hoverImage: 'assets/images/yeezy-zebra-hover.png',
+      sizes: ['US 7', 'US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11'],
+      description: "Groundbreaking Primeknit construction in iconic white and core black zebra patterning, lateral monofilament stripe with mirrored red 'SPLY-350' insignia, and full-length Boost encapsulated sole."
     }
   ];
 
@@ -265,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
       arrivalsGrid.innerHTML = CATALOG.slice(0, 4).map(p => createCardHtml(p)).join('');
     }
     if (staffGrid) {
-      staffGrid.innerHTML = CATALOG.slice(4, 12).map(p => createCardHtml(p)).join('');
+      staffGrid.innerHTML = CATALOG.slice(4, 16).map(p => createCardHtml(p)).join('');
     }
 
     // Attach card click & quick view handlers
