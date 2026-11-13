@@ -146,7 +146,9 @@ ul, ol {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  height: 76px;
+  min-height: 110px;
+  height: auto;
+  padding: 10px 0;
 }
 
 /* Left: Hamburger Menu */
@@ -207,15 +209,17 @@ ul, ol {
 }
 
 .brand-logo-img {
-  height: 60px;
+  height: 115px;
   width: auto;
+  max-width: 340px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 12px rgba(255, 42, 133, 0.25));
-  transition: filter var(--trans);
+  filter: drop-shadow(0 4px 22px rgba(255, 42, 133, 0.45));
+  transition: filter var(--trans), transform var(--trans);
 }
 
 .header-brand:hover .brand-logo-img {
-  filter: drop-shadow(0 4px 18px rgba(255, 42, 133, 0.5)) drop-shadow(0 0 8px rgba(255, 123, 0, 0.35));
+  transform: scale(1.04);
+  filter: drop-shadow(0 6px 28px rgba(255, 42, 133, 0.7)) drop-shadow(0 0 16px rgba(255, 123, 0, 0.5));
 }
 
 /* Right: Utilities */
