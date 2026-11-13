@@ -356,74 +356,52 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  // 8. SYNCHRONIZED "SHOP THE LOOK" OUTFIT & PRODUCT CAROUSEL
+  // 8. SYNCHRONIZED "SHOP THE LOOK" OUTFIT & 3-PRODUCT BOX CAROUSEL
   let currentLookSlide = 0;
   const totalLookSlides = 3;
-  const outfitTitles = [
-    'OUTFIT 01 // THE DOWNTOWN CARGO FIT',
-    'OUTFIT 02 // THE HOODIE GRAIL CAPSULE',
-    'OUTFIT 03 // THE URBAN SPEED SYNDICATE'
-  ];
   const lookMediaTrack = document.getElementById('look-media-track');
   const lookTrack = document.getElementById('look-carousel-track');
   const lookCounter = document.getElementById('look-slide-counter');
   const lookCarouselTag = document.getElementById('look-carousel-tag');
-  const outfitCounterTag = document.getElementById('outfit-counter-tag');
-  const lookDots = document.querySelectorAll('.look-dot-btn');
   const lookPrevBtn = document.getElementById('look-prev-btn');
   const lookNextBtn = document.getElementById('look-next-btn');
-  const outfitPrevArrow = document.getElementById('outfit-prev-arrow');
-  const outfitNextArrow = document.getElementById('outfit-next-arrow');
 
   function updateLookCarousel(idx) {
     currentLookSlide = (idx + totalLookSlides) % totalLookSlides;
 
-    // 1. Simultaneously slide Left Outfit Flat Lay Track (Image 2)
+    // 1. Simultaneously slide Left Outfit Flat Lay Track
     if (lookMediaTrack) {
       lookMediaTrack.style.transform = `translateX(-${currentLookSlide * 100}%)`;
     }
 
-    // 2. Simultaneously slide Right Product Card Track
+    // 2. Simultaneously slide Right 3-Product Box Stack Track
     if (lookTrack) {
       lookTrack.style.transform = `translateX(-${currentLookSlide * 100}%)`;
     }
 
-    // 3. Update Counters & Tags
+    // 3. Update Live Counter & Capsule Tag
     if (lookCounter) {
       lookCounter.textContent = `0${currentLookSlide + 1} / 03`;
     }
     if (lookCarouselTag) {
       lookCarouselTag.textContent = `// OUTFIT CAPSULE 0${currentLookSlide + 1} OF 03`;
     }
-    if (outfitCounterTag) {
-      outfitCounterTag.textContent = outfitTitles[currentLookSlide];
-    }
-
-    // 4. Update Navigation Dots
-    lookDots.forEach((btn, i) => {
-      btn.classList.toggle('active', i === currentLookSlide);
-    });
   }
 
-  // Right card arrow buttons (Image 1 in user directive)
-  lookPrevBtn?.addEventListener('click', () => updateLookCarousel(currentLookSlide - 1));
-  lookNextBtn?.addEventListener('click', () => updateLookCarousel(currentLookSlide + 1));
-
-  // Left outfit image arrow buttons (Image 2 in user directive)
-  outfitPrevArrow?.addEventListener('click', () => updateLookCarousel(currentLookSlide - 1));
-  outfitNextArrow?.addEventListener('click', () => updateLookCarousel(currentLookSlide + 1));
-
-  // Bottom dots listeners
-  lookDots.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const slide = parseInt(btn.dataset.slide, 10);
-      updateLookCarousel(slide);
-    });
+  // Right Navigation Arrow Event Handlers
+  lookPrevBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    updateLookCarousel(currentLookSlide - 1);
+  });
+  lookNextBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    updateLookCarousel(currentLookSlide + 1);
   });
 
-  // Connect carousel "VIEW PRODUCT" buttons
+  // Connect all "VIEW PRODUCT" buttons in the 3-box carousel to Quick View modal
   document.querySelectorAll('.btn-look-product').forEach(btn => {
     btn.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const pid = btn.dataset.id || 'look-1';
       openQuickView(pid);

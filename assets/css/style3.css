@@ -657,7 +657,7 @@ ul, ol {
 }
 
 /* ==========================================================================
-   7. "SHOP THE LOOK" (OUTFIT SLIDER + 3 COORDINATED PRODUCT BOXES)
+   7. "SHOP THE LOOK" (SYNCHRONIZED OUTFIT SLIDER + 3 PRODUCT BOXES)
    ========================================================================== */
 .shop-the-look-section {
   padding: 90px 0 100px;
@@ -669,13 +669,13 @@ ul, ol {
 .look-grid-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: 40px;
   align-items: stretch;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Left: Outfit Flat Lay Slide Stage with Prominent Arrow Icons */
+/* Left: Clean Curated Flat Lay Outfit Stage */
 .look-media-box {
   position: relative;
   width: 100%;
@@ -697,6 +697,7 @@ ul, ol {
 
 .look-media-slide {
   min-width: 100%;
+  width: 100%;
   height: 100%;
   flex-shrink: 0;
   position: relative;
@@ -710,77 +711,21 @@ ul, ol {
   display: block;
 }
 
-.outfit-top-hud {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.82);
-  backdrop-filter: blur(8px);
-  padding: 8px 16px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 42, 133, 0.45);
-  pointer-events: none;
-}
-
-.outfit-counter-tag {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: var(--brand-pink);
-  text-transform: uppercase;
-}
-
-.outfit-slide-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.85);
-  border: 2px solid var(--brand-pink);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 15;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 20px var(--brand-pink-glow);
-  transition: all var(--trans);
-}
-
-.outfit-slide-arrow svg {
-  width: 24px;
-  height: 24px;
-}
-
-.outfit-slide-arrow:hover {
-  background: var(--brand-pink);
-  color: #ffffff;
-  transform: translateY(-50%) scale(1.14);
-  box-shadow: 0 8px 30px var(--brand-pink-glow);
-}
-
-.outfit-slide-arrow.arrow-left { left: 16px; }
-.outfit-slide-arrow.arrow-right { right: 16px; }
-
-/* Right Column: Interactive Curated Outfit Product Showcase */
+/* Right Column: Interactive Curated 3-Box Product Showcase Carousel */
 .look-carousel-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 540px;
+  max-width: 560px;
   margin: 0 auto;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .look-carousel-nav-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   padding: 0 4px;
 }
 
@@ -834,6 +779,7 @@ ul, ol {
   overflow: hidden;
   position: relative;
   border-radius: 12px;
+  width: 100%;
 }
 
 .look-carousel-track {
@@ -845,150 +791,121 @@ ul, ol {
 
 .look-carousel-slide {
   min-width: 100%;
+  width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
 }
 
-.active-card-glow {
+/* 3-Box Stack Inside Each Outfit Slide */
+.look-preview-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-height: 680px;
+  overflow-y: auto;
+  padding: 4px 6px 4px 2px;
+}
+
+.look-preview-stack::-webkit-scrollbar {
+  width: 5px;
+}
+.look-preview-stack::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+}
+.look-preview-stack::-webkit-scrollbar-thumb {
+  background: rgba(255, 42, 133, 0.35);
+  border-radius: 3px;
+}
+.look-preview-stack::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-pink);
+}
+
+.look-preview-col {
+  background: #0d0d15;
   border: 1px solid var(--border-light);
   border-radius: 12px;
-  background: var(--bg-card);
-  padding: 32px 28px;
-  transition: all var(--trans);
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: all var(--trans);
   position: relative;
 }
 
-.active-card-glow:hover {
+.look-preview-col:hover,
+.look-preview-col.active-card-glow {
   border-color: var(--brand-pink);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), 0 0 24px rgba(255, 42, 133, 0.25);
+  box-shadow: 0 0 22px rgba(255, 42, 133, 0.3), 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
-.view-perspective-badge {
+.look-preview-col .look-item-thumb {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.65));
+  transition: transform 0.35s ease;
+}
+
+.look-preview-col:hover .look-item-thumb {
+  transform: scale(1.06);
+}
+
+.look-item-brand {
   font-family: var(--font-heading);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: var(--brand-orange);
-  background: rgba(255, 123, 0, 0.1);
-  border: 1px solid rgba(255, 123, 0, 0.3);
-  padding: 5px 12px;
-  border-radius: 4px;
-  margin-bottom: 18px;
   text-transform: uppercase;
-}
-
-.look-card-hero-thumb {
-  width: 220px;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-  background: radial-gradient(circle, rgba(255, 42, 133, 0.08) 0%, transparent 70%);
-}
-
-.look-card-hero-thumb .look-item-thumb {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: transform 0.4s ease;
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.7));
-}
-
-.active-card-glow:hover .look-item-thumb {
-  transform: scale(1.06) rotate(-2deg);
-}
-
-.look-item-brand {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .look-item-title {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: #ffffff;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .look-item-price {
   font-family: var(--font-sans);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--brand-pink);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-.outfit-pieces-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 22px;
-  width: 100%;
-}
-
-.piece-pill {
-  font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-muted);
-}
-
-.piece-pill.active {
-  background: rgba(255, 42, 133, 0.15);
-  border-color: var(--brand-pink);
+.look-preview-col .btn-look-product {
+  background: var(--brand-pink);
   color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 9px 24px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--trans);
+  box-shadow: 0 4px 14px var(--brand-pink-glow);
+}
+
+.look-preview-col .btn-look-product:hover {
+  background: var(--brand-pink-hover);
+  box-shadow: 0 6px 20px var(--brand-pink-glow);
+  transform: translateY(-2px);
 }
 
 .look-carousel-dots {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 18px;
-}
-
-.look-dot-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: var(--text-muted);
-  font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all var(--trans);
-}
-
-.look-dot-btn:hover {
-  border-color: var(--brand-pink);
-  color: #ffffff;
-}
-
-.look-dot-btn.active {
-  background: var(--brand-pink);
-  border-color: var(--brand-pink);
-  color: #ffffff;
-  box-shadow: 0 0 16px var(--brand-pink-glow);
+  display: none !important;
 }
 
 /* ==========================================================================
