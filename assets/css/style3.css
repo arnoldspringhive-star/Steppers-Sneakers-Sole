@@ -382,7 +382,9 @@ ul, ol {
 .marquee-bar {
   background-color: #000000;
   color: #ffffff;
-  height: 48px;
+  padding: 10px 0;
+  height: auto;
+  min-height: 54px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -398,7 +400,7 @@ ul, ol {
   flex-shrink: 0;
   align-items: center;
   min-width: 100%;
-  animation: marqueeContinuous 35s linear infinite;
+  animation: marqueeContinuous 70s linear infinite;
   will-change: transform;
 }
 
@@ -409,7 +411,7 @@ ul, ol {
 
 .marquee-item {
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -421,12 +423,13 @@ ul, ol {
   color: var(--brand-orange);
   text-shadow: 0 0 10px var(--brand-orange-glow);
   padding: 0 12px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .marquee-dot {
   color: var(--brand-orange);
   text-shadow: 0 0 8px var(--brand-orange-glow);
+  font-size: 16px;
 }
 
 @keyframes marqueeContinuous {
