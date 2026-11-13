@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 180,
       badge: 'NEW ARRIVAL',
       badgeClass: '',
-      image: 'assets/images/sneaker-chicago.jpg',
+      image: 'assets/images/aj1-chicago-profile.png',
+      hoverImage: 'assets/images/aj1-chicago-hover.png',
       sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11'],
       description: "The timeless 1985 silhouette in its truest archival form. Premium Varsity Red, White, and Black Nappa leather upper with encapsulated Nike Air cushioning."
     },
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 130,
       badge: null,
       badgeClass: '',
-      image: 'assets/images/sneaker-purple.jpg',
+      image: 'assets/images/af1-pastel-profile.png',
+      hoverImage: 'assets/images/af1-pastel-hover.png',
       sizes: ['US 6.5', 'US 7', 'US 7.5', 'US 8', 'US 8.5', 'US 9'],
       description: "Deconstructed layered pastels with dual eyestays, double mudguards, and mirrored heel branding over an elevated foam midsole."
     },
@@ -36,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 210,
       badge: 'LIMITED GRAIL',
       badgeClass: '',
-      image: 'assets/images/sneaker-cyan.jpg',
+      image: 'assets/images/cyan-profile.png',
+      hoverImage: 'assets/images/cyan-hover.png',
       sizes: ['US 8.5', 'US 9', 'US 10', 'US 10.5', 'US 12'],
       description: "Stark white premium tumbled leather upper paired with vibrant electric cyan accents, speckled eyelet wings, and responsive air cushioning."
     },
@@ -47,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 135,
       badge: null,
       badgeClass: '',
-      image: 'assets/images/sneaker-dunk.jpg',
+      image: 'assets/images/blacktoe-profile.png',
+      hoverImage: 'assets/images/blacktoe-hover.png',
       sizes: ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5'],
       description: "Crisp white quarter panel flanked by black nubuck overlays and gym red heel counter, finished with embroidered wings insignia."
     },
@@ -59,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 190,
       badge: null,
       badgeClass: '',
-      image: 'assets/images/sneaker-bred.jpg',
+      image: 'assets/images/bred-profile.png',
+      hoverImage: 'assets/images/bred-hover.png',
       sizes: ['US 8', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11'],
       description: "The silhouette that started the revolution. Iconic black and varsity red colorway with premium tumbled leather and archival nylon tongue."
     },
@@ -70,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 140,
       badge: null,
       badgeClass: '',
-      image: 'assets/images/sneaker-runner.jpg',
+      image: 'assets/images/free-red-profile.png',
+      hoverImage: 'assets/images/free-red-hover.png',
       sizes: ['US 8', 'US 8.5', 'US 9', 'US 10', 'US 11'],
       description: "Ultra-breathable seamless Flyknit woven upper in bold University Red, equipped with an auxetic tri-star outsole that expands and contracts naturally."
     },
@@ -81,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 145,
       badge: 'SOLD OUT',
       badgeClass: 'sold-out',
-      image: 'assets/images/af1-high-profile.jpg',
+      image: 'assets/images/af1-sail-profile.png',
+      hoverImage: 'assets/images/af1-sail-hover.png',
       sizes: ['US 7.5', 'US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 11'],
       description: "The classic 1982 hardwood high-top featuring summit white leather, metallic gold deubré, padded ankle collar, and secure velcro lock strap."
     },
@@ -92,7 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 120,
       badge: null,
       badgeClass: '',
-      image: 'assets/images/steppers-drip-hoodie.jpg',
+      image: 'assets/images/hoodie-front.png',
+      hoverImage: 'assets/images/hoodie-back.png',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       description: "Custom milled 480GSM French terry cotton hoodie in pitch black, engineered with double-lined crossover hood and tonal high-density Steppers monogram."
     }
@@ -133,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Air Jordan 1 Retro High OG 'Chicago'",
       size: 'US 9.5',
       price: 180,
-      image: 'assets/images/sneaker-chicago.jpg',
+      image: 'assets/images/aj1-chicago-profile.png',
       qty: 1
     }
   ];
@@ -232,11 +240,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function createCardHtml(p) {
     const badgeHtml = p.badge ? `<div class="product-badge-grandeur ${p.badgeClass}">${p.badge}</div>` : '';
+    const hoverImgHtml = p.hoverImage ? `<img src="${p.hoverImage}" alt="${p.name} - Alternate Angle" class="product-img-hover" loading="lazy">` : '';
     return `
       <div class="product-card-grandeur" data-id="${p.id}">
         <div class="product-thumb-box">
           ${badgeHtml}
-          <img src="${p.image}" alt="${p.name}" loading="lazy">
+          <img src="${p.image}" alt="${p.name}" class="product-img-primary" loading="lazy">
+          ${hoverImgHtml}
           <button class="product-quick-btn" data-id="${p.id}">QUICK VIEW</button>
         </div>
         <div class="product-meta-grandeur">
@@ -428,6 +438,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 10. QUICK VIEW MODAL
+  const modalGalleryThumbs = document.getElementById('modal-gallery-thumbs');
+
   function openQuickView(productId) {
     const product = CATALOG.find(p => p.id === productId);
     if (!product || !quickviewModal) return;
@@ -441,6 +453,30 @@ document.addEventListener('DOMContentLoaded', () => {
     modalTitle.textContent = product.name;
     modalPrice.textContent = `$${product.price.toFixed(2)} USD`;
     modalDesc.textContent = product.description;
+
+    if (modalGalleryThumbs) {
+      if (product.hoverImage) {
+        modalGalleryThumbs.innerHTML = `
+          <button class="modal-thumb-btn active" data-img="${product.image}">
+            <img src="${product.image}" alt="Profile View">
+            <span>PROFILE</span>
+          </button>
+          <button class="modal-thumb-btn" data-img="${product.hoverImage}">
+            <img src="${product.hoverImage}" alt="Perspective View">
+            <span>PERSPECTIVE</span>
+          </button>
+        `;
+        modalGalleryThumbs.querySelectorAll('.modal-thumb-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            modalGalleryThumbs.querySelectorAll('.modal-thumb-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            modalImg.src = btn.dataset.img;
+          });
+        });
+      } else {
+        modalGalleryThumbs.innerHTML = '';
+      }
+    }
 
     if (product.sizes) {
       modalSizesStrip.innerHTML = product.sizes.map(s => `
@@ -524,9 +560,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     searchResultsGrid.innerHTML = matches.map(p => `
-      <div class="product-card-grandeur" data-id="${p.id}" style="padding: 10px; border: 1px solid #eee;">
-        <div class="product-thumb-box" style="aspect-ratio: 1/1;">
-          <img src="${p.image}" alt="${p.name}">
+      <div class="product-card-grandeur" data-id="${p.id}" style="padding: 10px; border: 1px solid var(--border-light); background: var(--bg-card); border-radius: 6px;">
+        <div class="product-thumb-box" style="aspect-ratio: 1/1; margin-bottom: 8px;">
+          <img src="${p.image}" alt="${p.name}" class="product-img-primary">
+          ${p.hoverImage ? `<img src="${p.hoverImage}" alt="${p.name}" class="product-img-hover">` : ''}
         </div>
         <div class="product-meta-grandeur">
           <span class="product-brand">${p.brand}</span>
