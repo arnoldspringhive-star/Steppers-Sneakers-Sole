@@ -20,7 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: 'OG Grail',
       materials: 'Full-Grain Tumbled Cowhide',
       cushioning: 'Encapsulated Air-Sole Unit',
-      image: 'assets/images/sneaker-chicago.jpg',
+      image: 'assets/images/real_aj1_chicago.jpg',
+      gallery: [
+        'assets/images/real_aj1_chicago.jpg',
+        'assets/images/aj1_chicago_heel_detail.jpg',
+        'assets/images/aj1_chicago_toebox_detail.jpg',
+        'assets/images/aj1_chicago_sole_detail.jpg',
+        'assets/images/sneaker-chicago.jpg',
+        'assets/images/aj1-chicago-hover.png'
+      ],
       swatches: [
         'assets/images/sneaker-chicago.jpg',
         'assets/images/shoe-1.png',
@@ -50,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
       materials: 'Stacked Nappa Leather & Suede',
       cushioning: 'Elevated Foam Midsole with Air',
       image: 'assets/images/sneaker-purple.jpg',
+      gallery: [
+        'assets/images/af1-pastel-profile.png',
+        'assets/images/af1-pastel-hover.png',
+        'assets/images/sneaker-purple.jpg',
+        'assets/images/shoe-2.png'
+      ],
       swatches: [
         'assets/images/sneaker-purple.jpg',
         'assets/images/shoe-2.png'
@@ -78,6 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
       materials: 'Ripstop Mesh & Smooth Leather',
       cushioning: 'Full-Length Nike React Drop-In',
       image: 'assets/images/sneaker-cyan.jpg',
+      gallery: [
+        'assets/images/cyan-profile.png',
+        'assets/images/cyan-hover.png',
+        'assets/images/sneaker-cyan.jpg',
+        'assets/images/shoe-3.png'
+      ],
       swatches: [
         'assets/images/sneaker-cyan.jpg',
         'assets/images/shoe-3.png'
@@ -106,6 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
       materials: 'Smooth Box Leather & Heel Suede',
       cushioning: 'Midsole Encapsulated Air Unit',
       image: 'assets/images/sneaker-dunk.jpg',
+      gallery: [
+        'assets/images/blacktoe-profile.png',
+        'assets/images/blacktoe-hover.png',
+        'assets/images/sneaker-dunk.jpg',
+        'assets/images/shoe-4.png'
+      ],
       swatches: [
         'assets/images/sneaker-dunk.jpg',
         'assets/images/shoe-4.png'
@@ -134,6 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
       materials: 'Curry Suede, Mesh & Molded TPU',
       cushioning: 'Visible Max Air Chamber Unit',
       image: 'assets/images/sneaker-bred.jpg',
+      gallery: [
+        'assets/images/bred-profile.png',
+        'assets/images/bred-hover.png',
+        'assets/images/sneaker-bred.jpg',
+        'assets/images/shoe-5.png'
+      ],
       swatches: [
         'assets/images/sneaker-bred.jpg',
         'assets/images/shoe-5.png'
@@ -162,6 +194,12 @@ document.addEventListener('DOMContentLoaded', () => {
       materials: 'Full Leather & Gold Hardware',
       cushioning: 'Air-Sole Unit with Pivot Tread',
       image: 'assets/images/sneaker-retro4.jpg',
+      gallery: [
+        'assets/images/af1-sail-profile.png',
+        'assets/images/af1-sail-hover.png',
+        'assets/images/sneaker-retro4.jpg',
+        'assets/images/shoe-6.png'
+      ],
       swatches: [
         'assets/images/sneaker-retro4.jpg',
         'assets/images/shoe-6.png'
@@ -190,6 +228,12 @@ document.addEventListener('DOMContentLoaded', () => {
       materials: 'Seamless Multi-Ply Flyknit Weave',
       cushioning: 'Auxetic Tri-Star Siped Foam',
       image: 'assets/images/sneaker-runner.jpg',
+      gallery: [
+        'assets/images/free-red-profile.png',
+        'assets/images/free-red-hover.png',
+        'assets/images/sneaker-runner.jpg',
+        'assets/images/shoe-8.png'
+      ],
       swatches: [
         'assets/images/sneaker-runner.jpg',
         'assets/images/shoe-8.png'
@@ -519,9 +563,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attach Quick View
     catalogGrid.querySelectorAll('.btn-quickview-action').forEach(btn => {
       btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const id = btn.dataset.id;
         const prod = catalog.find(p => p.id === id);
         if (prod) openQuickView(prod);
+      });
+    });
+
+    // Clicking anywhere on card (image, title, etc.) opens Quick View
+    catalogGrid.querySelectorAll('.product-item-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        if (!e.target.closest('.btn-card-add-cart') && !e.target.closest('.btn-wishlist-action') && !e.target.closest('.btn-quickview-action')) {
+          const id = card.dataset.id;
+          const prod = catalog.find(p => p.id === id);
+          if (prod) openQuickView(prod);
+        }
       });
     });
 
@@ -834,10 +891,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function addToCart(prod, size) {
+  function addToCart(prod, size = 'US 10', qty = 1) {
     const existing = cart.find(i => i.id === prod.id && i.size === size);
     if (existing) {
-      existing.quantity += 1;
+      existing.quantity += qty;
     } else {
       cart.push({
         id: prod.id,
@@ -845,11 +902,11 @@ document.addEventListener('DOMContentLoaded', () => {
         price: prod.price,
         size: size,
         image: prod.image,
-        quantity: 1
+        quantity: qty
       });
     }
     updateCartUI();
-    showToast(`Added ${prod.name} (${size}) to Bag!`);
+    showToast(`Added ${qty > 1 ? qty + 'x ' : ''}${prod.name} (${size}) to Bag!`);
     openCart();
   }
 
@@ -905,7 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 6. QUICK VIEW MODAL
+  // 6. QUICK VIEW / LUXURY PDP MODAL (3-COLUMN GALLERY & DOSSIER)
   // ==========================================================================
   function openQuickView(prod) {
     let modal = document.getElementById('quickview-modal');
@@ -913,47 +970,200 @@ document.addEventListener('DOMContentLoaded', () => {
       modal = document.createElement('div');
       modal.id = 'quickview-modal';
       modal.className = 'cart-drawer-overlay';
-      modal.innerHTML = `
-        <div style="position:relative; width:800px; max-width:92vw; background:var(--bg-surface); border:1px solid var(--border-neon); border-radius:var(--radius-xl); padding:32px; box-shadow:0 30px 60px rgba(0,0,0,0.9); margin:auto; display:flex; gap:30px; flex-wrap:wrap;">
-          <button id="btn-close-quickview" style="position:absolute; top:18px; right:18px; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">✕</button>
-          <div style="flex:1; min-width:280px; aspect-ratio:1/1; background:#000; border-radius:var(--radius-lg); overflow:hidden;">
-            <img id="qv-img" src="${prod.image}" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div style="flex:1.2; min-width:280px; display:flex; flex-direction:column; gap:14px; justify-content:center;">
-            <span style="font-family:var(--font-tech); font-size:0.75rem; color:var(--accent-pink); font-weight:700;">${prod.badge.toUpperCase()} // ${prod.sku}</span>
-            <h2 style="font-family:var(--font-display); font-size:2.2rem; color:#fff; line-height:1.1;">${prod.name}</h2>
-            <div style="color:var(--accent-orange); font-size:0.9rem;">★★★★★ <span style="color:var(--text-muted); font-size:0.8rem;">(${prod.reviewsCount} verified collector reviews)</span></div>
-            <p style="font-size:16px; color:var(--text-secondary); line-height:1.5;">${prod.desc}</p>
-            <div style="font-family:var(--font-tech); font-size:1.6rem; font-weight:800; color:#fff;">$${prod.price}.00 USD</div>
-            <button id="btn-qv-add" style="padding:14px; border-radius:var(--radius-full); background:linear-gradient(135deg, var(--accent-pink), var(--accent-purple)); color:#fff; font-weight:700; font-family:var(--font-tech); cursor:pointer; text-transform:uppercase;">Add to Bag</button>
-          </div>
-        </div>
-      `;
       document.body.appendChild(modal);
-
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal || e.target.id === 'btn-close-quickview') {
-          modal.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      });
     }
 
-    const qvImg = document.getElementById('qv-img');
-    if (qvImg) qvImg.src = prod.image;
+    const gallery = (prod.gallery && prod.gallery.length > 0)
+      ? prod.gallery
+      : [
+          prod.image,
+          ...(prod.swatches || []),
+          'assets/images/aj1_chicago_heel_detail.jpg',
+          'assets/images/aj1_chicago_sole_detail.jpg'
+        ];
 
-    const btnQvAdd = document.getElementById('btn-qv-add');
-    if (btnQvAdd) {
-      btnQvAdd.onclick = () => {
-        addToCart(prod, 'US 10');
+    const monthly = (prod.price / 4).toFixed(2);
+    const saveAmount = (prod.originalPrice && prod.originalPrice > prod.price) 
+      ? prod.originalPrice - prod.price 
+      : 40;
+    const originalPrice = prod.originalPrice || (prod.price + saveAmount);
+
+    modal.innerHTML = `
+      <div class="qv-grandeur-container" role="dialog" aria-modal="true">
+        <button id="btn-close-quickview" class="qv-close-btn" aria-label="Close modal">&times;</button>
+        
+        <!-- Left: Vertical Thumbnails Strip -->
+        <div class="qv-thumbs-rail" aria-label="Product gallery thumbnails">
+          ${gallery.map((imgSrc, i) => `
+            <div class="qv-thumb-box ${i === 0 ? 'active' : ''}" data-src="${imgSrc}">
+              <img src="${imgSrc}" alt="${prod.name} thumbnail ${i + 1}" loading="lazy">
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Center: Main High-Res Image Display -->
+        <div class="qv-main-stage">
+          <div class="qv-main-img-wrap">
+            <img id="qv-main-img" src="${gallery[0]}" alt="${prod.name}">
+          </div>
+        </div>
+
+        <!-- Right: Product Purchase & Info Dossier -->
+        <div class="qv-dossier-panel">
+          <span class="qv-brand-tag">${(prod.brand || 'JORDAN BRAND').toUpperCase()}</span>
+          <h2 class="qv-title">${prod.name}</h2>
+          
+          <div class="qv-price-row">
+            <span class="qv-price">$${prod.price.toFixed(2)} USD</span>
+            <span class="qv-original-price">$${originalPrice.toFixed(2)} USD</span>
+            <span class="qv-save-badge">SAVE $${saveAmount}</span>
+          </div>
+
+          <div class="qv-installments">
+            From <strong>$${monthly}/mo</strong> or 0% APR with <span class="shoppay-badge">shop <span>Pay</span></span>
+          </div>
+
+          <div class="qv-condition-note">
+            <span class="qv-bullet">●</span> <strong>Condition:</strong> 100% Brand New Deadstock, Factory Laced, RFID Sealed, OG All
+          </div>
+
+          <div class="qv-section-label">SELECT SIZE (US MEN):</div>
+          <div class="qv-sizes-row">
+            ${(prod.sizes || ['US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11']).map((s, idx) => `
+              <button type="button" class="qv-size-chip ${idx === 2 ? 'active' : ''}" data-size="${s}">${s}</button>
+            `).join('')}
+          </div>
+
+          <div class="qv-qty-row">
+            <span class="qv-section-label">QUANTITY:</span>
+            <div class="qv-qty-selector">
+              <button type="button" class="qv-qty-btn" id="qv-qty-dec" aria-label="Decrease quantity">-</button>
+              <span id="qv-qty-val">1</span>
+              <button type="button" class="qv-qty-btn" id="qv-qty-inc" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <div class="qv-availability-card">
+            <div class="qv-avail-title">🏬 Store Availability</div>
+            <div class="qv-avail-row">
+              <span>Steppers Vault Miami</span>
+              <span class="avail-badge in-stock">● In Stock (1 available)</span>
+            </div>
+            <div class="qv-avail-row">
+              <span>Steppers Atelier NYC</span>
+              <span class="avail-badge in-stock">● In Stock</span>
+            </div>
+          </div>
+
+          <div class="qv-action-buttons">
+            <button class="qv-add-cart-btn" id="btn-qv-add">ADD TO CART</button>
+            <button class="qv-shoppay-btn" id="btn-qv-shoppay">Buy with <span class="shoppay-bold">shop</span><span class="shoppay-light">Pay</span></button>
+            <div class="qv-more-payments">More payment options</div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Handle thumbnail clicks to switch main image
+    const mainImg = modal.querySelector('#qv-main-img');
+    modal.querySelectorAll('.qv-thumb-box').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        modal.querySelectorAll('.qv-thumb-box').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        if (mainImg) {
+          mainImg.style.opacity = '0.4';
+          setTimeout(() => {
+            mainImg.src = thumb.dataset.src;
+            mainImg.style.opacity = '1';
+          }, 120);
+        }
+      });
+    });
+
+    // Size selection
+    let selectedSize = 'US 9';
+    modal.querySelectorAll('.qv-size-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        modal.querySelectorAll('.qv-size-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        selectedSize = chip.dataset.size || chip.textContent;
+      });
+    });
+
+    // Quantity selector
+    let currentQty = 1;
+    const qtyVal = modal.querySelector('#qv-qty-val');
+    const btnInc = modal.querySelector('#qv-qty-inc');
+    const btnDec = modal.querySelector('#qv-qty-dec');
+    if (btnInc && qtyVal) {
+      btnInc.onclick = (e) => {
+        e.preventDefault();
+        currentQty++;
+        qtyVal.textContent = currentQty;
+      };
+    }
+    if (btnDec && qtyVal) {
+      btnDec.onclick = (e) => {
+        e.preventDefault();
+        if (currentQty > 1) {
+          currentQty--;
+          qtyVal.textContent = currentQty;
+        }
+      };
+    }
+
+    // Add to cart
+    const btnAdd = modal.querySelector('#btn-qv-add');
+    if (btnAdd) {
+      btnAdd.onclick = (e) => {
+        e.preventDefault();
+        addToCart(prod, selectedSize, currentQty);
         modal.classList.remove('open');
         document.body.style.overflow = '';
       };
     }
 
+    // Buy with Shop Pay
+    const btnShopPay = modal.querySelector('#btn-qv-shoppay');
+    if (btnShopPay) {
+      btnShopPay.onclick = (e) => {
+        e.preventDefault();
+        addToCart(prod, selectedSize, currentQty);
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+        if (typeof openCart === 'function') openCart();
+      };
+    }
+
+    // Close button & overlay click
+    const btnClose = modal.querySelector('#btn-close-quickview');
+    if (btnClose) {
+      btnClose.onclick = () => {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+    }
+
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    };
+
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
+
+  // Auto-open via URL parameter (e.g. ?quickview=step-01)
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const qvParam = urlParams.get('quickview');
+    if (qvParam) {
+      const targetProd = catalog.find(p => p.id === qvParam) || catalog[0];
+      if (targetProd) setTimeout(() => openQuickView(targetProd), 150);
+    }
+  } catch (err) {}
 
   // ==========================================================================
   // 7. TOAST NOTIFICATION

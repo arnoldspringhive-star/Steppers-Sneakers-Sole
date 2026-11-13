@@ -2839,3 +2839,432 @@ ul {
   }
 }
 
+
+/* ==========================================================================
+   GRANDEUR STYLE LUXURY PDP MODAL (VERTICAL GALLERY & DOSSIER)
+   ========================================================================== */
+#quickview-modal.cart-drawer-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.qv-grandeur-container,
+.grandeur-pdp-modal {
+  position: relative;
+  width: 1140px;
+  max-width: 96vw;
+  max-height: 88vh;
+  background: #0d0e15;
+  border: 1px solid rgba(255, 42, 133, 0.4);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 40px rgba(255, 42, 133, 0.12);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 88px 1.1fr 1.25fr;
+  gap: 28px;
+  padding: 32px;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.grandeur-pdp-layout {
+  display: contents;
+}
+
+.qv-close-btn,
+.grandeur-pdp-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.qv-close-btn:hover,
+.grandeur-pdp-close:hover {
+  background: #ff2a85;
+  border-color: #ff2a85;
+  transform: rotate(90deg);
+}
+
+.qv-thumbs-rail,
+.grandeur-thumbs-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  max-height: 520px;
+  padding-right: 4px;
+}
+
+.qv-thumb-box,
+.grandeur-thumb-item {
+  width: 76px;
+  height: 76px;
+  border-radius: 8px;
+  background: #141520;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.qv-thumb-box img,
+.grandeur-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.25s ease;
+}
+
+.qv-thumb-box:hover img,
+.grandeur-thumb-item:hover img {
+  transform: scale(1.08);
+}
+
+.qv-thumb-box.active,
+.grandeur-thumb-item.active {
+  border-color: #ff2a85;
+  box-shadow: 0 0 14px rgba(255, 42, 133, 0.45);
+  transform: scale(1.03);
+}
+
+.qv-main-stage,
+.grandeur-main-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+}
+
+.qv-main-img-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#qv-main-img,
+#grandeur-main-display {
+  max-width: 100%;
+  max-height: 460px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+.qv-dossier-panel,
+.grandeur-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #fff;
+  padding-left: 8px;
+}
+
+.qv-brand-tag,
+.grandeur-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #ff7b00;
+  text-transform: uppercase;
+}
+
+.qv-title,
+.grandeur-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.qv-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.qv-price,
+.grandeur-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.qv-original-price {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+}
+
+.qv-save-badge {
+  background: rgba(255, 42, 133, 0.15);
+  color: #ff2a85;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 42, 133, 0.3);
+}
+
+.qv-installments,
+.grandeur-installments {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+}
+
+.shoppay-badge,
+.badge-shoppay {
+  background: #5a31f4;
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.qv-condition-note,
+.grandeur-condition {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.qv-section-label,
+.grandeur-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.qv-sizes-row,
+.grandeur-sizes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.qv-size-chip,
+.grandeur-size-btn {
+  padding: 7px 14px;
+  background: #141520;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qv-size-chip:hover,
+.grandeur-size-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.qv-size-chip.active,
+.grandeur-size-btn.active {
+  background: #ff2a85;
+  border-color: #ff2a85;
+  box-shadow: 0 0 12px rgba(255, 42, 133, 0.4);
+  color: #fff;
+}
+
+.qv-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 2px 0;
+}
+
+.qv-qty-selector,
+.grandeur-qty-box {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background: #141520;
+  overflow: hidden;
+}
+
+.qv-qty-btn,
+.grandeur-qty-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+#qv-qty-val,
+#pdp-qty-val {
+  width: 36px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.qv-availability-card,
+.grandeur-availability {
+  background: rgba(0, 229, 163, 0.05);
+  border: 1px solid rgba(0, 229, 163, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+}
+
+.qv-avail-title,
+.grandeur-avail-header {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qv-avail-row,
+.grandeur-avail-store {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2px 0;
+}
+
+.avail-badge.in-stock,
+.avail-tag-green {
+  color: #00e5a3;
+  font-weight: 600;
+}
+
+.qv-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.qv-add-cart-btn,
+.grandeur-btn-addcart {
+  width: 100%;
+  padding: 14px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.qv-add-cart-btn:hover,
+.grandeur-btn-addcart:hover {
+  background: #ff2a85;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(255, 42, 133, 0.4);
+}
+
+.qv-shoppay-btn,
+.grandeur-btn-shoppay {
+  width: 100%;
+  padding: 14px;
+  background: #5a31f4;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.25s ease;
+}
+
+.qv-shoppay-btn:hover,
+.grandeur-btn-shoppay:hover {
+  background: #4a24db;
+  box-shadow: 0 8px 24px rgba(90, 49, 244, 0.4);
+}
+
+.qv-more-payments,
+.grandeur-more-pay {
+  text-align: center;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .qv-grandeur-container,
+  .grandeur-pdp-modal {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+    padding: 24px 18px;
+    gap: 20px;
+  }
+  .qv-thumbs-rail,
+  .grandeur-thumbs-rail {
+    flex-direction: row;
+    max-height: 80px;
+    overflow-x: auto;
+  }
+}
